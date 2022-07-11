@@ -17,6 +17,7 @@ namespace SmartBill
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             Application.Run(new frmcustomer());
 =======
 <<<<<<< HEAD
@@ -25,6 +26,9 @@ namespace SmartBill
             Application.Run(new frmproduct());
 >>>>>>> dc191f00fdbb56db01ef514cc3636e7884362003
 >>>>>>> 872ce82496cd680422ace0418c18452a254be89e
+=======
+            Application.Run(new frminvoice());
+>>>>>>> ff6ceb9d3ab8ac6d695637feb9fe553007af9a0d
         }
     }
 }
