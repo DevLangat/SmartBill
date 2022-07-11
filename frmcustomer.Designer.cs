@@ -49,8 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(922, 663);
+            this.panel1.Size = new System.Drawing.Size(922, 616);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -75,7 +75,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(15, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(892, 612);
+            this.panel2.Size = new System.Drawing.Size(892, 586);
             this.panel2.TabIndex = 0;
             // 
             // panel3
@@ -98,7 +98,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(20, 27);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(475, 569);
+            this.panel3.Size = new System.Drawing.Size(475, 534);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -306,24 +306,24 @@
             this.Column2});
             this.dataGridView2.Location = new System.Drawing.Point(524, 27);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(351, 569);
+            this.dataGridView2.Size = new System.Drawing.Size(351, 534);
             this.dataGridView2.TabIndex = 3;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Customer ID";
-            this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Customer Name";
             this.Column2.Name = "Column2";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Customer ID";
+            this.Column1.Name = "Column1";
+            // 
             // frmcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 730);
+            this.ClientSize = new System.Drawing.Size(928, 683);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "frmcustomer";
