@@ -36,3 +36,7 @@ F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.csproj.CopyCo
 F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.exe
 F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.pdb
 >>>>>>> dc191f00fdbb56db01ef514cc3636e7884362003
+E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.dll
+E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.SqlServer.dll
+E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.xml
+E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.SqlServer.xml
