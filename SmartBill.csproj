@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="emloyeedbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emloyeedbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +66,12 @@
     </Compile>
     <Compile Include="frmcustomer.Designer.cs">
       <DependentUpon>frmcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frminvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frminvoice.Designer.cs">
+      <DependentUpon>frminvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="frmproduct.cs">
       <SubType>Form</SubType>
@@ -76,6 +87,9 @@
     <EmbeddedResource Include="frmcustomer.resx">
       <DependentUpon>frmcustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frminvoice.resx">
+      <DependentUpon>frminvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmproduct.resx">
       <DependentUpon>frmproduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +102,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="emloyeedbDataSet.xsc">
+      <DependentUpon>emloyeedbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="emloyeedbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>emloyeedbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="emloyeedbDataSet.xss">
+      <DependentUpon>emloyeedbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

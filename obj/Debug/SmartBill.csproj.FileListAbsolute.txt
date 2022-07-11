@@ -13,3 +13,4 @@ E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.exe
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.pdb
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmcustomer.resources
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmproduct.resources
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frminvoice.resources

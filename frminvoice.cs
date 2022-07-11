@@ -11,25 +11,17 @@ using System.Windows.Forms;
 
 namespace SmartBill
 {
-    public partial class frmcustomer : MaterialForm
+    public partial class frminvoice : MaterialForm
     {
-        public frmcustomer()
+        public frminvoice()
         {
             InitializeComponent();
         }
 
-        private void frmcustomer_Load(object sender, EventArgs e)
+        private void frminvoice_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
+            // TODO: This line of code loads data into the 'emloyeedbDataSet.Employee' table. You can move, or remove it, as needed.
+           
 
         }
     }

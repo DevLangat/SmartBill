@@ -32,14 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnSave = new MaterialSkin.Controls.MaterialButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtZipcode = new System.Windows.Forms.TextBox();
             this.txtKraPin = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,9 +45,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnSave = new MaterialSkin.Controls.MaterialButton();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -101,29 +101,6 @@
             this.panel3.Size = new System.Drawing.Size(475, 534);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnSave.Depth = 0;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSave.HighEmphasis = true;
-            this.btnSave.Icon = ((System.Drawing.Image)(resources.GetObject("btnSave.Icon")));
-            this.btnSave.Location = new System.Drawing.Point(291, 461);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSave.Size = new System.Drawing.Size(86, 36);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnSave.UseAccentColor = false;
-            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
@@ -203,26 +180,12 @@
             this.txtKraPin.Size = new System.Drawing.Size(219, 20);
             this.txtKraPin.TabIndex = 1;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(147, 101);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(219, 20);
-            this.txtEmail.TabIndex = 1;
-            // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(147, 62);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(219, 20);
             this.txtPhone.TabIndex = 1;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(147, 22);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(219, 20);
-            this.txtName.TabIndex = 1;
             // 
             // label9
             // 
@@ -297,6 +260,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Client";
             // 
+            // btnSave
+            // 
+            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSave.Depth = 0;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSave.HighEmphasis = true;
+            this.btnSave.Icon = ((System.Drawing.Image)(resources.GetObject("btnSave.Icon")));
+            this.btnSave.Location = new System.Drawing.Point(291, 461);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSave.Size = new System.Drawing.Size(86, 36);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSave.UseAccentColor = false;
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(147, 101);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(219, 20);
+            this.txtEmail.TabIndex = 1;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(147, 22);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(219, 20);
+            this.txtName.TabIndex = 1;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Customer Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Customer ID";
+            this.Column1.Name = "Column1";
+            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -309,16 +319,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(351, 534);
             this.dataGridView2.TabIndex = 3;
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Customer Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Customer ID";
-            this.Column1.Name = "Column1";
-            // 
             // frmcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +326,7 @@
             this.ClientSize = new System.Drawing.Size(928, 683);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmcustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Client";
@@ -355,14 +356,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtKraPin;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox comboBox1;
-        private MaterialSkin.Controls.MaterialButton btnSave;
         private System.Windows.Forms.TextBox txtZipcode;
+        private MaterialSkin.Controls.MaterialButton btnSave;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.TextBox txtName;
     }
 }
