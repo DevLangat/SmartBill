@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmproduct));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbTax = new System.Windows.Forms.ComboBox();
@@ -42,22 +43,21 @@
             this.cbType = new System.Windows.Forms.ComboBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.txtPrdctName = new System.Windows.Forms.TextBox();
-            this.txtQty = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbUOM = new System.Windows.Forms.ComboBox();
+            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,14 +83,28 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.product_id,
+            this.type,
+            this.name});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.Location = new System.Drawing.Point(518, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(331, 409);
+            this.dataGridView1.TabIndex = 4;
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.cbUOM);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.cbType);
             this.panel3.Controls.Add(this.txtDesc);
             this.panel3.Controls.Add(this.txtPrdctName);
-            this.panel3.Controls.Add(this.txtQty);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
@@ -169,7 +183,6 @@
             // 
             // cbType
             // 
-            this.cbType.Enabled = false;
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "Product",
@@ -189,17 +202,10 @@
             // 
             // txtPrdctName
             // 
-            this.txtPrdctName.Location = new System.Drawing.Point(93, 85);
+            this.txtPrdctName.Location = new System.Drawing.Point(93, 69);
             this.txtPrdctName.Name = "txtPrdctName";
             this.txtPrdctName.Size = new System.Drawing.Size(326, 20);
             this.txtPrdctName.TabIndex = 1;
-            // 
-            // txtQty
-            // 
-            this.txtQty.Location = new System.Drawing.Point(278, 19);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(105, 20);
-            this.txtQty.TabIndex = 1;
             // 
             // label6
             // 
@@ -213,7 +219,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 85);
+            this.label4.Location = new System.Drawing.Point(15, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 0;
@@ -224,9 +230,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(238, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Qty";
+            this.label3.Text = "UoM";
             // 
             // label2
             // 
@@ -269,36 +275,34 @@
             this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSave.UseAccentColor = false;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // dataGridView1
+            // cbUOM
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(518, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ShowCellToolTips = false;
-            this.dataGridView1.Size = new System.Drawing.Size(331, 409);
-            this.dataGridView1.TabIndex = 4;
+            this.cbUOM.FormattingEnabled = true;
+            this.cbUOM.Items.AddRange(new object[] {
+            "Boxes",
+            "Hours",
+            "Pieces"});
+            this.cbUOM.Location = new System.Drawing.Point(297, 18);
+            this.cbUOM.Name = "cbUOM";
+            this.cbUOM.Size = new System.Drawing.Size(121, 21);
+            this.cbUOM.TabIndex = 6;
             // 
-            // Column3
+            // product_id
             // 
-            this.Column3.HeaderText = "Product ID";
-            this.Column3.Name = "Column3";
+            this.product_id.HeaderText = "Product ID";
+            this.product_id.Name = "product_id";
             // 
-            // Column1
+            // type
             // 
-            this.Column1.HeaderText = "Product Type";
-            this.Column1.Name = "Column1";
+            this.type.HeaderText = "Product Type";
+            this.type.Name = "type";
             // 
-            // Column2
+            // name
             // 
-            this.Column2.HeaderText = "Product Name";
-            this.Column2.Name = "Column2";
+            this.name.HeaderText = "Product Name";
+            this.name.Name = "name";
             // 
             // frmproduct
             // 
@@ -311,14 +315,15 @@
             this.Name = "frmproduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product/Service";
+            this.Load += new System.EventHandler(this.frmproduct_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,7 +337,6 @@
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtPrdctName;
-        private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -346,8 +350,9 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ComboBox cbUOM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }

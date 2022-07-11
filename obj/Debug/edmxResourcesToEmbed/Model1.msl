@@ -1,0 +1,1185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sleekbillModelStoreContainer" CdmEntityContainer="sleekbillEntities">
+    <EntitySetMapping Name="bill_payments">
+      <EntityTypeMapping TypeName="sleekbillModel.bill_payments">
+        <MappingFragment StoreEntitySet="bill_payments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="payment_document_id" ColumnName="payment_document_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bill_products">
+      <EntityTypeMapping TypeName="sleekbillModel.bill_products">
+        <MappingFragment StoreEntitySet="bill_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="has_tax_included" ColumnName="has_tax_included" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="is_discount" ColumnName="is_discount" />
+          <ScalarProperty Name="discount_percentage" ColumnName="discount_percentage" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="purchase_rate" ColumnName="purchase_rate" />
+          <ScalarProperty Name="hsn" ColumnName="hsn" />
+          <ScalarProperty Name="sac" ColumnName="sac" />
+          <ScalarProperty Name="use_inline_discount" ColumnName="use_inline_discount" />
+          <ScalarProperty Name="cess_percentage" ColumnName="cess_percentage" />
+          <ScalarProperty Name="cess_value" ColumnName="cess_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bills">
+      <EntityTypeMapping TypeName="sleekbillModel.bill">
+        <MappingFragment StoreEntitySet="bills">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="vendor_name" ColumnName="vendor_name" />
+          <ScalarProperty Name="vendor_code" ColumnName="vendor_code" />
+          <ScalarProperty Name="vendor_email" ColumnName="vendor_email" />
+          <ScalarProperty Name="vendor_phone" ColumnName="vendor_phone" />
+          <ScalarProperty Name="vendor_contact" ColumnName="vendor_contact" />
+          <ScalarProperty Name="vendor_billing_address" ColumnName="vendor_billing_address" />
+          <ScalarProperty Name="vendor_billing_zip" ColumnName="vendor_billing_zip" />
+          <ScalarProperty Name="vendor_billing_city" ColumnName="vendor_billing_city" />
+          <ScalarProperty Name="vendor_shipping_address" ColumnName="vendor_shipping_address" />
+          <ScalarProperty Name="vendor_shipping_zip" ColumnName="vendor_shipping_zip" />
+          <ScalarProperty Name="vendor_shipping_city" ColumnName="vendor_shipping_city" />
+          <ScalarProperty Name="is_paid" ColumnName="is_paid" />
+          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
+          <ScalarProperty Name="bill_notes" ColumnName="bill_notes" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="po_number" ColumnName="po_number" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="vendor_billing_state_id" ColumnName="vendor_billing_state_id" />
+          <ScalarProperty Name="vendor_shipping_state_id" ColumnName="vendor_shipping_state_id" />
+          <ScalarProperty Name="pay_email" ColumnName="pay_email" />
+          <ScalarProperty Name="pay_online" ColumnName="pay_online" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="number_prefix" ColumnName="number_prefix" />
+          <ScalarProperty Name="second_number" ColumnName="second_number" />
+          <ScalarProperty Name="excise_duty" ColumnName="excise_duty" />
+          <ScalarProperty Name="use_transport" ColumnName="use_transport" />
+          <ScalarProperty Name="delivery_note" ColumnName="delivery_note" />
+          <ScalarProperty Name="vehicle_number" ColumnName="vehicle_number" />
+          <ScalarProperty Name="esugam" ColumnName="esugam" />
+          <ScalarProperty Name="lr_number" ColumnName="lr_number" />
+          <ScalarProperty Name="shipping_method" ColumnName="shipping_method" />
+          <ScalarProperty Name="excise_cess" ColumnName="excise_cess" />
+          <ScalarProperty Name="cancelled" ColumnName="cancelled" />
+          <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
+          <ScalarProperty Name="product_inline_discount" ColumnName="product_inline_discount" />
+          <ScalarProperty Name="po_date" ColumnName="po_date" />
+          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
+          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
+          <ScalarProperty Name="discount_all" ColumnName="discount_all" />
+          <ScalarProperty Name="lr_label" ColumnName="lr_label" />
+          <ScalarProperty Name="transporter_id" ColumnName="transporter_id" />
+          <ScalarProperty Name="inclusive_tax" ColumnName="inclusive_tax" />
+          <ScalarProperty Name="esugam_label" ColumnName="esugam_label" />
+          <ScalarProperty Name="transporter_name" ColumnName="transporter_name" />
+          <ScalarProperty Name="transporter_gstin" ColumnName="transporter_gstin" />
+          <ScalarProperty Name="show_cess" ColumnName="show_cess" />
+          <ScalarProperty Name="reverse_charges" ColumnName="reverse_charges" />
+          <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
+          <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+          <ScalarProperty Name="import_currency_id" ColumnName="import_currency_id" />
+          <ScalarProperty Name="exchange_rate" ColumnName="exchange_rate" />
+          <ScalarProperty Name="main_currency_id" ColumnName="main_currency_id" />
+          <ScalarProperty Name="tax_source" ColumnName="tax_source" />
+          <ScalarProperty Name="tax_source_type" ColumnName="tax_source_type" />
+          <ScalarProperty Name="tax_source_enabled" ColumnName="tax_source_enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cities">
+      <EntityTypeMapping TypeName="sleekbillModel.city">
+        <MappingFragment StoreEntitySet="cities">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="city1" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="state_short" ColumnName="state_short" />
+          <ScalarProperty Name="county" ColumnName="county" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="client_vendor_conversions">
+      <EntityTypeMapping TypeName="sleekbillModel.client_vendor_conversions">
+        <MappingFragment StoreEntitySet="client_vendor_conversions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clients">
+      <EntityTypeMapping TypeName="sleekbillModel.client">
+        <MappingFragment StoreEntitySet="clients">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+          <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
+          <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+          <ScalarProperty Name="billing_state_id" ColumnName="billing_state_id" />
+          <ScalarProperty Name="shipping_state_id" ColumnName="shipping_state_id" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="details_public" ColumnName="details_public" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="vat_number" ColumnName="vat_number" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company_details">
+      <EntityTypeMapping TypeName="sleekbillModel.company_details">
+        <MappingFragment StoreEntitySet="company_details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="tin" ColumnName="tin" />
+          <ScalarProperty Name="pan" ColumnName="pan" />
+          <ScalarProperty Name="stn" ColumnName="stn" />
+          <ScalarProperty Name="tax_label" ColumnName="tax_label" />
+          <ScalarProperty Name="service_category_id" ColumnName="service_category_id" />
+          <ScalarProperty Name="gstin" ColumnName="gstin" />
+          <ScalarProperty Name="tax_id_label" ColumnName="tax_id_label" />
+          <ScalarProperty Name="taxation_type" ColumnName="taxation_type" />
+          <ScalarProperty Name="signature_picture" ColumnName="signature_picture" />
+          <ScalarProperty Name="show_currency_code" ColumnName="show_currency_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="credit_note_products">
+      <EntityTypeMapping TypeName="sleekbillModel.credit_note_products">
+        <MappingFragment StoreEntitySet="credit_note_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="credit_note_id" ColumnName="credit_note_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="has_tax_included" ColumnName="has_tax_included" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="is_discount" ColumnName="is_discount" />
+          <ScalarProperty Name="discount_percentage" ColumnName="discount_percentage" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="purchase_rate" ColumnName="purchase_rate" />
+          <ScalarProperty Name="hsn" ColumnName="hsn" />
+          <ScalarProperty Name="sac" ColumnName="sac" />
+          <ScalarProperty Name="use_inline_discount" ColumnName="use_inline_discount" />
+          <ScalarProperty Name="cess_percentage" ColumnName="cess_percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="credit_notes">
+      <EntityTypeMapping TypeName="sleekbillModel.credit_notes">
+        <MappingFragment StoreEntitySet="credit_notes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+          <ScalarProperty Name="invoice_issue_date" ColumnName="invoice_issue_date" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="client_code" ColumnName="client_code" />
+          <ScalarProperty Name="client_email" ColumnName="client_email" />
+          <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+          <ScalarProperty Name="client_contact" ColumnName="client_contact" />
+          <ScalarProperty Name="client_billing_address" ColumnName="client_billing_address" />
+          <ScalarProperty Name="client_billing_zip" ColumnName="client_billing_zip" />
+          <ScalarProperty Name="client_billing_city" ColumnName="client_billing_city" />
+          <ScalarProperty Name="client_shipping_address" ColumnName="client_shipping_address" />
+          <ScalarProperty Name="client_shipping_zip" ColumnName="client_shipping_zip" />
+          <ScalarProperty Name="client_shipping_city" ColumnName="client_shipping_city" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
+          <ScalarProperty Name="credit_note_notes" ColumnName="credit_note_notes" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="client_billing_state_id" ColumnName="client_billing_state_id" />
+          <ScalarProperty Name="client_shipping_state_id" ColumnName="client_shipping_state_id" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="cancelled" ColumnName="cancelled" />
+          <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
+          <ScalarProperty Name="product_inline_discount" ColumnName="product_inline_discount" />
+          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
+          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
+          <ScalarProperty Name="discount_all" ColumnName="discount_all" />
+          <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
+          <ScalarProperty Name="show_cess" ColumnName="show_cess" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="client_shipping_name" ColumnName="client_shipping_name" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="invoice_payment_id" ColumnName="invoice_payment_id" />
+          <ScalarProperty Name="cn_status" ColumnName="cn_status" />
+          <ScalarProperty Name="stock_returned" ColumnName="stock_returned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="currencies">
+      <EntityTypeMapping TypeName="sleekbillModel.currency">
+        <MappingFragment StoreEntitySet="currencies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="currency_symbol" ColumnName="currency_symbol" />
+          <ScalarProperty Name="currency_name" ColumnName="currency_name" />
+          <ScalarProperty Name="is_used" ColumnName="is_used" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="debit_note_payments">
+      <EntityTypeMapping TypeName="sleekbillModel.debit_note_payments">
+        <MappingFragment StoreEntitySet="debit_note_payments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="debit_note_id" ColumnName="debit_note_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="debit_note_products">
+      <EntityTypeMapping TypeName="sleekbillModel.debit_note_products">
+        <MappingFragment StoreEntitySet="debit_note_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="debit_note_id" ColumnName="debit_note_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="has_tax_included" ColumnName="has_tax_included" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="is_discount" ColumnName="is_discount" />
+          <ScalarProperty Name="discount_percentage" ColumnName="discount_percentage" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="purchase_rate" ColumnName="purchase_rate" />
+          <ScalarProperty Name="hsn" ColumnName="hsn" />
+          <ScalarProperty Name="sac" ColumnName="sac" />
+          <ScalarProperty Name="use_inline_discount" ColumnName="use_inline_discount" />
+          <ScalarProperty Name="cess_percentage" ColumnName="cess_percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="debit_notes">
+      <EntityTypeMapping TypeName="sleekbillModel.debit_notes">
+        <MappingFragment StoreEntitySet="debit_notes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+          <ScalarProperty Name="invoice_issue_date" ColumnName="invoice_issue_date" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="client_code" ColumnName="client_code" />
+          <ScalarProperty Name="client_email" ColumnName="client_email" />
+          <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+          <ScalarProperty Name="client_contact" ColumnName="client_contact" />
+          <ScalarProperty Name="client_billing_address" ColumnName="client_billing_address" />
+          <ScalarProperty Name="client_billing_zip" ColumnName="client_billing_zip" />
+          <ScalarProperty Name="client_billing_city" ColumnName="client_billing_city" />
+          <ScalarProperty Name="client_shipping_address" ColumnName="client_shipping_address" />
+          <ScalarProperty Name="client_shipping_zip" ColumnName="client_shipping_zip" />
+          <ScalarProperty Name="client_shipping_city" ColumnName="client_shipping_city" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
+          <ScalarProperty Name="debit_note_notes" ColumnName="debit_note_notes" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="client_billing_state_id" ColumnName="client_billing_state_id" />
+          <ScalarProperty Name="client_shipping_state_id" ColumnName="client_shipping_state_id" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="cancelled" ColumnName="cancelled" />
+          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
+          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
+          <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="client_shipping_name" ColumnName="client_shipping_name" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="pay_email" ColumnName="pay_email" />
+          <ScalarProperty Name="pay_online" ColumnName="pay_online" />
+          <ScalarProperty Name="is_paid" ColumnName="is_paid" />
+          <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="client_type" ColumnName="client_type" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+          <ScalarProperty Name="discount_all" ColumnName="discount_all" />
+          <ScalarProperty Name="stock_reduced" ColumnName="stock_reduced" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimates">
+      <EntityTypeMapping TypeName="sleekbillModel.estimate">
+        <MappingFragment StoreEntitySet="estimate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="valid_until" ColumnName="valid_until" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="client_code" ColumnName="client_code" />
+          <ScalarProperty Name="client_email" ColumnName="client_email" />
+          <ScalarProperty Name="client_telephone" ColumnName="client_telephone" />
+          <ScalarProperty Name="client_contact" ColumnName="client_contact" />
+          <ScalarProperty Name="client_billing_address" ColumnName="client_billing_address" />
+          <ScalarProperty Name="client_billing_zip" ColumnName="client_billing_zip" />
+          <ScalarProperty Name="client_billing_city" ColumnName="client_billing_city" />
+          <ScalarProperty Name="client_shipping_address" ColumnName="client_shipping_address" />
+          <ScalarProperty Name="client_shipping_zip" ColumnName="client_shipping_zip" />
+          <ScalarProperty Name="client_shipping_city" ColumnName="client_shipping_city" />
+          <ScalarProperty Name="is_paid" ColumnName="is_paid" />
+          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
+          <ScalarProperty Name="estimate_notes" ColumnName="estimate_notes" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="po_number" ColumnName="po_number" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="client_billing_state_id" ColumnName="client_billing_state_id" />
+          <ScalarProperty Name="client_shipping_state_id" ColumnName="client_shipping_state_id" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
+          <ScalarProperty Name="pay_email" ColumnName="pay_email" />
+          <ScalarProperty Name="pay_online" ColumnName="pay_online" />
+          <ScalarProperty Name="hide_shipping_date" ColumnName="hide_shipping_date" />
+          <ScalarProperty Name="po_number_label" ColumnName="po_number_label" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="po_date" ColumnName="po_date" />
+          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
+          <ScalarProperty Name="po_date_label" ColumnName="po_date_label" />
+          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
+          <ScalarProperty Name="discount_all" ColumnName="discount_all" />
+          <ScalarProperty Name="number_prefix" ColumnName="number_prefix" />
+          <ScalarProperty Name="client_shipping_name" ColumnName="client_shipping_name" />
+          <ScalarProperty Name="show_cess" ColumnName="show_cess" />
+          <ScalarProperty Name="reverse_charges" ColumnName="reverse_charges" />
+          <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
+          <ScalarProperty Name="project" ColumnName="project" />
+          <ScalarProperty Name="kerala_cess" ColumnName="kerala_cess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimate_conversions">
+      <EntityTypeMapping TypeName="sleekbillModel.estimate_conversions">
+        <MappingFragment StoreEntitySet="estimate_conversions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="estimate_id" ColumnName="estimate_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimate_payments">
+      <EntityTypeMapping TypeName="sleekbillModel.estimate_payments">
+        <MappingFragment StoreEntitySet="estimate_payments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="estimate_id" ColumnName="estimate_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimate_products">
+      <EntityTypeMapping TypeName="sleekbillModel.estimate_products">
+        <MappingFragment StoreEntitySet="estimate_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="estimate_id" ColumnName="estimate_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="has_tax_included" ColumnName="has_tax_included" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="is_discount" ColumnName="is_discount" />
+          <ScalarProperty Name="discount_percentage" ColumnName="discount_percentage" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="purchase_rate" ColumnName="purchase_rate" />
+          <ScalarProperty Name="hsn" ColumnName="hsn" />
+          <ScalarProperty Name="sac" ColumnName="sac" />
+          <ScalarProperty Name="use_inline_discount" ColumnName="use_inline_discount" />
+          <ScalarProperty Name="cess_percentage" ColumnName="cess_percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expense_items">
+      <EntityTypeMapping TypeName="sleekbillModel.expense_items">
+        <MappingFragment StoreEntitySet="expense_items">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="expense_product_id" ColumnName="expense_product_id" />
+          <ScalarProperty Name="expense_id" ColumnName="expense_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expense_products">
+      <EntityTypeMapping TypeName="sleekbillModel.expense_products">
+        <MappingFragment StoreEntitySet="expense_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expenses">
+      <EntityTypeMapping TypeName="sleekbillModel.expens">
+        <MappingFragment StoreEntitySet="expenses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="number_prefix" ColumnName="number_prefix" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
+          <ScalarProperty Name="expense_notes" ColumnName="expense_notes" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="vendor_name" ColumnName="vendor_name" />
+          <ScalarProperty Name="vendor_code" ColumnName="vendor_code" />
+          <ScalarProperty Name="vendor_email" ColumnName="vendor_email" />
+          <ScalarProperty Name="vendor_phone" ColumnName="vendor_phone" />
+          <ScalarProperty Name="vendor_contact" ColumnName="vendor_contact" />
+          <ScalarProperty Name="vendor_billing_address" ColumnName="vendor_billing_address" />
+          <ScalarProperty Name="vendor_billing_zip" ColumnName="vendor_billing_zip" />
+          <ScalarProperty Name="vendor_billing_city" ColumnName="vendor_billing_city" />
+          <ScalarProperty Name="vendor_shipping_address" ColumnName="vendor_shipping_address" />
+          <ScalarProperty Name="vendor_shipping_zip" ColumnName="vendor_shipping_zip" />
+          <ScalarProperty Name="vendor_shipping_city" ColumnName="vendor_shipping_city" />
+          <ScalarProperty Name="vendor_billing_state_id" ColumnName="vendor_billing_state_id" />
+          <ScalarProperty Name="vendor_shipping_state_id" ColumnName="vendor_shipping_state_id" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
+          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="reverse_charges" ColumnName="reverse_charges" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="facturi_stornate">
+      <EntityTypeMapping TypeName="sleekbillModel.facturi_stornate">
+        <MappingFragment StoreEntitySet="facturi_stornate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="factura_id" ColumnName="factura_id" />
+          <ScalarProperty Name="data_stornarii" ColumnName="data_stornarii" />
+          <ScalarProperty Name="valoare1" ColumnName="valoare1" />
+          <ScalarProperty Name="valoare2" ColumnName="valoare2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fisc_year">
+      <EntityTypeMapping TypeName="sleekbillModel.fisc_year">
+        <MappingFragment StoreEntitySet="fisc_year">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="document_type" ColumnName="document_type" />
+          <ScalarProperty Name="start_number" ColumnName="start_number" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="reset_number_from_id" ColumnName="reset_number_from_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flags">
+      <EntityTypeMapping TypeName="sleekbillModel.flag">
+        <MappingFragment StoreEntitySet="flags">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="value_with_tax" ColumnName="value_with_tax" />
+          <ScalarProperty Name="invoice_label" ColumnName="invoice_label" />
+          <ScalarProperty Name="estimate_label" ColumnName="estimate_label" />
+          <ScalarProperty Name="product_label" ColumnName="product_label" />
+          <ScalarProperty Name="quantity_label" ColumnName="quantity_label" />
+          <ScalarProperty Name="price_label" ColumnName="price_label" />
+          <ScalarProperty Name="show_address" ColumnName="show_address" />
+          <ScalarProperty Name="total_without_decimals" ColumnName="total_without_decimals" />
+          <ScalarProperty Name="total_in_words" ColumnName="total_in_words" />
+          <ScalarProperty Name="show_signature" ColumnName="show_signature" />
+          <ScalarProperty Name="shipping_price" ColumnName="shipping_price" />
+          <ScalarProperty Name="replace_quantity" ColumnName="replace_quantity" />
+          <ScalarProperty Name="show_shipping" ColumnName="show_shipping" />
+          <ScalarProperty Name="shipping_label" ColumnName="shipping_label" />
+          <ScalarProperty Name="indian_format" ColumnName="indian_format" />
+          <ScalarProperty Name="show_up_column" ColumnName="show_up_column" />
+          <ScalarProperty Name="decimals" ColumnName="decimals" />
+          <ScalarProperty Name="show_um_column" ColumnName="show_um_column" />
+          <ScalarProperty Name="show_tax_column" ColumnName="show_tax_column" />
+          <ScalarProperty Name="show_tax_percentage" ColumnName="show_tax_percentage" />
+          <ScalarProperty Name="excise_duty" ColumnName="excise_duty" />
+          <ScalarProperty Name="hide_amount" ColumnName="hide_amount" />
+          <ScalarProperty Name="um_label" ColumnName="um_label" />
+          <ScalarProperty Name="tax_label" ColumnName="tax_label" />
+          <ScalarProperty Name="replace_paypal" ColumnName="replace_paypal" />
+          <ScalarProperty Name="fisc_year_start" ColumnName="fisc_year_start" />
+          <ScalarProperty Name="end_fisc_year" ColumnName="end_fisc_year" />
+          <ScalarProperty Name="use_document_prefix" ColumnName="use_document_prefix" />
+          <ScalarProperty Name="prefix_separator" ColumnName="prefix_separator" />
+          <ScalarProperty Name="use_date_prefix" ColumnName="use_date_prefix" />
+          <ScalarProperty Name="show_delivery_note_amount" ColumnName="show_delivery_note_amount" />
+          <ScalarProperty Name="po_number_label" ColumnName="po_number_label" />
+          <ScalarProperty Name="odt_activated" ColumnName="odt_activated" />
+          <ScalarProperty Name="use_pin_code" ColumnName="use_pin_code" />
+          <ScalarProperty Name="tax_invoice_label" ColumnName="tax_invoice_label" />
+          <ScalarProperty Name="retail_invoice_label" ColumnName="retail_invoice_label" />
+          <ScalarProperty Name="excise_invoice_label" ColumnName="excise_invoice_label" />
+          <ScalarProperty Name="proforma_label" ColumnName="proforma_label" />
+          <ScalarProperty Name="challan_label" ColumnName="challan_label" />
+          <ScalarProperty Name="show_contact_name" ColumnName="show_contact_name" />
+          <ScalarProperty Name="copy_type_original" ColumnName="copy_type_original" />
+          <ScalarProperty Name="copy_type_dupl" ColumnName="copy_type_dupl" />
+          <ScalarProperty Name="copy_type_tripl" ColumnName="copy_type_tripl" />
+          <ScalarProperty Name="copy_type_quadr" ColumnName="copy_type_quadr" />
+          <ScalarProperty Name="header_on_all_pages" ColumnName="header_on_all_pages" />
+          <ScalarProperty Name="show_net_received" ColumnName="show_net_received" />
+          <ScalarProperty Name="a5_more_pages" ColumnName="a5_more_pages" />
+          <ScalarProperty Name="use_second_number" ColumnName="use_second_number" />
+          <ScalarProperty Name="change_dosc_df" ColumnName="change_dosc_df" />
+          <ScalarProperty Name="basic_inventory" ColumnName="basic_inventory" />
+          <ScalarProperty Name="inventory_docs" ColumnName="inventory_docs" />
+          <ScalarProperty Name="rmv_product_qty_decimals" ColumnName="rmv_product_qty_decimals" />
+          <ScalarProperty Name="show_dn_tax" ColumnName="show_dn_tax" />
+          <ScalarProperty Name="show_dn_price" ColumnName="show_dn_price" />
+          <ScalarProperty Name="show_gst_rates" ColumnName="show_gst_rates" />
+          <ScalarProperty Name="show_total_tax" ColumnName="show_total_tax" />
+          <ScalarProperty Name="show_total_before_tax" ColumnName="show_total_before_tax" />
+          <ScalarProperty Name="split_calc_cgst" ColumnName="split_calc_cgst" />
+          <ScalarProperty Name="inclusive_tax" ColumnName="inclusive_tax" />
+          <ScalarProperty Name="client_note_label" ColumnName="client_note_label" />
+          <ScalarProperty Name="hindi_keyboard" ColumnName="hindi_keyboard" />
+          <ScalarProperty Name="show_grand_total" ColumnName="show_grand_total" />
+          <ScalarProperty Name="fy_reset_numbering" ColumnName="fy_reset_numbering" />
+          <ScalarProperty Name="end_fiscal_year_date" ColumnName="end_fiscal_year_date" />
+          <ScalarProperty Name="purchase_order_label" ColumnName="purchase_order_label" />
+          <ScalarProperty Name="show_discount_column" ColumnName="show_discount_column" />
+          <ScalarProperty Name="discount_label" ColumnName="discount_label" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gst_port_codes">
+      <EntityTypeMapping TypeName="sleekbillModel.gst_port_codes">
+        <MappingFragment StoreEntitySet="gst_port_codes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="port_code" ColumnName="port_code" />
+          <ScalarProperty Name="port_name" ColumnName="port_name" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="port_code_details" ColumnName="port_code_details" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoice_payments">
+      <EntityTypeMapping TypeName="sleekbillModel.invoice_payments">
+        <MappingFragment StoreEntitySet="invoice_payments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="credit_note_id" ColumnName="credit_note_id" />
+          <ScalarProperty Name="payment_document_id" ColumnName="payment_document_id" />
+          <ScalarProperty Name="Receiptno" ColumnName="Receiptno" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoice_products">
+      <EntityTypeMapping TypeName="sleekbillModel.invoice_products">
+        <MappingFragment StoreEntitySet="invoice_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="has_tax_included" ColumnName="has_tax_included" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="is_discount" ColumnName="is_discount" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="purchase_rate" ColumnName="purchase_rate" />
+          <ScalarProperty Name="cess_value" ColumnName="cess_value" />
+          <ScalarProperty Name="discount_type" ColumnName="discount_type" />
+          <ScalarProperty Name="discount_value" ColumnName="discount_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoices">
+      <EntityTypeMapping TypeName="sleekbillModel.invoice">
+        <MappingFragment StoreEntitySet="invoices">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="client_code" ColumnName="client_code" />
+          <ScalarProperty Name="client_email" ColumnName="client_email" />
+          <ScalarProperty Name="client_telephone" ColumnName="client_telephone" />
+          <ScalarProperty Name="client_contact" ColumnName="client_contact" />
+          <ScalarProperty Name="client_billing_address" ColumnName="client_billing_address" />
+          <ScalarProperty Name="client_billing_zip" ColumnName="client_billing_zip" />
+          <ScalarProperty Name="client_billing_city" ColumnName="client_billing_city" />
+          <ScalarProperty Name="client_shipping_address" ColumnName="client_shipping_address" />
+          <ScalarProperty Name="client_shipping_zip" ColumnName="client_shipping_zip" />
+          <ScalarProperty Name="client_shipping_city" ColumnName="client_shipping_city" />
+          <ScalarProperty Name="is_paid" ColumnName="is_paid" />
+          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
+          <ScalarProperty Name="invoice_notes" ColumnName="invoice_notes" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="po_number" ColumnName="po_number" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="client_billing_state_id" ColumnName="client_billing_state_id" />
+          <ScalarProperty Name="client_shipping_state_id" ColumnName="client_shipping_state_id" />
+          <ScalarProperty Name="pay_email" ColumnName="pay_email" />
+          <ScalarProperty Name="pay_online" ColumnName="pay_online" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="number_prefix" ColumnName="number_prefix" />
+          <ScalarProperty Name="second_number" ColumnName="second_number" />
+          <ScalarProperty Name="excise_duty" ColumnName="excise_duty" />
+          <ScalarProperty Name="use_transport" ColumnName="use_transport" />
+          <ScalarProperty Name="delivery_note" ColumnName="delivery_note" />
+          <ScalarProperty Name="vehicle_number" ColumnName="vehicle_number" />
+          <ScalarProperty Name="esugam" ColumnName="esugam" />
+          <ScalarProperty Name="lr_number" ColumnName="lr_number" />
+          <ScalarProperty Name="shipping_method" ColumnName="shipping_method" />
+          <ScalarProperty Name="excise_cess" ColumnName="excise_cess" />
+          <ScalarProperty Name="cancelled" ColumnName="cancelled" />
+          <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
+          <ScalarProperty Name="product_inline_discount" ColumnName="product_inline_discount" />
+          <ScalarProperty Name="esugam_label" ColumnName="esugam_label" />
+          <ScalarProperty Name="po_date" ColumnName="po_date" />
+          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
+          <ScalarProperty Name="reverse_charges" ColumnName="reverse_charges" />
+          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
+          <ScalarProperty Name="discount_all" ColumnName="discount_all" />
+          <ScalarProperty Name="lr_label" ColumnName="lr_label" />
+          <ScalarProperty Name="transporter_id" ColumnName="transporter_id" />
+          <ScalarProperty Name="client_shipping_name" ColumnName="client_shipping_name" />
+          <ScalarProperty Name="transporter_name" ColumnName="transporter_name" />
+          <ScalarProperty Name="transporter_gstin" ColumnName="transporter_gstin" />
+          <ScalarProperty Name="show_cess" ColumnName="show_cess" />
+          <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
+          <ScalarProperty Name="ship_bill_distance" ColumnName="ship_bill_distance" />
+          <ScalarProperty Name="exchange_country" ColumnName="exchange_country" />
+          <ScalarProperty Name="exchange_curr_id" ColumnName="exchange_curr_id" />
+          <ScalarProperty Name="exchange_export_type" ColumnName="exchange_export_type" />
+          <ScalarProperty Name="exchange_rate" ColumnName="exchange_rate" />
+          <ScalarProperty Name="gst_port_code_id" ColumnName="gst_port_code_id" />
+          <ScalarProperty Name="ship_bill_number" ColumnName="ship_bill_number" />
+          <ScalarProperty Name="ship_bill_date" ColumnName="ship_bill_date" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="total_measuring_unit" ColumnName="total_measuring_unit" />
+          <ScalarProperty Name="kerala_cess" ColumnName="kerala_cess" />
+          <ScalarProperty Name="tax_source" ColumnName="tax_source" />
+          <ScalarProperty Name="tax_source_type" ColumnName="tax_source_type" />
+          <ScalarProperty Name="tax_source_enabled" ColumnName="tax_source_enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="packing_slip_conversions">
+      <EntityTypeMapping TypeName="sleekbillModel.packing_slip_conversions">
+        <MappingFragment StoreEntitySet="packing_slip_conversions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="packing_slip_id" ColumnName="packing_slip_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="packing_slip_products">
+      <EntityTypeMapping TypeName="sleekbillModel.packing_slip_products">
+        <MappingFragment StoreEntitySet="packing_slip_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="packing_slip_id" ColumnName="packing_slip_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="ship_measuring_unit" ColumnName="ship_measuring_unit" />
+          <ScalarProperty Name="ship_quantity" ColumnName="ship_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="packing_slips">
+      <EntityTypeMapping TypeName="sleekbillModel.packing_slips">
+        <MappingFragment StoreEntitySet="packing_slips">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+          <ScalarProperty Name="invoice_issue_date" ColumnName="invoice_issue_date" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="client_code" ColumnName="client_code" />
+          <ScalarProperty Name="client_email" ColumnName="client_email" />
+          <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+          <ScalarProperty Name="client_contact" ColumnName="client_contact" />
+          <ScalarProperty Name="client_billing_address" ColumnName="client_billing_address" />
+          <ScalarProperty Name="client_billing_zip" ColumnName="client_billing_zip" />
+          <ScalarProperty Name="client_billing_city" ColumnName="client_billing_city" />
+          <ScalarProperty Name="client_shipping_address" ColumnName="client_shipping_address" />
+          <ScalarProperty Name="client_shipping_zip" ColumnName="client_shipping_zip" />
+          <ScalarProperty Name="client_shipping_city" ColumnName="client_shipping_city" />
+          <ScalarProperty Name="packing_slip_notes" ColumnName="packing_slip_notes" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="client_shipping_name" ColumnName="client_shipping_name" />
+          <ScalarProperty Name="client_billing_state_id" ColumnName="client_billing_state_id" />
+          <ScalarProperty Name="client_shipping_state_id" ColumnName="client_shipping_state_id" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="page_size">
+      <EntityTypeMapping TypeName="sleekbillModel.page_size">
+        <MappingFragment StoreEntitySet="page_size">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="format" ColumnName="format" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment_documents">
+      <EntityTypeMapping TypeName="sleekbillModel.payment_documents">
+        <MappingFragment StoreEntitySet="payment_documents">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="bank_charges" ColumnName="bank_charges" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="pay_date" ColumnName="pay_date" />
+          <ScalarProperty Name="amount_payment" ColumnName="amount_payment" />
+          <ScalarProperty Name="amount_used" ColumnName="amount_used" />
+          <ScalarProperty Name="amount_excessed" ColumnName="amount_excessed" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="converted_payment_id" ColumnName="converted_payment_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payments">
+      <EntityTypeMapping TypeName="sleekbillModel.payment">
+        <MappingFragment StoreEntitySet="payments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="pay_date" ColumnName="pay_date" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="advance" ColumnName="advance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="sleekbillModel.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="has_tax_included" ColumnName="has_tax_included" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="purchase_rate" ColumnName="purchase_rate" />
+          <ScalarProperty Name="hsn" ColumnName="hsn" />
+          <ScalarProperty Name="sac" ColumnName="sac" />
+          <ScalarProperty Name="cess_percentage" ColumnName="cess_percentage" />
+          <ScalarProperty Name="cess_value" ColumnName="cess_value" />
+          <ScalarProperty Name="purchase_currency_id" ColumnName="purchase_currency_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchase_order">
+      <EntityTypeMapping TypeName="sleekbillModel.purchase_order">
+        <MappingFragment StoreEntitySet="purchase_order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="valid_until" ColumnName="valid_until" />
+          <ScalarProperty Name="company_details_id" ColumnName="company_details_id" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="vendor_name" ColumnName="vendor_name" />
+          <ScalarProperty Name="vendor_code" ColumnName="vendor_code" />
+          <ScalarProperty Name="vendor_email" ColumnName="vendor_email" />
+          <ScalarProperty Name="vendor_phone" ColumnName="vendor_phone" />
+          <ScalarProperty Name="vendor_contact" ColumnName="vendor_contact" />
+          <ScalarProperty Name="vendor_billing_address" ColumnName="vendor_billing_address" />
+          <ScalarProperty Name="vendor_billing_zip" ColumnName="vendor_billing_zip" />
+          <ScalarProperty Name="vendor_billing_city" ColumnName="vendor_billing_city" />
+          <ScalarProperty Name="vendor_shipping_address" ColumnName="vendor_shipping_address" />
+          <ScalarProperty Name="vendor_shipping_zip" ColumnName="vendor_shipping_zip" />
+          <ScalarProperty Name="vendor_shipping_city" ColumnName="vendor_shipping_city" />
+          <ScalarProperty Name="is_paid" ColumnName="is_paid" />
+          <ScalarProperty Name="is_draft" ColumnName="is_draft" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
+          <ScalarProperty Name="purchase_order_notes" ColumnName="purchase_order_notes" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="po_number" ColumnName="po_number" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
+          <ScalarProperty Name="vendor_billing_state_id" ColumnName="vendor_billing_state_id" />
+          <ScalarProperty Name="vendor_shipping_state_id" ColumnName="vendor_shipping_state_id" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="print_id" ColumnName="print_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
+          <ScalarProperty Name="pay_email" ColumnName="pay_email" />
+          <ScalarProperty Name="pay_online" ColumnName="pay_online" />
+          <ScalarProperty Name="hide_shipping_date" ColumnName="hide_shipping_date" />
+          <ScalarProperty Name="po_number_label" ColumnName="po_number_label" />
+          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
+          <ScalarProperty Name="po_date" ColumnName="po_date" />
+          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
+          <ScalarProperty Name="po_date_label" ColumnName="po_date_label" />
+          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
+          <ScalarProperty Name="discount_all" ColumnName="discount_all" />
+          <ScalarProperty Name="number_prefix" ColumnName="number_prefix" />
+          <ScalarProperty Name="inclusive_tax" ColumnName="inclusive_tax" />
+          <ScalarProperty Name="show_cess" ColumnName="show_cess" />
+          <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
+          <ScalarProperty Name="import_currency_id" ColumnName="import_currency_id" />
+          <ScalarProperty Name="exchange_rate" ColumnName="exchange_rate" />
+          <ScalarProperty Name="advance_payment" ColumnName="advance_payment" />
+          <ScalarProperty Name="main_currency_id" ColumnName="main_currency_id" />
+          <ScalarProperty Name="project" ColumnName="project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchase_order_conversions">
+      <EntityTypeMapping TypeName="sleekbillModel.purchase_order_conversions">
+        <MappingFragment StoreEntitySet="purchase_order_conversions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="purchase_order_id" ColumnName="purchase_order_id" />
+          <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchase_order_products">
+      <EntityTypeMapping TypeName="sleekbillModel.purchase_order_products">
+        <MappingFragment StoreEntitySet="purchase_order_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="purchase_order_id" ColumnName="purchase_order_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="has_tax_included" ColumnName="has_tax_included" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
+          <ScalarProperty Name="total_tax" ColumnName="total_tax" />
+          <ScalarProperty Name="total_all" ColumnName="total_all" />
+          <ScalarProperty Name="is_discount" ColumnName="is_discount" />
+          <ScalarProperty Name="discount_percentage" ColumnName="discount_percentage" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="purchase_rate" ColumnName="purchase_rate" />
+          <ScalarProperty Name="hsn" ColumnName="hsn" />
+          <ScalarProperty Name="sac" ColumnName="sac" />
+          <ScalarProperty Name="use_inline_discount" ColumnName="use_inline_discount" />
+          <ScalarProperty Name="cess_percentage" ColumnName="cess_percentage" />
+          <ScalarProperty Name="cess_value" ColumnName="cess_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="release_notes">
+      <EntityTypeMapping TypeName="sleekbillModel.release_notes">
+        <MappingFragment StoreEntitySet="release_notes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="release_notes1" ColumnName="release_notes" />
+          <ScalarProperty Name="show_notes" ColumnName="show_notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_tax_services">
+      <EntityTypeMapping TypeName="sleekbillModel.service_tax_services">
+        <MappingFragment StoreEntitySet="service_tax_services">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="service_category" ColumnName="service_category" />
+          <ScalarProperty Name="introduction_date" ColumnName="introduction_date" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="ac_tax_collection" ColumnName="ac_tax_collection" />
+          <ScalarProperty Name="ac_other_receipts" ColumnName="ac_other_receipts" />
+          <ScalarProperty Name="ac_deduct_refunds" ColumnName="ac_deduct_refunds" />
+          <ScalarProperty Name="ac_education_cess" ColumnName="ac_education_cess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="sleekbillModel.state">
+        <MappingFragment StoreEntitySet="states">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="state1" ColumnName="state" />
+          <ScalarProperty Name="county" ColumnName="county" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="tin" ColumnName="tin" />
+          <ScalarProperty Name="state_code" ColumnName="state_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stock_history">
+      <EntityTypeMapping TypeName="sleekbillModel.stock_history">
+        <MappingFragment StoreEntitySet="stock_history">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+          <ScalarProperty Name="credit_note_id" ColumnName="credit_note_id" />
+          <ScalarProperty Name="old_quantity" ColumnName="old_quantity" />
+          <ScalarProperty Name="debit_note_id" ColumnName="debit_note_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stocks">
+      <EntityTypeMapping TypeName="sleekbillModel.stock">
+        <MappingFragment StoreEntitySet="stocks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="sold_quantity" ColumnName="sold_quantity" />
+          <ScalarProperty Name="sold_total_amount" ColumnName="sold_total_amount" />
+          <ScalarProperty Name="cogs" ColumnName="cogs" />
+          <ScalarProperty Name="gross_margin" ColumnName="gross_margin" />
+          <ScalarProperty Name="gross_margin_percent" ColumnName="gross_margin_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tax_combo">
+      <EntityTypeMapping TypeName="sleekbillModel.tax_combo">
+        <MappingFragment StoreEntitySet="tax_combo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="main_tax_id" ColumnName="main_tax_id" />
+          <ScalarProperty Name="component_tax_id" ColumnName="component_tax_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taxes">
+      <EntityTypeMapping TypeName="sleekbillModel.tax">
+        <MappingFragment StoreEntitySet="taxes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tax_name" ColumnName="tax_name" />
+          <ScalarProperty Name="tax_percentage" ColumnName="tax_percentage" />
+          <ScalarProperty Name="is_default_tax" ColumnName="is_default_tax" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="explicit_order" ColumnName="explicit_order" />
+          <ScalarProperty Name="tax_on_taxable_value" ColumnName="tax_on_taxable_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tips">
+      <EntityTypeMapping TypeName="sleekbillModel.tip">
+        <MappingFragment StoreEntitySet="tips">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="count" ColumnName="count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendors">
+      <EntityTypeMapping TypeName="sleekbillModel.vendor">
+        <MappingFragment StoreEntitySet="vendors">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+          <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
+          <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+          <ScalarProperty Name="shipping_address" ColumnName="shipping_address" />
+          <ScalarProperty Name="shipping_zip" ColumnName="shipping_zip" />
+          <ScalarProperty Name="shipping_city" ColumnName="shipping_city" />
+          <ScalarProperty Name="billing_state_id" ColumnName="billing_state_id" />
+          <ScalarProperty Name="shipping_state_id" ColumnName="shipping_state_id" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="details_public" ColumnName="details_public" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="tin" ColumnName="tin" />
+          <ScalarProperty Name="pan" ColumnName="pan" />
+          <ScalarProperty Name="vendor_code" ColumnName="vendor_code" />
+          <ScalarProperty Name="vat_number" ColumnName="vat_number" />
+          <ScalarProperty Name="gstin" ColumnName="gstin" />
+          <ScalarProperty Name="ship_my_address" ColumnName="ship_my_address" />
+          <ScalarProperty Name="SEZ" ColumnName="SEZ" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="versions">
+      <EntityTypeMapping TypeName="sleekbillModel.version">
+        <MappingFragment StoreEntitySet="version">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="version1" ColumnName="version" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="configs">
+      <EntityTypeMapping TypeName="sleekbillModel.config">
+        <MappingFragment StoreEntitySet="config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="config_id" ColumnName="config_id" />
+          <ScalarProperty Name="KEY" ColumnName="KEY" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

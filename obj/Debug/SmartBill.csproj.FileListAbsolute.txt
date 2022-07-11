@@ -13,4 +13,26 @@ E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.exe
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.pdb
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmcustomer.resources
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmproduct.resources
+<<<<<<< HEAD
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frminvoice.resources
+=======
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\SmartBill.exe.config
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\SmartBill.exe
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\SmartBill.pdb
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\EntityFramework.dll
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\EntityFramework.SqlServer.dll
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\MaterialSkin.dll
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\EntityFramework.xml
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\EntityFramework.SqlServer.xml
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.csproj.AssemblyReference.cache
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.csproj.SuggestedBindingRedirects.cache
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.Form1.resources
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.frmcustomer.resources
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.frmproduct.resources
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.Properties.Resources.resources
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.csproj.GenerateResource.cache
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.csproj.CoreCompileInputs.cache
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.csproj.CopyComplete
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.exe
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.pdb
+>>>>>>> dc191f00fdbb56db01ef514cc3636e7884362003

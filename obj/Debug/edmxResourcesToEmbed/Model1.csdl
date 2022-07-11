@@ -1,0 +1,1187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sleekbillModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bill_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="bill_id" Type="Int32" />
+    <Property Name="amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payment_document_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="bill_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="bill_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="has_tax_included" Type="Boolean" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_discount" Type="Boolean" />
+    <Property Name="discount_percentage" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sku" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_rate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hsn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="use_inline_discount" Type="Boolean" />
+    <Property Name="cess_percentage" Type="Int32" Nullable="false" />
+    <Property Name="cess_value" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="bill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="due_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="vendor_id" Type="Int32" />
+    <Property Name="vendor_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="vendor_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_paid" Type="Boolean" />
+    <Property Name="is_draft" Type="Boolean" />
+    <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="internal_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bill_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="po_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="vendor_billing_state_id" Type="Int32" />
+    <Property Name="vendor_shipping_state_id" Type="Int32" />
+    <Property Name="pay_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pay_online" Type="Boolean" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sent" Type="Boolean" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fiscal_year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="number_prefix" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="second_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="excise_duty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="use_transport" Type="Boolean" />
+    <Property Name="delivery_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vehicle_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="esugam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lr_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="shipping_method" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="excise_cess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cancelled" Type="Boolean" />
+    <Property Name="quantity_no_decimal" Type="Boolean" />
+    <Property Name="product_inline_discount" Type="Boolean" />
+    <Property Name="po_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="supply_state_id" Type="Int32" />
+    <Property Name="discount_all" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="lr_label" Type="Int32" Nullable="false" />
+    <Property Name="transporter_id" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="inclusive_tax" Type="Boolean" />
+    <Property Name="esugam_label" Type="Int32" Nullable="false" />
+    <Property Name="transporter_name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="transporter_gstin" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="show_cess" Type="Boolean" />
+    <Property Name="reverse_charges" Type="Boolean" />
+    <Property Name="shipping_tax_id" Type="Int32" />
+    <Property Name="invoice_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="import_currency_id" Type="Int32" />
+    <Property Name="exchange_rate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="main_currency_id" Type="Int32" />
+    <Property Name="tax_source" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="tax_source_type" Type="Int32" Nullable="false" />
+    <Property Name="tax_source_enabled" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="zip" Type="Int32" />
+    <Property Name="city1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state_short" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="county" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="client_vendor_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="vendor_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_state_id" Type="Int32" />
+    <Property Name="shipping_state_id" Type="Int32" />
+    <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="details_public" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="vat_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="currency_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="company_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="state_id" Type="Int32" />
+    <Property Name="currency_id" Type="Int32" />
+    <Property Name="tin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="stn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tax_label" Type="Int32" Nullable="false" />
+    <Property Name="service_category_id" Type="Int32" />
+    <Property Name="gstin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tax_id_label" Type="Int32" Nullable="false" />
+    <Property Name="taxation_type" Type="Int32" Nullable="false" />
+    <Property Name="signature_picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="show_currency_code" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="credit_note_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="credit_note_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="has_tax_included" Type="Boolean" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="is_discount" Type="Boolean" />
+    <Property Name="discount_percentage" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sku" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_rate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="hsn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="use_inline_discount" Type="Boolean" />
+    <Property Name="cess_percentage" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="credit_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="invoice_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="invoice_issue_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="client_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="client_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="client_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="client_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="client_contact" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="total_no_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="internal_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="credit_note_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="client_billing_state_id" Type="Int32" />
+    <Property Name="client_shipping_state_id" Type="Int32" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="discount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sent" Type="Boolean" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="cancelled" Type="Boolean" />
+    <Property Name="quantity_no_decimal" Type="Boolean" />
+    <Property Name="product_inline_discount" Type="Boolean" />
+    <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="supply_state_id" Type="Int32" />
+    <Property Name="discount_all" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="shipping_tax_id" Type="Int32" />
+    <Property Name="show_cess" Type="Boolean" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="fiscal_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="reason" Type="Int32" Nullable="false" />
+    <Property Name="invoice_payment_id" Type="Int32" />
+    <Property Name="cn_status" Type="Int32" Nullable="false" />
+    <Property Name="stock_returned" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="currency">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="currency_symbol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="currency_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="is_used" Type="Boolean" />
+    <Property Name="symbol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="debit_note_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="debit_note_id" Type="Int32" />
+    <Property Name="amount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="debit_note_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="debit_note_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="has_tax_included" Type="Boolean" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="is_discount" Type="Boolean" />
+    <Property Name="discount_percentage" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sku" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_rate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="hsn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="use_inline_discount" Type="Boolean" />
+    <Property Name="cess_percentage" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="debit_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="due_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="invoice_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="invoice_issue_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="client_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="client_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="client_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="client_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="client_contact" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="total_no_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="internal_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="debit_note_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="client_billing_state_id" Type="Int32" />
+    <Property Name="client_shipping_state_id" Type="Int32" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="sent" Type="Boolean" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="cancelled" Type="Boolean" />
+    <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="supply_state_id" Type="Int32" />
+    <Property Name="shipping_tax_id" Type="Int32" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="fiscal_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="reason" Type="Int32" Nullable="false" />
+    <Property Name="pay_email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="pay_online" Type="Boolean" />
+    <Property Name="is_paid" Type="Boolean" />
+    <Property Name="quantity_no_decimal" Type="Boolean" />
+    <Property Name="discount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="client_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_id" Type="Int32" />
+    <Property Name="bill_id" Type="Int32" />
+    <Property Name="discount_all" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="stock_reduced" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="estimate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="valid_until" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="client_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="client_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_paid" Type="Boolean" />
+    <Property Name="is_draft" Type="Boolean" />
+    <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="internal_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="estimate_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="po_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="client_billing_state_id" Type="Int32" />
+    <Property Name="client_shipping_state_id" Type="Int32" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sent" Type="Boolean" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="quantity_no_decimal" Type="Boolean" />
+    <Property Name="pay_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pay_online" Type="Boolean" />
+    <Property Name="hide_shipping_date" Type="Boolean" />
+    <Property Name="po_number_label" Type="Int32" Nullable="false" />
+    <Property Name="fiscal_year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="po_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="po_date_label" Type="Int32" Nullable="false" />
+    <Property Name="supply_state_id" Type="Int32" />
+    <Property Name="discount_all" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="number_prefix" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="show_cess" Type="Boolean" />
+    <Property Name="reverse_charges" Type="Boolean" />
+    <Property Name="shipping_tax_id" Type="Int32" />
+    <Property Name="project" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="kerala_cess" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="estimate_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="estimate_id" Type="Int32" />
+    <Property Name="invoice_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="estimate_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="estimate_id" Type="Int32" />
+    <Property Name="amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estimate_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="estimate_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="has_tax_included" Type="Boolean" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_discount" Type="Boolean" />
+    <Property Name="discount_percentage" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sku" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_rate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hsn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="use_inline_discount" Type="Boolean" />
+    <Property Name="cess_percentage" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="expense_items">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="expense_product_id" Type="Int32" />
+    <Property Name="expense_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="measuring_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="expense_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="measuring_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tax_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="expens">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="number_prefix" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="internal_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="expense_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_id" Type="Int32" />
+    <Property Name="vendor_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="vendor_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_contact" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_state_id" Type="Int32" />
+    <Property Name="vendor_shipping_state_id" Type="Int32" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="supply_state_id" Type="Int32" />
+    <Property Name="fiscal_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="reverse_charges" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="facturi_stornate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="factura_id" Type="Double" />
+    <Property Name="data_stornarii" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="valoare1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="valoare2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="fisc_year">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="document_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="reset_number_from_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="flag">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="value_with_tax" Type="Boolean" Nullable="false" />
+    <Property Name="invoice_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="estimate_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="product_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="quantity_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="show_address" Type="Boolean" />
+    <Property Name="total_without_decimals" Type="Boolean" />
+    <Property Name="total_in_words" Type="Boolean" />
+    <Property Name="show_signature" Type="Boolean" />
+    <Property Name="shipping_price" Type="Int32" />
+    <Property Name="replace_quantity" Type="Boolean" />
+    <Property Name="show_shipping" Type="Boolean" />
+    <Property Name="shipping_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="indian_format" Type="Int32" />
+    <Property Name="show_up_column" Type="Int32" />
+    <Property Name="decimals" Type="Int32" />
+    <Property Name="show_um_column" Type="Int32" />
+    <Property Name="show_tax_column" Type="Int32" />
+    <Property Name="show_tax_percentage" Type="Int32" />
+    <Property Name="excise_duty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hide_amount" Type="Int32" />
+    <Property Name="um_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tax_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="replace_paypal" Type="Int32" />
+    <Property Name="fisc_year_start" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="end_fisc_year" Type="Boolean" />
+    <Property Name="use_document_prefix" Type="Boolean" />
+    <Property Name="prefix_separator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="use_date_prefix" Type="Boolean" />
+    <Property Name="show_delivery_note_amount" Type="Int32" />
+    <Property Name="po_number_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="odt_activated" Type="Boolean" />
+    <Property Name="use_pin_code" Type="Boolean" />
+    <Property Name="tax_invoice_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="retail_invoice_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="excise_invoice_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="proforma_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="challan_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="show_contact_name" Type="Boolean" />
+    <Property Name="copy_type_original" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="copy_type_dupl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="copy_type_tripl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="copy_type_quadr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="header_on_all_pages" Type="Boolean" />
+    <Property Name="show_net_received" Type="Boolean" />
+    <Property Name="a5_more_pages" Type="Boolean" />
+    <Property Name="use_second_number" Type="Boolean" />
+    <Property Name="change_dosc_df" Type="Boolean" />
+    <Property Name="basic_inventory" Type="Boolean" />
+    <Property Name="inventory_docs" Type="Boolean" />
+    <Property Name="rmv_product_qty_decimals" Type="Boolean" />
+    <Property Name="show_dn_tax" Type="Boolean" />
+    <Property Name="show_dn_price" Type="Boolean" />
+    <Property Name="show_gst_rates" Type="Boolean" />
+    <Property Name="show_total_tax" Type="Boolean" />
+    <Property Name="show_total_before_tax" Type="Boolean" />
+    <Property Name="split_calc_cgst" Type="Boolean" />
+    <Property Name="inclusive_tax" Type="Boolean" />
+    <Property Name="client_note_label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hindi_keyboard" Type="Boolean" />
+    <Property Name="show_grand_total" Type="Boolean" />
+    <Property Name="fy_reset_numbering" Type="Boolean" />
+    <Property Name="end_fiscal_year_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_order_label" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="show_discount_column" Type="Boolean" />
+    <Property Name="discount_label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="gst_port_codes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="port_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="port_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="state_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="port_code_details" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="invoice_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="invoice_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="deleted" Type="Boolean" Nullable="false" />
+    <Property Name="credit_note_id" Type="Int32" />
+    <Property Name="payment_document_id" Type="Int32" />
+    <Property Name="Receiptno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="invoice_products">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="quantity" Type="Double" Nullable="false" />
+    <Property Name="has_tax_included" Type="Boolean" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="total_tax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="total_all" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="is_discount" Type="Boolean" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="purchase_rate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cess_value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="discount_type" Type="Int32" />
+    <Property Name="discount_value" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="invoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="due_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="client_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="client_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_paid" Type="Boolean" />
+    <Property Name="is_draft" Type="Boolean" />
+    <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="internal_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="invoice_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="po_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="client_billing_state_id" Type="Int32" />
+    <Property Name="client_shipping_state_id" Type="Int32" />
+    <Property Name="pay_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pay_online" Type="Boolean" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sent" Type="Boolean" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fiscal_year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="number_prefix" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="second_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="excise_duty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="use_transport" Type="Boolean" />
+    <Property Name="delivery_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vehicle_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="esugam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lr_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="shipping_method" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="excise_cess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cancelled" Type="Boolean" />
+    <Property Name="quantity_no_decimal" Type="Boolean" />
+    <Property Name="product_inline_discount" Type="Boolean" />
+    <Property Name="esugam_label" Type="Int32" Nullable="false" />
+    <Property Name="po_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="reverse_charges" Type="Boolean" />
+    <Property Name="supply_state_id" Type="Int32" />
+    <Property Name="discount_all" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="lr_label" Type="Int32" Nullable="false" />
+    <Property Name="transporter_id" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="transporter_name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="transporter_gstin" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="show_cess" Type="Boolean" />
+    <Property Name="shipping_tax_id" Type="Int32" />
+    <Property Name="ship_bill_distance" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="exchange_country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="exchange_curr_id" Type="Int32" />
+    <Property Name="exchange_export_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="exchange_rate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="gst_port_code_id" Type="Int32" />
+    <Property Name="ship_bill_number" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="ship_bill_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="total_quantity" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="total_measuring_unit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="kerala_cess" Type="Boolean" />
+    <Property Name="tax_source" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="tax_source_type" Type="Int32" Nullable="false" />
+    <Property Name="tax_source_enabled" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="packing_slip_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="packing_slip_id" Type="Int32" />
+    <Property Name="invoice_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="packing_slip_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="packing_slip_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ship_measuring_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="packing_slips">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="invoice_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="invoice_issue_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="client_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="client_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="client_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="client_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="client_contact" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_zip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="client_shipping_city" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="packing_slip_notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="client_shipping_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="client_billing_state_id" Type="Int32" />
+    <Property Name="client_shipping_state_id" Type="Int32" />
+    <Property Name="fiscal_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="page_size">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="format" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment_documents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="client_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reference" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="bank_charges" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payment_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="note" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="pay_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="amount_payment" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="amount_used" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="amount_excessed" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fiscal_year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="color" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="vendor_id" Type="Int32" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="sent" Type="Boolean" />
+    <Property Name="logo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="converted_payment_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pay_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="advance" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="has_tax_included" Type="Boolean" Nullable="false" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sku" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_rate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hsn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="cess_percentage" Type="Int32" Nullable="false" />
+    <Property Name="cess_value" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_currency_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="purchase_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="valid_until" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="company_details_id" Type="Int32" />
+    <Property Name="vendor_id" Type="Int32" />
+    <Property Name="vendor_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="vendor_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_shipping_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_paid" Type="Boolean" />
+    <Property Name="is_draft" Type="Boolean" />
+    <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="internal_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_order_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="po_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="page_size_id" Type="Int32" />
+    <Property Name="vendor_billing_state_id" Type="Int32" />
+    <Property Name="vendor_shipping_state_id" Type="Int32" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="layout" Type="Int32" Nullable="false" />
+    <Property Name="discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sent" Type="Boolean" />
+    <Property Name="print_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="quantity_no_decimal" Type="Boolean" />
+    <Property Name="pay_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pay_online" Type="Boolean" />
+    <Property Name="hide_shipping_date" Type="Boolean" />
+    <Property Name="po_number_label" Type="Int32" Nullable="false" />
+    <Property Name="fiscal_year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="po_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="po_date_label" Type="Int32" Nullable="false" />
+    <Property Name="supply_state_id" Type="Int32" />
+    <Property Name="discount_all" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="number_prefix" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="inclusive_tax" Type="Boolean" />
+    <Property Name="show_cess" Type="Boolean" />
+    <Property Name="shipping_tax_id" Type="Int32" />
+    <Property Name="import_currency_id" Type="Int32" />
+    <Property Name="exchange_rate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="advance_payment" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="main_currency_id" Type="Int32" />
+    <Property Name="project" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="purchase_order_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="purchase_order_id" Type="Int32" />
+    <Property Name="bill_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="purchase_order_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="purchase_order_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="has_tax_included" Type="Boolean" />
+    <Property Name="tax_id" Type="Int32" />
+    <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_discount" Type="Boolean" />
+    <Property Name="discount_percentage" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sku" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_rate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hsn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="use_inline_discount" Type="Boolean" />
+    <Property Name="cess_percentage" Type="Int32" Nullable="false" />
+    <Property Name="cess_value" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="release_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="version" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="release_notes1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="show_notes" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="service_tax_services">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="service_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="introduction_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ac_tax_collection" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ac_other_receipts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ac_deduct_refunds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ac_education_cess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="state1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="county" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="tin" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="state_code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="stock_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="stock_id" Type="Int32" />
+    <Property Name="quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="added_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="bill_id" Type="Int32" />
+    <Property Name="credit_note_id" Type="Int32" />
+    <Property Name="old_quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="debit_note_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="stock">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="quantity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sold_quantity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sold_total_amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cogs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gross_margin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gross_margin_percent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tax_combo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="main_tax_id" Type="Int32" />
+    <Property Name="component_tax_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tax">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tax_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tax_percentage" Type="Double" Nullable="false" />
+    <Property Name="is_default_tax" Type="Boolean" />
+    <Property Name="deleted" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="explicit_order" Type="Boolean" />
+    <Property Name="tax_on_taxable_value" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tip">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vendor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="shipping_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="shipping_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="shipping_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="billing_state_id" Type="Int32" />
+    <Property Name="shipping_state_id" Type="Int32" />
+    <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="details_public" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="vat_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gstin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ship_my_address" Type="Boolean" />
+    <Property Name="SEZ" Type="Boolean" />
+    <Property Name="currency_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="version">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="version1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="year" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="config">
+    <Key>
+      <PropertyRef Name="config_id" />
+      <PropertyRef Name="KEY" />
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="id" Type="Int32" />
+    <Property Name="config_id" Type="Int32" Nullable="false" />
+    <Property Name="KEY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="sleekbillEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bill_payments" EntityType="Self.bill_payments" />
+    <EntitySet Name="bill_products" EntityType="Self.bill_products" />
+    <EntitySet Name="bills" EntityType="Self.bill" />
+    <EntitySet Name="cities" EntityType="Self.city" />
+    <EntitySet Name="client_vendor_conversions" EntityType="Self.client_vendor_conversions" />
+    <EntitySet Name="clients" EntityType="Self.client" />
+    <EntitySet Name="company_details" EntityType="Self.company_details" />
+    <EntitySet Name="credit_note_products" EntityType="Self.credit_note_products" />
+    <EntitySet Name="credit_notes" EntityType="Self.credit_notes" />
+    <EntitySet Name="currencies" EntityType="Self.currency" />
+    <EntitySet Name="debit_note_payments" EntityType="Self.debit_note_payments" />
+    <EntitySet Name="debit_note_products" EntityType="Self.debit_note_products" />
+    <EntitySet Name="debit_notes" EntityType="Self.debit_notes" />
+    <EntitySet Name="estimates" EntityType="Self.estimate" />
+    <EntitySet Name="estimate_conversions" EntityType="Self.estimate_conversions" />
+    <EntitySet Name="estimate_payments" EntityType="Self.estimate_payments" />
+    <EntitySet Name="estimate_products" EntityType="Self.estimate_products" />
+    <EntitySet Name="expense_items" EntityType="Self.expense_items" />
+    <EntitySet Name="expense_products" EntityType="Self.expense_products" />
+    <EntitySet Name="expenses" EntityType="Self.expens" />
+    <EntitySet Name="facturi_stornate" EntityType="Self.facturi_stornate" />
+    <EntitySet Name="fisc_year" EntityType="Self.fisc_year" />
+    <EntitySet Name="flags" EntityType="Self.flag" />
+    <EntitySet Name="gst_port_codes" EntityType="Self.gst_port_codes" />
+    <EntitySet Name="invoice_payments" EntityType="Self.invoice_payments" />
+    <EntitySet Name="invoice_products" EntityType="Self.invoice_products" />
+    <EntitySet Name="invoices" EntityType="Self.invoice" />
+    <EntitySet Name="packing_slip_conversions" EntityType="Self.packing_slip_conversions" />
+    <EntitySet Name="packing_slip_products" EntityType="Self.packing_slip_products" />
+    <EntitySet Name="packing_slips" EntityType="Self.packing_slips" />
+    <EntitySet Name="page_size" EntityType="Self.page_size" />
+    <EntitySet Name="payment_documents" EntityType="Self.payment_documents" />
+    <EntitySet Name="payments" EntityType="Self.payment" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="purchase_order" EntityType="Self.purchase_order" />
+    <EntitySet Name="purchase_order_conversions" EntityType="Self.purchase_order_conversions" />
+    <EntitySet Name="purchase_order_products" EntityType="Self.purchase_order_products" />
+    <EntitySet Name="release_notes" EntityType="Self.release_notes" />
+    <EntitySet Name="service_tax_services" EntityType="Self.service_tax_services" />
+    <EntitySet Name="states" EntityType="Self.state" />
+    <EntitySet Name="stock_history" EntityType="Self.stock_history" />
+    <EntitySet Name="stocks" EntityType="Self.stock" />
+    <EntitySet Name="tax_combo" EntityType="Self.tax_combo" />
+    <EntitySet Name="taxes" EntityType="Self.tax" />
+    <EntitySet Name="tips" EntityType="Self.tip" />
+    <EntitySet Name="vendors" EntityType="Self.vendor" />
+    <EntitySet Name="versions" EntityType="Self.version" />
+    <EntitySet Name="configs" EntityType="Self.config" />
+  </EntityContainer>
+</Schema>
