@@ -16,11 +16,7 @@ namespace SmartBill
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new frminvoice());
-=======
-            Application.Run(new frmproduct());
->>>>>>> dc191f00fdbb56db01ef514cc3636e7884362003
         }
     }
 }
