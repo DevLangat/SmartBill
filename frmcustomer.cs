@@ -32,8 +32,47 @@ namespace SmartBill
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try { 
+            Boolean Result = false;
+            string eMail = txtEmail.Text;
             var context = new sleekbillEntities();
+            try
+            {
+                var eMailValidator = new System.Net.Mail.MailAddress(eMail);
+
+                Result = (eMail.LastIndexOf(".") > eMail.LastIndexOf("@"));
+            }
+            catch
+            {
+                MessageBox.Show("Please Input a valid Email Address",this.Text,MessageBoxButtons.OK);
+                Result = false;
+                return;
+            };
+            if(txtName.Text=="")
+            {
+                MessageBox.Show("Please Input a Customer Name", this.Text, MessageBoxButtons.OK);
+                return;
+            }
+            if (txtKraPin.Text == "")
+            {
+                MessageBox.Show("Please Input a valid KRA Pin", this.Text, MessageBoxButtons.OK);
+                return;
+            }
+            if (txtAddress.Text == "")
+            {
+                MessageBox.Show("Please Input a Valid address", this.Text, MessageBoxButtons.OK);
+                return;
+            }
+            if (txtPhone.Text == "")
+            {
+                MessageBox.Show("Please Input a Valid Phone Number", this.Text, MessageBoxButtons.OK);
+                return;
+            }
+
+
+
+            try
+            { 
+       
             var clientdetails = new client()
 
             {
