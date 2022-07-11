@@ -32,12 +32,29 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
             this.cbocounty = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtZipcode = new System.Windows.Forms.TextBox();
             this.txtKraPin = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,6 +67,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +85,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(15, 12);
@@ -85,6 +104,216 @@
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.materialButton1);
+            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.textBox2);
+            this.panel4.Controls.Add(this.textBox3);
+            this.panel4.Controls.Add(this.textBox4);
+            this.panel4.Controls.Add(this.txtName);
+            this.panel4.Controls.Add(this.txtEmail);
+            this.panel4.Controls.Add(this.textBox6);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Location = new System.Drawing.Point(20, 23);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(475, 534);
+            this.panel4.TabIndex = 1;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.materialButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.materialButton1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton1.Icon")));
+            this.materialButton1.Location = new System.Drawing.Point(291, 461);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(86, 36);
+            this.materialButton1.TabIndex = 3;
+            this.materialButton1.Text = "Save";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = false;
+            this.materialButton1.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Mombasa",
+            "Kwale",
+            "Kilifi",
+            "Tana River",
+            "Lamu",
+            "Taita Mak Taveta",
+            "Garissa",
+            "Wajir",
+            "Mandera",
+            "Marsabit",
+            "Isiolo",
+            "Meru",
+            "Tharaka-Nithi",
+            "Embu",
+            "Kitui",
+            "Machakos",
+            "Makueni",
+            "Nyandarua",
+            "Nyeri",
+            "Kirinyaga",
+            "Murang’a",
+            "Kiambu The",
+            "Turkana",
+            "West Pokot",
+            "Samburu",
+            "Trans-Nzoia",
+            "Uasin Gishu",
+            "Elgeyo-Marakwet",
+            "Nandi",
+            "Baringo",
+            "Laikipia",
+            "Nakuru",
+            "Narok",
+            "Kajiado",
+            "Kericho",
+            "Bomet",
+            "Kakamega",
+            "Vihiga",
+            "Bungoma",
+            "Busia",
+            "Siaya",
+            "Kisumu",
+            "Homa Bay",
+            "Migori",
+            "Kisii",
+            "Nyamira",
+            "Nairobi"});
+            this.comboBox1.Location = new System.Drawing.Point(147, 326);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(272, 21);
+            this.comboBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(147, 212);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(272, 89);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(147, 387);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(219, 20);
+            this.textBox3.TabIndex = 1;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(147, 148);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(219, 20);
+            this.textBox4.TabIndex = 1;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(147, 19);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(219, 20);
+            this.txtName.TabIndex = 1;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(147, 105);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(219, 20);
+            this.txtEmail.TabIndex = 1;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(147, 62);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(219, 20);
+            this.textBox6.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 390);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Zip Code";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 326);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "County";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 219);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Billing Address";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 155);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "KRA PIN";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 108);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Email";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 65);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Phone";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 22);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(64, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Client Name";
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -93,9 +322,8 @@
             this.panel3.Controls.Add(this.txtAddress);
             this.panel3.Controls.Add(this.txtZipcode);
             this.panel3.Controls.Add(this.txtKraPin);
-            this.panel3.Controls.Add(this.txtEmail);
+            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.txtPhone);
-            this.panel3.Controls.Add(this.txtName);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
@@ -211,6 +439,13 @@
             this.txtKraPin.Size = new System.Drawing.Size(219, 20);
             this.txtKraPin.TabIndex = 1;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(147, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(219, 20);
+            this.textBox1.TabIndex = 1;
+            // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(147, 62);
@@ -307,6 +542,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -329,12 +566,29 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtKraPin;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtName;
+       
         private System.Windows.Forms.ComboBox cbocounty;
         private MaterialSkin.Controls.MaterialButton btnSave;
         private System.Windows.Forms.TextBox txtZipcode;
-        private MaterialSkin.Controls.MaterialButton btnSave;
-        private System.Windows.Forms.TextBox txtEmail;
+      
+       
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel4;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
