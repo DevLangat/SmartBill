@@ -40,3 +40,4 @@ E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.dll
 E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.SqlServer.dll
 E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.xml
 E:\CSharp Projects\SmartBill\bin\Debug\EntityFramework.SqlServer.xml
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.frminvoice.resources
