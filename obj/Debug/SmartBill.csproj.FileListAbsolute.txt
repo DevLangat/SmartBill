@@ -1,0 +1,14 @@
+E:\CSharp Projects\SmartBill\bin\Debug\SmartBill.exe.config
+E:\CSharp Projects\SmartBill\bin\Debug\SmartBill.exe
+E:\CSharp Projects\SmartBill\bin\Debug\SmartBill.pdb
+E:\CSharp Projects\SmartBill\bin\Debug\MaterialSkin.dll
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.csproj.AssemblyReference.cache
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.csproj.SuggestedBindingRedirects.cache
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.Form1.resources
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.Properties.Resources.resources
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.csproj.GenerateResource.cache
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.csproj.CoreCompileInputs.cache
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.csproj.CopyComplete
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.exe
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.pdb
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmcustomer.resources
