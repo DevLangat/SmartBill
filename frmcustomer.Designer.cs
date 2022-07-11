@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcustomer));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbocounty = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtZipcode = new System.Windows.Forms.TextBox();
             this.txtKraPin = new System.Windows.Forms.TextBox();
@@ -48,13 +49,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,11 +76,22 @@
             this.panel2.Size = new System.Drawing.Size(892, 586);
             this.panel2.TabIndex = 0;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(524, 27);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(351, 534);
+            this.dataGridView2.TabIndex = 3;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cbocounty);
             this.panel3.Controls.Add(this.txtAddress);
             this.panel3.Controls.Add(this.txtZipcode);
             this.panel3.Controls.Add(this.txtKraPin);
@@ -124,11 +133,12 @@
             this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSave.UseAccentColor = false;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // comboBox1
+            // cbocounty
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbocounty.FormattingEnabled = true;
+            this.cbocounty.Items.AddRange(new object[] {
             "Mombasa",
             "Kwale",
             "Kilifi",
@@ -176,10 +186,10 @@
             "Kisii",
             "Nyamira",
             "Nairobi"});
-            this.comboBox1.Location = new System.Drawing.Point(147, 326);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbocounty.Location = new System.Drawing.Point(147, 326);
+            this.cbocounty.Name = "cbocounty";
+            this.cbocounty.Size = new System.Drawing.Size(272, 21);
+            this.cbocounty.TabIndex = 2;
             // 
             // txtAddress
             // 
@@ -297,28 +307,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Client";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView2.Location = new System.Drawing.Point(524, 27);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(351, 534);
-            this.dataGridView2.TabIndex = 3;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Customer Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Customer ID";
-            this.Column1.Name = "Column1";
-            // 
             // frmcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,9 +321,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,11 +346,9 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbocounty;
         private MaterialSkin.Controls.MaterialButton btnSave;
         private System.Windows.Forms.TextBox txtZipcode;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

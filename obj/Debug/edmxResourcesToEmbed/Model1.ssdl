@@ -1,0 +1,1210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sleekbillModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'sleekbill.dbo.alias_email' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="alias_email">
+          <Property Name="id" Type="int" />
+          <Property Name="client_id" Type="float" />
+          <Property Name="alias" Type="nvarchar" MaxLength="100" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+  <EntityType Name="bill_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="bill_id" Type="int" />
+    <Property Name="amount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="payment_document_id" Type="int" />
+  </EntityType>
+  <EntityType Name="bill_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="bill_id" Type="int" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="measuring_unit" Type="nvarchar(max)" />
+    <Property Name="price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="quantity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="has_tax_included" Type="bit" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="total_no_tax" Type="nvarchar(max)" />
+    <Property Name="total_tax" Type="nvarchar(max)" />
+    <Property Name="total_all" Type="nvarchar(max)" />
+    <Property Name="is_discount" Type="bit" />
+    <Property Name="discount_percentage" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sku" Type="nvarchar(max)" />
+    <Property Name="purchase_rate" Type="nvarchar(max)" />
+    <Property Name="hsn" Type="nvarchar" MaxLength="30" />
+    <Property Name="sac" Type="nvarchar" MaxLength="30" />
+    <Property Name="use_inline_discount" Type="bit" />
+    <Property Name="cess_percentage" Type="int" Nullable="false" />
+    <Property Name="cess_value" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="bills">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="due_date" Type="nvarchar(max)" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="vendor_id" Type="int" />
+    <Property Name="vendor_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="vendor_code" Type="nvarchar(max)" />
+    <Property Name="vendor_email" Type="nvarchar(max)" />
+    <Property Name="vendor_phone" Type="nvarchar(max)" />
+    <Property Name="vendor_contact" Type="nvarchar(max)" />
+    <Property Name="vendor_billing_address" Type="nvarchar(max)" />
+    <Property Name="vendor_billing_zip" Type="nvarchar(max)" />
+    <Property Name="vendor_billing_city" Type="nvarchar(max)" />
+    <Property Name="vendor_shipping_address" Type="nvarchar(max)" />
+    <Property Name="vendor_shipping_zip" Type="nvarchar(max)" />
+    <Property Name="vendor_shipping_city" Type="nvarchar(max)" />
+    <Property Name="is_paid" Type="bit" />
+    <Property Name="is_draft" Type="bit" />
+    <Property Name="total_no_tax" Type="nvarchar(max)" />
+    <Property Name="total_tax" Type="nvarchar(max)" />
+    <Property Name="total_all" Type="nvarchar(max)" />
+    <Property Name="internal_notes" Type="nvarchar(max)" />
+    <Property Name="bill_notes" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="po_number" Type="nvarchar(max)" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="vendor_billing_state_id" Type="int" />
+    <Property Name="vendor_shipping_state_id" Type="int" />
+    <Property Name="pay_email" Type="nvarchar(max)" />
+    <Property Name="pay_online" Type="bit" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="discount" Type="nvarchar(max)" />
+    <Property Name="sent" Type="bit" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="fiscal_year" Type="nvarchar(max)" />
+    <Property Name="number_prefix" Type="nvarchar(max)" />
+    <Property Name="second_number" Type="nvarchar(max)" />
+    <Property Name="excise_duty" Type="nvarchar(max)" />
+    <Property Name="use_transport" Type="bit" />
+    <Property Name="delivery_note" Type="nvarchar(max)" />
+    <Property Name="vehicle_number" Type="nvarchar(max)" />
+    <Property Name="esugam" Type="nvarchar(max)" />
+    <Property Name="lr_number" Type="nvarchar(max)" />
+    <Property Name="shipping_method" Type="nvarchar(max)" />
+    <Property Name="excise_cess" Type="nvarchar(max)" />
+    <Property Name="cancelled" Type="bit" />
+    <Property Name="quantity_no_decimal" Type="bit" />
+    <Property Name="product_inline_discount" Type="bit" />
+    <Property Name="po_date" Type="nvarchar(max)" />
+    <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="supply_state_id" Type="int" />
+    <Property Name="discount_all" Type="nvarchar" MaxLength="15" />
+    <Property Name="lr_label" Type="int" Nullable="false" />
+    <Property Name="transporter_id" Type="nvarchar" MaxLength="40" />
+    <Property Name="inclusive_tax" Type="bit" />
+    <Property Name="esugam_label" Type="int" Nullable="false" />
+    <Property Name="transporter_name" Type="nvarchar" MaxLength="40" />
+    <Property Name="transporter_gstin" Type="nvarchar" MaxLength="40" />
+    <Property Name="show_cess" Type="bit" />
+    <Property Name="reverse_charges" Type="bit" />
+    <Property Name="shipping_tax_id" Type="int" />
+    <Property Name="invoice_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="import_currency_id" Type="int" />
+    <Property Name="exchange_rate" Type="nvarchar" MaxLength="25" />
+    <Property Name="main_currency_id" Type="int" />
+    <Property Name="tax_source" Type="nvarchar" MaxLength="25" />
+    <Property Name="tax_source_type" Type="int" Nullable="false" />
+    <Property Name="tax_source_enabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="cities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="zip" Type="int" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="state_short" Type="nvarchar" MaxLength="2" />
+    <Property Name="county" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_vendor_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="vendor_id" Type="int" />
+  </EntityType>
+  <EntityType Name="clients">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="telephone" Type="nvarchar(max)" />
+    <Property Name="billing_address" Type="nvarchar(max)" />
+    <Property Name="billing_zip" Type="nvarchar(max)" />
+    <Property Name="billing_city" Type="nvarchar(max)" />
+    <Property Name="billing_state_id" Type="int" />
+    <Property Name="shipping_state_id" Type="int" />
+    <Property Name="details" Type="nvarchar(max)" />
+    <Property Name="details_public" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="vat_number" Type="nvarchar(max)" />
+    <Property Name="currency_id" Type="int" />
+  </EntityType>
+  <EntityType Name="company_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="zip" Type="nvarchar(max)" />
+    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="telephone" Type="nvarchar(max)" />
+    <Property Name="website" Type="nvarchar(max)" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="details" Type="nvarchar(max)" />
+    <Property Name="state_id" Type="int" />
+    <Property Name="currency_id" Type="int" />
+    <Property Name="tin" Type="nvarchar(max)" />
+    <Property Name="pan" Type="nvarchar(max)" />
+    <Property Name="stn" Type="nvarchar(max)" />
+    <Property Name="tax_label" Type="int" Nullable="false" />
+    <Property Name="service_category_id" Type="int" />
+    <Property Name="gstin" Type="nvarchar(max)" />
+    <Property Name="tax_id_label" Type="int" Nullable="false" />
+    <Property Name="taxation_type" Type="int" Nullable="false" />
+    <Property Name="signature_picture" Type="nvarchar(max)" />
+    <Property Name="show_currency_code" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="config">
+    <Key>
+      <PropertyRef Name="config_id" />
+      <PropertyRef Name="KEY" />
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="id" Type="int" />
+    <Property Name="config_id" Type="int" Nullable="false" />
+    <Property Name="KEY" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="value" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="credit_note_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="credit_note_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="measuring_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="quantity" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="has_tax_included" Type="bit" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="total_no_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_all" Type="nvarchar" MaxLength="20" />
+    <Property Name="is_discount" Type="bit" />
+    <Property Name="discount_percentage" Type="int" />
+    <Property Name="type" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="sku" Type="nvarchar" MaxLength="50" />
+    <Property Name="purchase_rate" Type="nvarchar" MaxLength="20" />
+    <Property Name="hsn" Type="nvarchar" MaxLength="50" />
+    <Property Name="sac" Type="nvarchar" MaxLength="50" />
+    <Property Name="use_inline_discount" Type="bit" />
+    <Property Name="cess_percentage" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="credit_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="invoice_number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="invoice_issue_date" Type="nvarchar" MaxLength="12" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="client_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="client_code" Type="nvarchar" MaxLength="20" />
+    <Property Name="client_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_contact" Type="nvarchar" MaxLength="100" />
+    <Property Name="client_billing_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="client_billing_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="client_billing_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="client_shipping_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="client_shipping_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="client_shipping_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="total_no_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_all" Type="nvarchar" MaxLength="20" />
+    <Property Name="internal_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="credit_note_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="client_billing_state_id" Type="int" />
+    <Property Name="client_shipping_state_id" Type="int" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="discount" Type="nvarchar" MaxLength="20" />
+    <Property Name="sent" Type="bit" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="cancelled" Type="bit" />
+    <Property Name="quantity_no_decimal" Type="bit" />
+    <Property Name="product_inline_discount" Type="bit" />
+    <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="supply_state_id" Type="int" />
+    <Property Name="discount_all" Type="nvarchar" MaxLength="15" />
+    <Property Name="shipping_tax_id" Type="int" />
+    <Property Name="show_cess" Type="bit" />
+    <Property Name="invoice_id" Type="int" />
+    <Property Name="fiscal_year" Type="nvarchar" MaxLength="20" />
+    <Property Name="client_shipping_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="reason" Type="int" Nullable="false" />
+    <Property Name="invoice_payment_id" Type="int" />
+    <Property Name="cn_status" Type="int" Nullable="false" />
+    <Property Name="stock_returned" Type="bit" />
+  </EntityType>
+  <EntityType Name="currencies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="currency_symbol" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="currency_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="is_used" Type="bit" />
+    <Property Name="symbol" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="debit_note_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="debit_note_id" Type="int" />
+    <Property Name="amount" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="debit_note_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="debit_note_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="measuring_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="quantity" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="has_tax_included" Type="bit" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="total_no_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_all" Type="nvarchar" MaxLength="20" />
+    <Property Name="is_discount" Type="bit" />
+    <Property Name="discount_percentage" Type="int" />
+    <Property Name="type" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="sku" Type="nvarchar" MaxLength="50" />
+    <Property Name="purchase_rate" Type="nvarchar" MaxLength="20" />
+    <Property Name="hsn" Type="nvarchar" MaxLength="50" />
+    <Property Name="sac" Type="nvarchar" MaxLength="50" />
+    <Property Name="use_inline_discount" Type="bit" />
+    <Property Name="cess_percentage" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="debit_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="due_date" Type="nvarchar" MaxLength="12" />
+    <Property Name="invoice_number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="invoice_issue_date" Type="nvarchar" MaxLength="12" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="client_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="client_code" Type="nvarchar" MaxLength="20" />
+    <Property Name="client_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_contact" Type="nvarchar" MaxLength="100" />
+    <Property Name="client_billing_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="client_billing_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="client_billing_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="client_shipping_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="client_shipping_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="client_shipping_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="total_no_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_all" Type="nvarchar" MaxLength="20" />
+    <Property Name="internal_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="debit_note_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="client_billing_state_id" Type="int" />
+    <Property Name="client_shipping_state_id" Type="int" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="sent" Type="bit" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="cancelled" Type="bit" />
+    <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="supply_state_id" Type="int" />
+    <Property Name="shipping_tax_id" Type="int" />
+    <Property Name="invoice_id" Type="int" />
+    <Property Name="fiscal_year" Type="nvarchar" MaxLength="20" />
+    <Property Name="client_shipping_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="reason" Type="int" Nullable="false" />
+    <Property Name="pay_email" Type="nvarchar" MaxLength="255" />
+    <Property Name="pay_online" Type="bit" />
+    <Property Name="is_paid" Type="bit" />
+    <Property Name="quantity_no_decimal" Type="bit" />
+    <Property Name="discount" Type="nvarchar" MaxLength="20" />
+    <Property Name="client_type" Type="nvarchar" MaxLength="20" />
+    <Property Name="vendor_id" Type="int" />
+    <Property Name="bill_id" Type="int" />
+    <Property Name="discount_all" Type="nvarchar" MaxLength="20" />
+    <Property Name="stock_reduced" Type="bit" />
+  </EntityType>
+  <EntityType Name="estimate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar(max)" />
+    <Property Name="valid_until" Type="nvarchar(max)" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="client_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="client_code" Type="nvarchar(max)" />
+    <Property Name="client_email" Type="nvarchar(max)" />
+    <Property Name="client_telephone" Type="nvarchar(max)" />
+    <Property Name="client_contact" Type="nvarchar(max)" />
+    <Property Name="client_billing_address" Type="nvarchar(max)" />
+    <Property Name="client_billing_zip" Type="nvarchar(max)" />
+    <Property Name="client_billing_city" Type="nvarchar(max)" />
+    <Property Name="client_shipping_address" Type="nvarchar(max)" />
+    <Property Name="client_shipping_zip" Type="nvarchar(max)" />
+    <Property Name="client_shipping_city" Type="nvarchar(max)" />
+    <Property Name="is_paid" Type="bit" />
+    <Property Name="is_draft" Type="bit" />
+    <Property Name="total_no_tax" Type="nvarchar(max)" />
+    <Property Name="total_tax" Type="nvarchar(max)" />
+    <Property Name="total_all" Type="nvarchar(max)" />
+    <Property Name="internal_notes" Type="nvarchar(max)" />
+    <Property Name="estimate_notes" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="po_number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="client_billing_state_id" Type="int" />
+    <Property Name="client_shipping_state_id" Type="int" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="discount" Type="nvarchar(max)" />
+    <Property Name="sent" Type="bit" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="quantity_no_decimal" Type="bit" />
+    <Property Name="pay_email" Type="nvarchar(max)" />
+    <Property Name="pay_online" Type="bit" />
+    <Property Name="hide_shipping_date" Type="bit" />
+    <Property Name="po_number_label" Type="int" Nullable="false" />
+    <Property Name="fiscal_year" Type="nvarchar(max)" />
+    <Property Name="po_date" Type="nvarchar(max)" />
+    <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="po_date_label" Type="int" Nullable="false" />
+    <Property Name="supply_state_id" Type="int" />
+    <Property Name="discount_all" Type="nvarchar" MaxLength="15" />
+    <Property Name="number_prefix" Type="nvarchar" MaxLength="15" />
+    <Property Name="client_shipping_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="show_cess" Type="bit" />
+    <Property Name="reverse_charges" Type="bit" />
+    <Property Name="shipping_tax_id" Type="int" />
+    <Property Name="project" Type="nvarchar" MaxLength="100" />
+    <Property Name="kerala_cess" Type="bit" />
+  </EntityType>
+  <EntityType Name="estimate_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="estimate_id" Type="int" />
+    <Property Name="invoice_id" Type="int" />
+  </EntityType>
+  <EntityType Name="estimate_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="estimate_id" Type="int" />
+    <Property Name="amount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estimate_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="estimate_id" Type="int" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="measuring_unit" Type="nvarchar(max)" />
+    <Property Name="price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="quantity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="has_tax_included" Type="bit" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="total_no_tax" Type="nvarchar(max)" />
+    <Property Name="total_tax" Type="nvarchar(max)" />
+    <Property Name="total_all" Type="nvarchar(max)" />
+    <Property Name="is_discount" Type="bit" />
+    <Property Name="discount_percentage" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sku" Type="nvarchar(max)" />
+    <Property Name="purchase_rate" Type="nvarchar(max)" />
+    <Property Name="hsn" Type="nvarchar" MaxLength="30" />
+    <Property Name="sac" Type="nvarchar" MaxLength="30" />
+    <Property Name="use_inline_discount" Type="bit" />
+    <Property Name="cess_percentage" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="expense_items">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="expense_product_id" Type="int" />
+    <Property Name="expense_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="measuring_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="nvarchar" MaxLength="20" />
+    <Property Name="quantity" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="total_no_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_all" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="expense_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="measuring_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="nvarchar" MaxLength="20" />
+    <Property Name="deleted" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="tax_id" Type="int" />
+  </EntityType>
+  <EntityType Name="expenses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="number_prefix" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="total_no_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_tax" Type="nvarchar" MaxLength="20" />
+    <Property Name="total_all" Type="nvarchar" MaxLength="20" />
+    <Property Name="internal_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="expense_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="vendor_id" Type="int" />
+    <Property Name="vendor_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="vendor_code" Type="nvarchar" MaxLength="20" />
+    <Property Name="vendor_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="vendor_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="vendor_contact" Type="nvarchar" MaxLength="100" />
+    <Property Name="vendor_billing_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="vendor_billing_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="vendor_billing_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="vendor_shipping_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="vendor_shipping_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="vendor_shipping_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="vendor_billing_state_id" Type="int" />
+    <Property Name="vendor_shipping_state_id" Type="int" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="supply_state_id" Type="int" />
+    <Property Name="fiscal_year" Type="nvarchar" MaxLength="20" />
+    <Property Name="reverse_charges" Type="bit" />
+  </EntityType>
+  <EntityType Name="facturi_stornate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="factura_id" Type="float" />
+    <Property Name="data_stornarii" Type="nvarchar(max)" />
+    <Property Name="valoare1" Type="nvarchar(max)" />
+    <Property Name="valoare2" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="fisc_year">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="document_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="start_number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="active" Type="bit" />
+    <Property Name="reset_number_from_id" Type="int" />
+  </EntityType>
+  <EntityType Name="flags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="value_with_tax" Type="bit" Nullable="false" />
+    <Property Name="invoice_label" Type="nvarchar(max)" />
+    <Property Name="estimate_label" Type="nvarchar(max)" />
+    <Property Name="product_label" Type="nvarchar(max)" />
+    <Property Name="quantity_label" Type="nvarchar(max)" />
+    <Property Name="price_label" Type="nvarchar(max)" />
+    <Property Name="show_address" Type="bit" />
+    <Property Name="total_without_decimals" Type="bit" />
+    <Property Name="total_in_words" Type="bit" />
+    <Property Name="show_signature" Type="bit" />
+    <Property Name="shipping_price" Type="int" />
+    <Property Name="replace_quantity" Type="bit" />
+    <Property Name="show_shipping" Type="bit" />
+    <Property Name="shipping_label" Type="nvarchar(max)" />
+    <Property Name="indian_format" Type="int" />
+    <Property Name="show_up_column" Type="int" />
+    <Property Name="decimals" Type="int" />
+    <Property Name="show_um_column" Type="int" />
+    <Property Name="show_tax_column" Type="int" />
+    <Property Name="show_tax_percentage" Type="int" />
+    <Property Name="excise_duty" Type="nvarchar(max)" />
+    <Property Name="hide_amount" Type="int" />
+    <Property Name="um_label" Type="nvarchar(max)" />
+    <Property Name="tax_label" Type="nvarchar(max)" />
+    <Property Name="replace_paypal" Type="int" />
+    <Property Name="fisc_year_start" Type="nvarchar(max)" />
+    <Property Name="end_fisc_year" Type="bit" />
+    <Property Name="use_document_prefix" Type="bit" />
+    <Property Name="prefix_separator" Type="nvarchar(max)" />
+    <Property Name="use_date_prefix" Type="bit" />
+    <Property Name="show_delivery_note_amount" Type="int" />
+    <Property Name="po_number_label" Type="nvarchar(max)" />
+    <Property Name="odt_activated" Type="bit" />
+    <Property Name="use_pin_code" Type="bit" />
+    <Property Name="tax_invoice_label" Type="nvarchar(max)" />
+    <Property Name="retail_invoice_label" Type="nvarchar(max)" />
+    <Property Name="excise_invoice_label" Type="nvarchar(max)" />
+    <Property Name="proforma_label" Type="nvarchar(max)" />
+    <Property Name="challan_label" Type="nvarchar(max)" />
+    <Property Name="show_contact_name" Type="bit" />
+    <Property Name="copy_type_original" Type="nvarchar(max)" />
+    <Property Name="copy_type_dupl" Type="nvarchar(max)" />
+    <Property Name="copy_type_tripl" Type="nvarchar(max)" />
+    <Property Name="copy_type_quadr" Type="nvarchar(max)" />
+    <Property Name="header_on_all_pages" Type="bit" />
+    <Property Name="show_net_received" Type="bit" />
+    <Property Name="a5_more_pages" Type="bit" />
+    <Property Name="use_second_number" Type="bit" />
+    <Property Name="change_dosc_df" Type="bit" />
+    <Property Name="basic_inventory" Type="bit" />
+    <Property Name="inventory_docs" Type="bit" />
+    <Property Name="rmv_product_qty_decimals" Type="bit" />
+    <Property Name="show_dn_tax" Type="bit" />
+    <Property Name="show_dn_price" Type="bit" />
+    <Property Name="show_gst_rates" Type="bit" />
+    <Property Name="show_total_tax" Type="bit" />
+    <Property Name="show_total_before_tax" Type="bit" />
+    <Property Name="split_calc_cgst" Type="bit" />
+    <Property Name="inclusive_tax" Type="bit" />
+    <Property Name="client_note_label" Type="nvarchar" MaxLength="50" />
+    <Property Name="hindi_keyboard" Type="bit" />
+    <Property Name="show_grand_total" Type="bit" />
+    <Property Name="fy_reset_numbering" Type="bit" />
+    <Property Name="end_fiscal_year_date" Type="nvarchar" MaxLength="12" />
+    <Property Name="purchase_order_label" Type="nvarchar" MaxLength="100" />
+    <Property Name="show_discount_column" Type="bit" />
+    <Property Name="discount_label" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gst_port_codes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="port_code" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="port_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="state_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="port_code_details" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="invoice_payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="invoice_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="amount" Type="money" Nullable="false" />
+    <Property Name="deleted" Type="bit" Nullable="false" />
+    <Property Name="credit_note_id" Type="int" />
+    <Property Name="payment_document_id" Type="int" />
+    <Property Name="Receiptno" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="invoice_products">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="invoice_id" Type="int" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="measuring_unit" Type="nvarchar(max)" />
+    <Property Name="price" Type="money" Nullable="false" />
+    <Property Name="quantity" Type="float" Nullable="false" />
+    <Property Name="has_tax_included" Type="bit" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="total_no_tax" Type="money" />
+    <Property Name="total_tax" Type="money" />
+    <Property Name="total_all" Type="money" />
+    <Property Name="is_discount" Type="bit" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="purchase_rate" Type="money" />
+    <Property Name="cess_value" Type="money" />
+    <Property Name="discount_type" Type="int" />
+    <Property Name="discount_value" Type="money" />
+  </EntityType>
+  <EntityType Name="invoices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="due_date" Type="nvarchar(max)" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="client_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="client_code" Type="nvarchar(max)" />
+    <Property Name="client_email" Type="nvarchar(max)" />
+    <Property Name="client_telephone" Type="nvarchar(max)" />
+    <Property Name="client_contact" Type="nvarchar(max)" />
+    <Property Name="client_billing_address" Type="nvarchar(max)" />
+    <Property Name="client_billing_zip" Type="nvarchar(max)" />
+    <Property Name="client_billing_city" Type="nvarchar(max)" />
+    <Property Name="client_shipping_address" Type="nvarchar(max)" />
+    <Property Name="client_shipping_zip" Type="nvarchar(max)" />
+    <Property Name="client_shipping_city" Type="nvarchar(max)" />
+    <Property Name="is_paid" Type="bit" />
+    <Property Name="is_draft" Type="bit" />
+    <Property Name="total_no_tax" Type="nvarchar(max)" />
+    <Property Name="total_tax" Type="nvarchar(max)" />
+    <Property Name="total_all" Type="nvarchar(max)" />
+    <Property Name="internal_notes" Type="nvarchar(max)" />
+    <Property Name="invoice_notes" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="po_number" Type="nvarchar(max)" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="client_billing_state_id" Type="int" />
+    <Property Name="client_shipping_state_id" Type="int" />
+    <Property Name="pay_email" Type="nvarchar(max)" />
+    <Property Name="pay_online" Type="bit" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="discount" Type="nvarchar(max)" />
+    <Property Name="sent" Type="bit" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="fiscal_year" Type="nvarchar(max)" />
+    <Property Name="number_prefix" Type="nvarchar(max)" />
+    <Property Name="second_number" Type="nvarchar(max)" />
+    <Property Name="excise_duty" Type="nvarchar(max)" />
+    <Property Name="use_transport" Type="bit" />
+    <Property Name="delivery_note" Type="nvarchar(max)" />
+    <Property Name="vehicle_number" Type="nvarchar(max)" />
+    <Property Name="esugam" Type="nvarchar(max)" />
+    <Property Name="lr_number" Type="nvarchar(max)" />
+    <Property Name="shipping_method" Type="nvarchar(max)" />
+    <Property Name="excise_cess" Type="nvarchar(max)" />
+    <Property Name="cancelled" Type="bit" />
+    <Property Name="quantity_no_decimal" Type="bit" />
+    <Property Name="product_inline_discount" Type="bit" />
+    <Property Name="esugam_label" Type="int" Nullable="false" />
+    <Property Name="po_date" Type="nvarchar(max)" />
+    <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="reverse_charges" Type="bit" />
+    <Property Name="supply_state_id" Type="int" />
+    <Property Name="discount_all" Type="nvarchar" MaxLength="15" />
+    <Property Name="lr_label" Type="int" Nullable="false" />
+    <Property Name="transporter_id" Type="nvarchar" MaxLength="40" />
+    <Property Name="client_shipping_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="transporter_name" Type="nvarchar" MaxLength="40" />
+    <Property Name="transporter_gstin" Type="nvarchar" MaxLength="40" />
+    <Property Name="show_cess" Type="bit" />
+    <Property Name="shipping_tax_id" Type="int" />
+    <Property Name="ship_bill_distance" Type="nvarchar" MaxLength="25" />
+    <Property Name="exchange_country" Type="nvarchar" MaxLength="100" />
+    <Property Name="exchange_curr_id" Type="int" />
+    <Property Name="exchange_export_type" Type="nvarchar" MaxLength="100" />
+    <Property Name="exchange_rate" Type="nvarchar" MaxLength="25" />
+    <Property Name="gst_port_code_id" Type="int" />
+    <Property Name="ship_bill_number" Type="nvarchar" MaxLength="60" />
+    <Property Name="ship_bill_date" Type="nvarchar" MaxLength="12" />
+    <Property Name="total_quantity" Type="nvarchar" MaxLength="25" />
+    <Property Name="total_measuring_unit" Type="nvarchar" MaxLength="100" />
+    <Property Name="kerala_cess" Type="bit" />
+    <Property Name="tax_source" Type="nvarchar" MaxLength="25" />
+    <Property Name="tax_source_type" Type="int" Nullable="false" />
+    <Property Name="tax_source_enabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="packing_slip_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="packing_slip_id" Type="int" />
+    <Property Name="invoice_id" Type="int" />
+  </EntityType>
+  <EntityType Name="packing_slip_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="packing_slip_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="measuring_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="quantity" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ship_measuring_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="ship_quantity" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="packing_slips">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="invoice_number" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="invoice_issue_date" Type="nvarchar" MaxLength="12" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="client_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="client_code" Type="nvarchar" MaxLength="20" />
+    <Property Name="client_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_contact" Type="nvarchar" MaxLength="100" />
+    <Property Name="client_billing_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="client_billing_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="client_billing_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="client_shipping_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="client_shipping_zip" Type="nvarchar" MaxLength="15" />
+    <Property Name="client_shipping_city" Type="nvarchar" MaxLength="25" />
+    <Property Name="packing_slip_notes" Type="nvarchar" MaxLength="1000" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="invoice_id" Type="int" />
+    <Property Name="client_shipping_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="client_billing_state_id" Type="int" />
+    <Property Name="client_shipping_state_id" Type="int" />
+    <Property Name="fiscal_year" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="page_size">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="format" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment_documents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="client_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="reference" Type="nvarchar" MaxLength="40" />
+    <Property Name="bank_charges" Type="nvarchar" MaxLength="40" />
+    <Property Name="type" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="payment_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="pay_date" Type="nvarchar" MaxLength="12" />
+    <Property Name="amount_payment" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="amount_used" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="amount_excessed" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="fiscal_year" Type="nvarchar" MaxLength="5" />
+    <Property Name="color" Type="nvarchar" MaxLength="10" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="vendor_id" Type="int" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="sent" Type="bit" />
+    <Property Name="logo" Type="nvarchar" MaxLength="255" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="converted_payment_id" Type="int" />
+  </EntityType>
+  <EntityType Name="payments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="amount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pay_date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="advance" Type="bit" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="measuring_unit" Type="nvarchar(max)" />
+    <Property Name="price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="has_tax_included" Type="bit" Nullable="false" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sku" Type="nvarchar(max)" />
+    <Property Name="purchase_rate" Type="nvarchar(max)" />
+    <Property Name="hsn" Type="nvarchar" MaxLength="30" />
+    <Property Name="sac" Type="nvarchar" MaxLength="30" />
+    <Property Name="cess_percentage" Type="int" Nullable="false" />
+    <Property Name="cess_value" Type="nvarchar" MaxLength="20" />
+    <Property Name="purchase_currency_id" Type="int" />
+  </EntityType>
+  <EntityType Name="purchase_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="issue_date" Type="nvarchar(max)" />
+    <Property Name="valid_until" Type="nvarchar(max)" />
+    <Property Name="company_details_id" Type="int" />
+    <Property Name="vendor_id" Type="int" />
+    <Property Name="vendor_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="vendor_code" Type="nvarchar(max)" />
+    <Property Name="vendor_email" Type="nvarchar(max)" />
+    <Property Name="vendor_phone" Type="nvarchar(max)" />
+    <Property Name="vendor_contact" Type="nvarchar(max)" />
+    <Property Name="vendor_billing_address" Type="nvarchar(max)" />
+    <Property Name="vendor_billing_zip" Type="nvarchar(max)" />
+    <Property Name="vendor_billing_city" Type="nvarchar(max)" />
+    <Property Name="vendor_shipping_address" Type="nvarchar(max)" />
+    <Property Name="vendor_shipping_zip" Type="nvarchar(max)" />
+    <Property Name="vendor_shipping_city" Type="nvarchar(max)" />
+    <Property Name="is_paid" Type="bit" />
+    <Property Name="is_draft" Type="bit" />
+    <Property Name="total_no_tax" Type="nvarchar(max)" />
+    <Property Name="total_tax" Type="nvarchar(max)" />
+    <Property Name="total_all" Type="nvarchar(max)" />
+    <Property Name="internal_notes" Type="nvarchar(max)" />
+    <Property Name="purchase_order_notes" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="po_number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="page_size_id" Type="int" />
+    <Property Name="vendor_billing_state_id" Type="int" />
+    <Property Name="vendor_shipping_state_id" Type="int" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="layout" Type="int" Nullable="false" />
+    <Property Name="discount" Type="nvarchar(max)" />
+    <Property Name="sent" Type="bit" />
+    <Property Name="print_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="quantity_no_decimal" Type="bit" />
+    <Property Name="pay_email" Type="nvarchar(max)" />
+    <Property Name="pay_online" Type="bit" />
+    <Property Name="hide_shipping_date" Type="bit" />
+    <Property Name="po_number_label" Type="int" Nullable="false" />
+    <Property Name="fiscal_year" Type="nvarchar(max)" />
+    <Property Name="po_date" Type="nvarchar(max)" />
+    <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
+    <Property Name="po_date_label" Type="int" Nullable="false" />
+    <Property Name="supply_state_id" Type="int" />
+    <Property Name="discount_all" Type="nvarchar" MaxLength="15" />
+    <Property Name="number_prefix" Type="nvarchar" MaxLength="15" />
+    <Property Name="inclusive_tax" Type="bit" />
+    <Property Name="show_cess" Type="bit" />
+    <Property Name="shipping_tax_id" Type="int" />
+    <Property Name="import_currency_id" Type="int" />
+    <Property Name="exchange_rate" Type="nvarchar" MaxLength="25" />
+    <Property Name="advance_payment" Type="nvarchar" MaxLength="25" />
+    <Property Name="main_currency_id" Type="int" />
+    <Property Name="project" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="purchase_order_conversions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="purchase_order_id" Type="int" />
+    <Property Name="bill_id" Type="int" />
+  </EntityType>
+  <EntityType Name="purchase_order_products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="purchase_order_id" Type="int" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="measuring_unit" Type="nvarchar(max)" />
+    <Property Name="price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="quantity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="has_tax_included" Type="bit" />
+    <Property Name="tax_id" Type="int" />
+    <Property Name="total_no_tax" Type="nvarchar(max)" />
+    <Property Name="total_tax" Type="nvarchar(max)" />
+    <Property Name="total_all" Type="nvarchar(max)" />
+    <Property Name="is_discount" Type="bit" />
+    <Property Name="discount_percentage" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sku" Type="nvarchar(max)" />
+    <Property Name="purchase_rate" Type="nvarchar(max)" />
+    <Property Name="hsn" Type="nvarchar" MaxLength="30" />
+    <Property Name="sac" Type="nvarchar" MaxLength="30" />
+    <Property Name="use_inline_discount" Type="bit" />
+    <Property Name="cess_percentage" Type="int" Nullable="false" />
+    <Property Name="cess_value" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="release_notes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="version" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="year" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="release_notes" Type="nvarchar(max)" />
+    <Property Name="show_notes" Type="bit" />
+  </EntityType>
+  <EntityType Name="service_tax_services">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="service_category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="introduction_date" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ac_tax_collection" Type="nvarchar(max)" />
+    <Property Name="ac_other_receipts" Type="nvarchar(max)" />
+    <Property Name="ac_deduct_refunds" Type="nvarchar(max)" />
+    <Property Name="ac_education_cess" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="sqlite_sequence">
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="seq" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="states">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="state" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="county" Type="nvarchar" MaxLength="100" />
+    <Property Name="city" Type="nvarchar" MaxLength="100" />
+    <Property Name="country" Type="nvarchar" MaxLength="100" />
+    <Property Name="tin" Type="nvarchar" MaxLength="5" />
+    <Property Name="state_code" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="stock_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="stock_id" Type="int" />
+    <Property Name="quantity" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="added_date" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="invoice_id" Type="int" />
+    <Property Name="bill_id" Type="int" />
+    <Property Name="credit_note_id" Type="int" />
+    <Property Name="old_quantity" Type="nvarchar" MaxLength="20" />
+    <Property Name="debit_note_id" Type="int" />
+  </EntityType>
+  <EntityType Name="stocks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="quantity" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sold_quantity" Type="nvarchar(max)" />
+    <Property Name="sold_total_amount" Type="nvarchar(max)" />
+    <Property Name="cogs" Type="nvarchar(max)" />
+    <Property Name="gross_margin" Type="nvarchar(max)" />
+    <Property Name="gross_margin_percent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tax_combo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="main_tax_id" Type="int" />
+    <Property Name="component_tax_id" Type="int" />
+  </EntityType>
+  <EntityType Name="taxes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tax_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tax_percentage" Type="float" Nullable="false" />
+    <Property Name="is_default_tax" Type="bit" />
+    <Property Name="deleted" Type="nvarchar" MaxLength="1" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="explicit_order" Type="bit" />
+    <Property Name="tax_on_taxable_value" Type="bit" />
+  </EntityType>
+  <EntityType Name="tips">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="text" Type="nvarchar(max)" />
+    <Property Name="priority" Type="int" />
+    <Property Name="version" Type="int" />
+    <Property Name="count" Type="int" />
+  </EntityType>
+  <EntityType Name="vendors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="code" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="telephone" Type="nvarchar(max)" />
+    <Property Name="contact" Type="nvarchar(max)" />
+    <Property Name="billing_address" Type="nvarchar(max)" />
+    <Property Name="billing_zip" Type="nvarchar(max)" />
+    <Property Name="billing_city" Type="nvarchar(max)" />
+    <Property Name="shipping_address" Type="nvarchar(max)" />
+    <Property Name="shipping_zip" Type="nvarchar(max)" />
+    <Property Name="shipping_city" Type="nvarchar(max)" />
+    <Property Name="billing_state_id" Type="int" />
+    <Property Name="shipping_state_id" Type="int" />
+    <Property Name="details" Type="nvarchar(max)" />
+    <Property Name="details_public" Type="nvarchar(max)" />
+    <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tin" Type="nvarchar(max)" />
+    <Property Name="pan" Type="nvarchar(max)" />
+    <Property Name="vendor_code" Type="nvarchar(max)" />
+    <Property Name="vat_number" Type="nvarchar(max)" />
+    <Property Name="gstin" Type="nvarchar(max)" />
+    <Property Name="ship_my_address" Type="bit" />
+    <Property Name="SEZ" Type="bit" />
+    <Property Name="currency_id" Type="int" />
+  </EntityType>
+  <EntityType Name="version">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="year" Type="nvarchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="sleekbillModelStoreContainer">
+    <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bill_products" EntityType="Self.bill_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bills" EntityType="Self.bills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cities" EntityType="Self.cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="client_vendor_conversions" EntityType="Self.client_vendor_conversions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="clients" EntityType="Self.clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="company_details" EntityType="Self.company_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="credit_note_products" EntityType="Self.credit_note_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="credit_notes" EntityType="Self.credit_notes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="currencies" EntityType="Self.currencies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="debit_note_payments" EntityType="Self.debit_note_payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="debit_note_products" EntityType="Self.debit_note_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="debit_notes" EntityType="Self.debit_notes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estimate" EntityType="Self.estimate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estimate_conversions" EntityType="Self.estimate_conversions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estimate_payments" EntityType="Self.estimate_payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estimate_products" EntityType="Self.estimate_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="expense_items" EntityType="Self.expense_items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="expense_products" EntityType="Self.expense_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="expenses" EntityType="Self.expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="facturi_stornate" EntityType="Self.facturi_stornate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fisc_year" EntityType="Self.fisc_year" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flags" EntityType="Self.flags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gst_port_codes" EntityType="Self.gst_port_codes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="invoice_payments" EntityType="Self.invoice_payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="invoice_products" EntityType="Self.invoice_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="invoices" EntityType="Self.invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="packing_slip_conversions" EntityType="Self.packing_slip_conversions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="packing_slip_products" EntityType="Self.packing_slip_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="packing_slips" EntityType="Self.packing_slips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="page_size" EntityType="Self.page_size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payment_documents" EntityType="Self.payment_documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payments" EntityType="Self.payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchase_order" EntityType="Self.purchase_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchase_order_conversions" EntityType="Self.purchase_order_conversions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchase_order_products" EntityType="Self.purchase_order_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="release_notes" EntityType="Self.release_notes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="service_tax_services" EntityType="Self.service_tax_services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="states" EntityType="Self.states" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stock_history" EntityType="Self.stock_history" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stocks" EntityType="Self.stocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tax_combo" EntityType="Self.tax_combo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="taxes" EntityType="Self.taxes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tips" EntityType="Self.tips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vendors" EntityType="Self.vendors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="version" EntityType="Self.version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="config" EntityType="Self.config" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [config].[id] AS [id], 
+    [config].[config_id] AS [config_id], 
+    [config].[KEY] AS [KEY], 
+    [config].[value] AS [value]
+    FROM [dbo].[config] AS [config]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
