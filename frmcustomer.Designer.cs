@@ -38,9 +38,7 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtZipcode = new System.Windows.Forms.TextBox();
             this.txtKraPin = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -213,26 +211,12 @@
             this.txtKraPin.Size = new System.Drawing.Size(219, 20);
             this.txtKraPin.TabIndex = 1;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(147, 101);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(219, 20);
-            this.txtEmail.TabIndex = 1;
-            // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(147, 62);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(219, 20);
             this.txtPhone.TabIndex = 1;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(147, 22);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(219, 20);
-            this.txtName.TabIndex = 1;
             // 
             // label9
             // 
@@ -314,6 +298,7 @@
             this.ClientSize = new System.Drawing.Size(928, 683);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmcustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Client";
@@ -343,12 +328,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtKraPin;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cbocounty;
         private MaterialSkin.Controls.MaterialButton btnSave;
         private System.Windows.Forms.TextBox txtZipcode;
+        private MaterialSkin.Controls.MaterialButton btnSave;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

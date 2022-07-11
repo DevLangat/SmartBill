@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="emloyeedbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emloyeedbDataSet.xsd</DependentUpon>
+=======
     <Compile Include="bill.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -130,6 +136,7 @@
     </Compile>
     <Compile Include="flag.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+>>>>>>> dc191f00fdbb56db01ef514cc3636e7884362003
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -142,6 +149,12 @@
     </Compile>
     <Compile Include="frmcustomer.Designer.cs">
       <DependentUpon>frmcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frminvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frminvoice.Designer.cs">
+      <DependentUpon>frminvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="frmproduct.cs">
       <SubType>Form</SubType>
@@ -244,6 +257,9 @@
     <EmbeddedResource Include="frmcustomer.resx">
       <DependentUpon>frmcustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frminvoice.resx">
+      <DependentUpon>frminvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmproduct.resx">
       <DependentUpon>frmproduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,12 +272,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <None Include="emloyeedbDataSet.xsc">
+      <DependentUpon>emloyeedbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="emloyeedbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>emloyeedbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="emloyeedbDataSet.xss">
+      <DependentUpon>emloyeedbDataSet.xsd</DependentUpon>
+=======
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
+>>>>>>> dc191f00fdbb56db01ef514cc3636e7884362003
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
