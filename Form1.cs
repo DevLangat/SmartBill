@@ -43,5 +43,35 @@ namespace SmartBill
             frminvoice inv=new frminvoice();
             inv.ShowDialog();
         }
+
+        private void btnCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmCompany frmCompany = new frmCompany();
+            frmCompany.ShowDialog();
+        }
+
+        private void btnNewProduct_Click(object sender, EventArgs e)
+        {
+            frmproduct frmproduct = new frmproduct();
+            frmproduct.ShowDialog();
+        }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmpayments frmpayments = new frmpayments();
+            frmpayments.ShowDialog();
+        }
+
+        private void customerToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmcustomer frmCustomer = new frmcustomer();
+           frmCustomer.ShowDialog();
+        }
+
+        private void companyDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompany frmCompany = new frmCompany();
+             frmCompany.ShowDialog();
+        }
     }
 }
