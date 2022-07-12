@@ -12,10 +12,7 @@
     
     Example:
     
-    ... ado.net/XML 
-    
-
-ers & schema ...
+    ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
@@ -157,7 +154,7 @@ ers & schema ...
   <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAAd0SU1FB90GFhAhIUSW/n8AAADSSURBVChTY0AGyZudWZoPZTqBMIgNFcYEsas0
+        EAAACxABrSO9dQAAAAd0SU1FB90GFhAhIUSW/n8AAADSSURBVChTY0AGyZudWZoPZTqBMIgNFcYEsas0
         Bco3WfwHYRAbKowJYldqCJRtMP0PwiA2VBgCEtbbs3QdyRPoOVYoULrDV6F8o+l/EAaxQWIgOZAaoCl6
         Tq17vP937PUF47ZdjmAM44PkQGoYIhZoONXvcPjfBJQE4d5DHmAM44PkQGoY3CfLs8Qv0hNIWKwnkLjE
         QKHjgMd/EAaxQWIgOZAaqEshIHmJoUD3Ia//IAxiQ4UxQeJiAwG4iUA2VBgTuE9QYImap+0EwiA2VBgI

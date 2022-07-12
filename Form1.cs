@@ -27,5 +27,21 @@ namespace SmartBill
         {
 
         }
+
+        private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnNewInvoice_Click(object sender, EventArgs e)
+        {
+            frminvoice inv=new frminvoice();
+            inv.ShowDialog();
+        }
     }
 }

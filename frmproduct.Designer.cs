@@ -32,7 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbUOM = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbTax = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
-            this.cbUOM = new System.Windows.Forms.ComboBox();
-            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -97,6 +97,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(331, 409);
             this.dataGridView1.TabIndex = 4;
             // 
+            // product_id
+            // 
+            this.product_id.HeaderText = "Product ID";
+            this.product_id.Name = "product_id";
+            // 
+            // type
+            // 
+            this.type.HeaderText = "Product Type";
+            this.type.Name = "type";
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Product Name";
+            this.name.Name = "name";
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -113,6 +128,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(478, 409);
             this.panel3.TabIndex = 1;
+            // 
+            // cbUOM
+            // 
+            this.cbUOM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUOM.FormattingEnabled = true;
+            this.cbUOM.Items.AddRange(new object[] {
+            "Boxes",
+            "Hours",
+            "Pieces"});
+            this.cbUOM.Location = new System.Drawing.Point(297, 18);
+            this.cbUOM.Name = "cbUOM";
+            this.cbUOM.Size = new System.Drawing.Size(121, 21);
+            this.cbUOM.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -183,6 +211,7 @@
             // 
             // cbType
             // 
+            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "Product",
@@ -276,33 +305,6 @@
             this.btnSave.UseAccentColor = false;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // cbUOM
-            // 
-            this.cbUOM.FormattingEnabled = true;
-            this.cbUOM.Items.AddRange(new object[] {
-            "Boxes",
-            "Hours",
-            "Pieces"});
-            this.cbUOM.Location = new System.Drawing.Point(297, 18);
-            this.cbUOM.Name = "cbUOM";
-            this.cbUOM.Size = new System.Drawing.Size(121, 21);
-            this.cbUOM.TabIndex = 6;
-            // 
-            // product_id
-            // 
-            this.product_id.HeaderText = "Product ID";
-            this.product_id.Name = "product_id";
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Product Type";
-            this.type.Name = "type";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Product Name";
-            this.name.Name = "name";
             // 
             // frmproduct
             // 
