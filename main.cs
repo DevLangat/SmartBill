@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SmartBill
 {
-    public partial class Form1 : MaterialForm
+    public partial class main : MaterialForm
     {
-        public Form1()
+        public main()
         {
             InitializeComponent();
         }
