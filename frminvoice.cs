@@ -149,8 +149,9 @@ namespace SmartBill
                 double quantity = Convert.ToDouble(txtQuantity.Text);
                 int client_id = Convert.ToInt32(cbClients.SelectedValue);
                 string fiscalyear = "";
+                string number = "0";
                 var context = new sleekbillEntities();
-                var products = new invoice()
+                var invoicecreation = new invoice()
 
                 {
                     issue_date   = dpIssueDate.Value.ToString(),
@@ -158,30 +159,29 @@ namespace SmartBill
                     client_name = cbClients.Text,
                     total_tax = cbTax.Text,
                     type = cboproduct.Text,
-                    fiscal_year = fiscalyear,
-                   
-                    
+                    fiscal_year = fiscalyear,                  
+                    number=number,
 
 
                 };
 
-                context.invoice_products.Add(products);
-                var prod = (from sdetails in context.invoice_products
-                            where sdetails.product_id == prodid
-                            select new { sdetails.name }).ToList();
+                context.invoices.Add(invoicecreation);
+                var prod = (from sdetails in context.invoices
+                            where sdetails.number == number
+                            select new { sdetails.number }).ToList();
                 if (prod.Count == 1)
                 {
-                    context.Entry(products).State = System.Data.Entity.EntityState.Modified;
+                    context.Entry(invoicecreation).State = System.Data.Entity.EntityState.Modified;
 
                     context.SaveChanges();
-                    MessageBox.Show("Product Details Updated Successfully", this.Text, MessageBoxButtons.OK);
+                    MessageBox.Show("Invoice Details Updated Successfully", this.Text, MessageBoxButtons.OK);
 
 
                 }
                 else
                 {
                     context.SaveChanges();
-                    MessageBox.Show("Product Details submitted Successfully", this.Text, MessageBoxButtons.OK);
+                    MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
                 }
             }
             catch (Exception err)
