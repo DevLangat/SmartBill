@@ -22,16 +22,14 @@ namespace SmartBill
         {
 
             this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                panel2.BackColor = colorDialog1.Color;
-            }
+
         }
     }
 }
