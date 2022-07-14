@@ -135,6 +135,7 @@
             this.btnPayment.TabIndex = 5;
             this.btnPayment.Text = "Payment";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // productsRpt
             // 
@@ -491,7 +492,7 @@
             this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.paymentsToolStripMenuItem.Text = "Payments";
             // 
-            // Form1
+            // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -502,7 +503,7 @@
             this.DrawerIsOpen = true;
             this.DrawerShowIconsWhenHidden = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Smart Bill";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

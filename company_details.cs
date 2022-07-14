@@ -18,20 +18,20 @@ namespace SmartBill
         public string name { get; set; }
         public string address { get; set; }
         public string zip { get; set; }
-        public string city { get; set; }
+        public string county { get; set; }
         public string email { get; set; }
         public string telephone { get; set; }
         public string website { get; set; }
-        public string logo { get; set; }
+        public string country { get; set; }
         public string details { get; set; }
         public Nullable<int> state_id { get; set; }
         public Nullable<int> currency_id { get; set; }
         public string tin { get; set; }
         public string pan { get; set; }
         public string stn { get; set; }
-        public int tax_label { get; set; }
+        public Nullable<int> tax_label { get; set; }
         public Nullable<int> service_category_id { get; set; }
-        public string gstin { get; set; }
+        public string pin { get; set; }
         public int tax_id_label { get; set; }
         public int taxation_type { get; set; }
         public string signature_picture { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="sleekbillModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="sleekbillModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6013: The table/view 'sleekbill.dbo.alias_email' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="alias_email">
@@ -173,24 +173,24 @@ warning 6013: The table/view 'sleekbill.dbo.alias_email' does not have a primary
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="address" Type="nvarchar(max)" />
           <Property Name="zip" Type="nvarchar(max)" />
-          <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="county" Type="nvarchar(max)" />
           <Property Name="email" Type="nvarchar(max)" />
           <Property Name="telephone" Type="nvarchar(max)" />
           <Property Name="website" Type="nvarchar(max)" />
-          <Property Name="logo" Type="nvarchar(max)" />
+          <Property Name="country" Type="nvarchar(max)" />
           <Property Name="details" Type="nvarchar(max)" />
           <Property Name="state_id" Type="int" />
           <Property Name="currency_id" Type="int" />
           <Property Name="tin" Type="nvarchar(max)" />
           <Property Name="pan" Type="nvarchar(max)" />
           <Property Name="stn" Type="nvarchar(max)" />
-          <Property Name="tax_label" Type="int" Nullable="false" />
+          <Property Name="tax_label" Type="int" />
           <Property Name="service_category_id" Type="int" />
-          <Property Name="gstin" Type="nvarchar(max)" />
+          <Property Name="pin" Type="nvarchar(max)" />
           <Property Name="tax_id_label" Type="int" Nullable="false" />
           <Property Name="taxation_type" Type="int" Nullable="false" />
           <Property Name="signature_picture" Type="nvarchar(max)" />
@@ -1212,8 +1212,7 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
     FROM [dbo].[config] AS [config]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sleekbillModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1377,24 +1376,24 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="county" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="state_id" Type="Int32" />
           <Property Name="currency_id" Type="Int32" />
           <Property Name="tin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="pan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="stn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="tax_label" Type="Int32" Nullable="false" />
+          <Property Name="tax_label" Type="Int32" />
           <Property Name="service_category_id" Type="Int32" />
-          <Property Name="gstin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="tax_id_label" Type="Int32" Nullable="false" />
           <Property Name="taxation_type" Type="Int32" Nullable="false" />
           <Property Name="signature_picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -2576,11 +2575,11 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="zip" ColumnName="zip" />
-                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="county" ColumnName="county" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="telephone" ColumnName="telephone" />
                 <ScalarProperty Name="website" ColumnName="website" />
-                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="country" ColumnName="country" />
                 <ScalarProperty Name="details" ColumnName="details" />
                 <ScalarProperty Name="state_id" ColumnName="state_id" />
                 <ScalarProperty Name="currency_id" ColumnName="currency_id" />
@@ -2589,7 +2588,7 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
                 <ScalarProperty Name="stn" ColumnName="stn" />
                 <ScalarProperty Name="tax_label" ColumnName="tax_label" />
                 <ScalarProperty Name="service_category_id" ColumnName="service_category_id" />
-                <ScalarProperty Name="gstin" ColumnName="gstin" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
                 <ScalarProperty Name="tax_id_label" ColumnName="tax_id_label" />
                 <ScalarProperty Name="taxation_type" ColumnName="taxation_type" />
                 <ScalarProperty Name="signature_picture" ColumnName="signature_picture" />

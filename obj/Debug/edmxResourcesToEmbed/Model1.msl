@@ -170,11 +170,11 @@
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="zip" ColumnName="zip" />
-          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="county" ColumnName="county" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="telephone" ColumnName="telephone" />
           <ScalarProperty Name="website" ColumnName="website" />
-          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="country" ColumnName="country" />
           <ScalarProperty Name="details" ColumnName="details" />
           <ScalarProperty Name="state_id" ColumnName="state_id" />
           <ScalarProperty Name="currency_id" ColumnName="currency_id" />
@@ -183,7 +183,7 @@
           <ScalarProperty Name="stn" ColumnName="stn" />
           <ScalarProperty Name="tax_label" ColumnName="tax_label" />
           <ScalarProperty Name="service_category_id" ColumnName="service_category_id" />
-          <ScalarProperty Name="gstin" ColumnName="gstin" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
           <ScalarProperty Name="tax_id_label" ColumnName="tax_id_label" />
           <ScalarProperty Name="taxation_type" ColumnName="taxation_type" />
           <ScalarProperty Name="signature_picture" ColumnName="signature_picture" />
