@@ -11,21 +11,11 @@ using System.Windows.Forms;
 
 namespace SmartBill
 {
-    public partial class Form1 : MaterialForm
+    public partial class frmpayments : MaterialForm
     {
-        public Form1()
+        public frmpayments()
         {
             InitializeComponent();
-        }
-
-        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
