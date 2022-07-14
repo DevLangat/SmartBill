@@ -44,14 +44,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtAmountPaid = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbTax = new System.Windows.Forms.ComboBox();
             this.cboproduct = new System.Windows.Forms.ComboBox();
@@ -64,7 +56,7 @@
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtdocnumber = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,6 +71,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -137,7 +137,7 @@
             this.panel3.Controls.Add(this.txtdesc);
             this.panel3.Controls.Add(this.txtUnitPrice);
             this.panel3.Controls.Add(this.txtQuantity);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtdocnumber);
             this.panel3.Controls.Add(this.txtPhone);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
@@ -242,13 +242,13 @@
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
-            this.product,
+            this.Product,
             this.Description,
             this.Quantity,
-            this.price,
-            this.value,
+            this.Price,
+            this.Value,
             this.tax,
-            this.action});
+            this.Action});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,59 +266,6 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(846, 170);
             this.dataGridView1.TabIndex = 13;
-            // 
-            // No
-            // 
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // product
-            // 
-            this.product.HeaderText = "Product/Service";
-            this.product.Name = "product";
-            this.product.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "QTY";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Unit Price";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // value
-            // 
-            this.value.HeaderText = "Value";
-            this.value.Name = "value";
-            this.value.ReadOnly = true;
-            // 
-            // tax
-            // 
-            this.tax.HeaderText = "Tax";
-            this.tax.Name = "tax";
-            this.tax.ReadOnly = true;
-            // 
-            // action
-            // 
-            this.action.HeaderText = "Action";
-            this.action.Name = "action";
-            this.action.ReadOnly = true;
-            this.action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.action.ToolTipText = "Edit";
-            this.action.Width = 80;
             // 
             // btnAdd
             // 
@@ -423,12 +370,12 @@
             this.txtQuantity.Size = new System.Drawing.Size(105, 20);
             this.txtQuantity.TabIndex = 1;
             // 
-            // textBox1
+            // txtdocnumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(394, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtdocnumber.Location = new System.Drawing.Point(394, 23);
+            this.txtdocnumber.Name = "txtdocnumber";
+            this.txtdocnumber.Size = new System.Drawing.Size(143, 20);
+            this.txtdocnumber.TabIndex = 1;
             // 
             // txtPhone
             // 
@@ -556,6 +503,61 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Document Data";
             // 
+            // No
+            // 
+            this.No.DataPropertyName = "No";
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            // 
+            // Product
+            // 
+            this.Product.DataPropertyName = "Product";
+            this.Product.HeaderText = "Product";
+            this.Product.Name = "Product";
+            this.Product.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Value
+            // 
+            this.Value.DataPropertyName = "Value";
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            // 
+            // tax
+            // 
+            this.tax.DataPropertyName = "tax";
+            this.tax.HeaderText = "Tax";
+            this.tax.Name = "tax";
+            this.tax.ReadOnly = true;
+            // 
+            // Action
+            // 
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
+            // 
             // frminvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,7 +600,7 @@
         private System.Windows.Forms.TextBox txtdesc;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtdocnumber;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -621,12 +623,12 @@
         private System.Windows.Forms.CheckBox chckPay;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn tax;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn action;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Action;
     }
 }

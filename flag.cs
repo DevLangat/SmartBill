@@ -59,8 +59,7 @@ namespace SmartBill
         public string copy_type_dupl { get; set; }
         public string copy_type_tripl { get; set; }
         public string copy_type_quadr { get; set; }
-        public Nullable<bool> 
-            er_on_all_pages { get; set; }
+        public Nullable<bool> header_on_all_pages { get; set; }
         public Nullable<bool> show_net_received { get; set; }
         public Nullable<bool> a5_more_pages { get; set; }
         public Nullable<bool> use_second_number { get; set; }

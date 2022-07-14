@@ -15,7 +15,7 @@ namespace SmartBill
     public partial class invoice
     {
         public int id { get; set; }
-        public string number { get; set; }
+        public long number { get; set; }
         public string issue_date { get; set; }
         public string due_date { get; set; }
         public Nullable<int> company_details_id { get; set; }

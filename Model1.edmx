@@ -682,11 +682,11 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
-            <PropertyRef Name="product_id" />
+            <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="product_id" Type="int" Nullable="false" />
-          <Property Name="invoice_id" Type="int" />
+          <Property Name="invoice_id" Type="int" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="description" Type="nvarchar(max)" />
           <Property Name="measuring_unit" Type="nvarchar(max)" />
@@ -709,7 +709,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="number" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="number" Type="bigint" Nullable="false" />
           <Property Name="issue_date" Type="nvarchar(max)" Nullable="false" />
           <Property Name="due_date" Type="nvarchar(max)" />
           <Property Name="company_details_id" Type="int" />
@@ -901,16 +901,16 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="description" Type="nvarchar(max)" />
-          <Property Name="measuring_unit" Type="nvarchar(max)" />
-          <Property Name="price" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="150" />
+          <Property Name="measuring_unit" Type="nvarchar" MaxLength="150" />
+          <Property Name="price" Type="money" Nullable="false" />
           <Property Name="has_tax_included" Type="bit" Nullable="false" />
           <Property Name="tax_id" Type="int" />
-          <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="type" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="sku" Type="nvarchar(max)" />
-          <Property Name="purchase_rate" Type="nvarchar(max)" />
+          <Property Name="deleted" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="sku" Type="nvarchar" MaxLength="10" />
+          <Property Name="purchase_rate" Type="money" />
           <Property Name="hsn" Type="nvarchar" MaxLength="30" />
           <Property Name="sac" Type="nvarchar" MaxLength="30" />
           <Property Name="cess_percentage" Type="int" Nullable="false" />
@@ -1155,6 +1155,7 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
           <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="year" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
+        <Function Name="sp_getinvoices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="sleekbillModelStoreContainer">
           <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="bill_products" EntityType="Self.bill_products" Schema="dbo" store:Type="Tables" />
@@ -1873,11 +1874,11 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
-            <PropertyRef Name="product_id" />
+            <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="Int32" Nullable="false" />
-          <Property Name="invoice_id" Type="Int32" />
+          <Property Name="invoice_id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1900,7 +1901,7 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="number" Type="Int64" Nullable="false" />
           <Property Name="issue_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="due_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="company_details_id" Type="Int32" />
@@ -2092,16 +2093,16 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="measuring_unit" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="has_tax_included" Type="Boolean" Nullable="false" />
           <Property Name="tax_id" Type="Int32" />
-          <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="sku" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="purchase_rate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sku" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="purchase_rate" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="hsn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="sac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="cess_percentage" Type="Int32" Nullable="false" />
@@ -2400,7 +2401,17 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
           <EntitySet Name="vendors" EntityType="Self.vendor" />
           <EntitySet Name="versions" EntityType="Self.version" />
           <EntitySet Name="configs" EntityType="Self.config" />
+          <FunctionImport Name="sp_getinvoices" ReturnType="Collection(sleekbillModel.sp_getinvoices_Result)" />
         </EntityContainer>
+        <ComplexType Name="sp_getinvoices_Result">
+          <Property Type="Int32" Name="No" Nullable="false" />
+          <Property Type="String" Name="Product" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="Double" Name="Quantity" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
+          <Property Type="Double" Name="Value" Nullable="true" />
+          <Property Type="Double" Name="Tax" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3587,6 +3598,19 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_getinvoices" FunctionName="sleekbillModel.Store.sp_getinvoices">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sleekbillModel.sp_getinvoices_Result">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

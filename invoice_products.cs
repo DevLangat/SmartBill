@@ -14,9 +14,9 @@ namespace SmartBill
     
     public partial class invoice_products
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public int product_id { get; set; }
-        public Nullable<int> invoice_id { get; set; }
+        public int invoice_id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public string measuring_unit { get; set; }
