@@ -1,6 +1,6 @@
 ﻿namespace SmartBill
 {
-    partial class frmpayments
+    partial class frmInvoiceReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmpayments));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInvoiceReport));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -78,8 +78,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(955, 697);
-            this.panel1.TabIndex = 2;
+            this.panel1.Size = new System.Drawing.Size(1546, 656);
+            this.panel1.TabIndex = 3;
             // 
             // btnPreview
             // 
@@ -401,17 +401,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Document Data";
             // 
-            // frmpayments
+            // frmInvoiceReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 764);
+            this.ClientSize = new System.Drawing.Size(1552, 723);
             this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmpayments";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Payments";
+            this.Name = "frmInvoiceReport";
+            this.Text = "frmInvoiceReport";
+            this.Load += new System.EventHandler(this.frmInvoiceReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -428,24 +426,9 @@
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private System.Windows.Forms.ComboBox cbPayType;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker payDate;
-        private System.Windows.Forms.ComboBox cbClients;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox txtReference;
-        private System.Windows.Forms.TextBox txtNumber;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -453,7 +436,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private System.Windows.Forms.ComboBox cbPayType;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker payDate;
+        private System.Windows.Forms.ComboBox cbClients;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.TextBox txtReference;
+        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

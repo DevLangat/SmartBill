@@ -12,6 +12,8 @@ namespace SmartBill
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class sleekbillEntities : DbContext
     {
@@ -73,5 +75,10 @@ namespace SmartBill
         public virtual DbSet<vendor> vendors { get; set; }
         public virtual DbSet<version> versions { get; set; }
         public virtual DbSet<config> configs { get; set; }
+    
+        public virtual ObjectResult<GetClientData_Result> GetClientData()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetClientData_Result>("GetClientData");
+        }
     }
 }

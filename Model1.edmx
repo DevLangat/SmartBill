@@ -5,14 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="sleekbillModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sleekbill.dbo.alias_email' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="alias_email">
-          <Property Name="id" Type="int" />
-          <Property Name="client_id" Type="float" />
-          <Property Name="alias" Type="nvarchar" MaxLength="100" />
-          <Property Name="email" Type="nvarchar" MaxLength="100" />
-        </EntityType>-->
         <EntityType Name="bill_payments">
           <Key>
             <PropertyRef Name="id" />
@@ -1038,12 +1030,6 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Name="ac_deduct_refunds" Type="nvarchar(max)" />
           <Property Name="ac_education_cess" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="sqlite_sequence">
-          <Property Name="name" Type="nvarchar(max)" />
-          <Property Name="seq" Type="nvarchar(max)" />
-        </EntityType>-->
         <EntityType Name="states">
           <Key>
             <PropertyRef Name="id" />
@@ -1155,6 +1141,7 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
           <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="year" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
+        <Function Name="GetClientData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="sleekbillModelStoreContainer">
           <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="bill_products" EntityType="Self.bill_products" Schema="dbo" store:Type="Tables" />
@@ -2399,7 +2386,25 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
           <EntitySet Name="vendors" EntityType="Self.vendor" />
           <EntitySet Name="versions" EntityType="Self.version" />
           <EntitySet Name="configs" EntityType="Self.config" />
+          <FunctionImport Name="GetClientData" ReturnType="Collection(sleekbillModel.GetClientData_Result)" />
         </EntityContainer>
+        <ComplexType Name="GetClientData_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="email" Nullable="true" />
+          <Property Type="String" Name="telephone" Nullable="true" />
+          <Property Type="String" Name="billing_address" Nullable="true" />
+          <Property Type="String" Name="billing_zip" Nullable="true" />
+          <Property Type="String" Name="billing_city" Nullable="true" />
+          <Property Type="Int32" Name="billing_state_id" Nullable="true" />
+          <Property Type="Int32" Name="shipping_state_id" Nullable="true" />
+          <Property Type="String" Name="details" Nullable="true" />
+          <Property Type="String" Name="details_public" Nullable="true" />
+          <Property Type="String" Name="deleted" Nullable="false" />
+          <Property Type="String" Name="vat_number" Nullable="true" />
+          <Property Type="Int32" Name="currency_id" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3586,6 +3591,27 @@ warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetClientData" FunctionName="sleekbillModel.Store.GetClientData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sleekbillModel.GetClientData_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+                <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="billing_state_id" ColumnName="billing_state_id" />
+                <ScalarProperty Name="shipping_state_id" ColumnName="shipping_state_id" />
+                <ScalarProperty Name="details" ColumnName="details" />
+                <ScalarProperty Name="details_public" ColumnName="details_public" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="vat_number" ColumnName="vat_number" />
+                <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

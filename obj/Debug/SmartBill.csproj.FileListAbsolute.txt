@@ -95,3 +95,4 @@ E:\CSharp Projects\Rotich\SmartBill\obj\Debug\SmartBill.csproj.CoreCompileInputs
 E:\CSharp Projects\Rotich\SmartBill\obj\Debug\SmartBill.csproj.CopyComplete
 E:\CSharp Projects\Rotich\SmartBill\obj\Debug\SmartBill.exe
 E:\CSharp Projects\Rotich\SmartBill\obj\Debug\SmartBill.pdb
+E:\CSharp Projects\Rotich\SmartBill\obj\Debug\SmartBill.frmAddPayment.resources
