@@ -97,3 +97,10 @@ F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\zh-CHT\Microsoft.Report
 F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.csproj.CopyComplete
 F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.exe
 F:\Elisha\C# Projects 2022\SmartBill\SmartBill\obj\Debug\SmartBill.pdb
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\ClosedXML.dll
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\DocumentFormat.OpenXml.dll
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\ExcelNumberFormat.dll
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\ClosedXML.pdb
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\ClosedXML.xml
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\DocumentFormat.OpenXml.xml
+F:\Elisha\C# Projects 2022\SmartBill\SmartBill\bin\Debug\ExcelNumberFormat.xml
