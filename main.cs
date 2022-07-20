@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,17 +16,33 @@ namespace SmartBill
     {
         public main()
         {
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            t.Abort();
+        }
+        public void StartForm()
+        {
+            Application.Run(new frmsplashscreen());
         }
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
+        private void getCount()
+        {
+            sleekbillEntities context = new sleekbillEntities();           
+            var countunpaid = (from invoice in context.invoices
+                                 where invoice.is_paid == false
+                                 select new { invoice.id }).ToList();
+            lblUnpaid.Text=countunpaid.Count.ToString();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            getCount();
         }
 
         private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)

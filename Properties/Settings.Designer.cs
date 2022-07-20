@@ -32,5 +32,16 @@ namespace SmartBill.Properties {
                 return ((string)(this["emloyeedbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=sleekbill;Integrated Security=True;MultipleActiveRe" +
+            "sultSets=True;Application Name=EntityFramework")]
+        public string sleekbillConnectionString {
+            get {
+                return ((string)(this["sleekbillConnectionString"]));
+            }
+        }
     }
 }
