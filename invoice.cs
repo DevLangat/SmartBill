@@ -15,84 +15,24 @@ namespace SmartBill
     public partial class invoice
     {
         public int id { get; set; }
-        public string number { get; set; }
-        public string issue_date { get; set; }
-        public string due_date { get; set; }
+        public long number { get; set; }
+        public System.DateTime issue_date { get; set; }
+        public Nullable<System.DateTime> due_date { get; set; }
         public Nullable<int> company_details_id { get; set; }
-        public Nullable<int> client_id { get; set; }
+        public string client_id { get; set; }
         public string client_name { get; set; }
         public string client_code { get; set; }
-        public string client_email { get; set; }
-        public string client_telephone { get; set; }
-        public string client_contact { get; set; }
-        public string client_billing_address { get; set; }
-        public string client_billing_zip { get; set; }
-        public string client_billing_city { get; set; }
-        public string client_shipping_address { get; set; }
-        public string client_shipping_zip { get; set; }
-        public string client_shipping_city { get; set; }
         public Nullable<bool> is_paid { get; set; }
         public Nullable<bool> is_draft { get; set; }
         public string total_no_tax { get; set; }
         public string total_tax { get; set; }
         public string total_all { get; set; }
-        public string internal_notes { get; set; }
         public string invoice_notes { get; set; }
         public string deleted { get; set; }
-        public string color { get; set; }
         public string po_number { get; set; }
-        public string logo { get; set; }
-        public Nullable<int> page_size_id { get; set; }
-        public Nullable<int> client_billing_state_id { get; set; }
-        public Nullable<int> client_shipping_state_id { get; set; }
-        public string pay_email { get; set; }
-        public Nullable<bool> pay_online { get; set; }
-        public Nullable<int> flag_id { get; set; }
-        public int layout { get; set; }
-        public string discount { get; set; }
-        public Nullable<bool> sent { get; set; }
-        public int print_id { get; set; }
-        public string type { get; set; }
-        public string fiscal_year { get; set; }
-        public string number_prefix { get; set; }
-        public string second_number { get; set; }
-        public string excise_duty { get; set; }
-        public Nullable<bool> use_transport { get; set; }
         public string delivery_note { get; set; }
-        public string vehicle_number { get; set; }
-        public string esugam { get; set; }
-        public string lr_number { get; set; }
-        public string shipping_method { get; set; }
-        public string excise_cess { get; set; }
         public Nullable<bool> cancelled { get; set; }
-        public Nullable<bool> quantity_no_decimal { get; set; }
-        public Nullable<bool> product_inline_discount { get; set; }
-        public int esugam_label { get; set; }
-        public string po_date { get; set; }
-        public string gst_type { get; set; }
-        public Nullable<bool> reverse_charges { get; set; }
-        public Nullable<int> supply_state_id { get; set; }
-        public string discount_all { get; set; }
-        public int lr_label { get; set; }
-        public string transporter_id { get; set; }
-        public string client_shipping_name { get; set; }
-        public string transporter_name { get; set; }
-        public string transporter_gstin { get; set; }
-        public Nullable<bool> show_cess { get; set; }
-        public Nullable<int> shipping_tax_id { get; set; }
-        public string ship_bill_distance { get; set; }
-        public string exchange_country { get; set; }
-        public Nullable<int> exchange_curr_id { get; set; }
-        public string exchange_export_type { get; set; }
-        public string exchange_rate { get; set; }
-        public Nullable<int> gst_port_code_id { get; set; }
-        public string ship_bill_number { get; set; }
-        public string ship_bill_date { get; set; }
-        public string total_quantity { get; set; }
-        public string total_measuring_unit { get; set; }
-        public Nullable<bool> kerala_cess { get; set; }
-        public string tax_source { get; set; }
-        public int tax_source_type { get; set; }
-        public Nullable<bool> tax_source_enabled { get; set; }
+        public Nullable<double> Quantity { get; set; }
+        public Nullable<System.DateTime> po_date { get; set; }
     }
 }

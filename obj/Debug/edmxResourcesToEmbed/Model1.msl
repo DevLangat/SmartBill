@@ -702,6 +702,7 @@
           <ScalarProperty Name="cess_value" ColumnName="cess_value" />
           <ScalarProperty Name="discount_type" ColumnName="discount_type" />
           <ScalarProperty Name="discount_value" ColumnName="discount_value" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -716,78 +717,18 @@
           <ScalarProperty Name="client_id" ColumnName="client_id" />
           <ScalarProperty Name="client_name" ColumnName="client_name" />
           <ScalarProperty Name="client_code" ColumnName="client_code" />
-          <ScalarProperty Name="client_email" ColumnName="client_email" />
-          <ScalarProperty Name="client_telephone" ColumnName="client_telephone" />
-          <ScalarProperty Name="client_contact" ColumnName="client_contact" />
-          <ScalarProperty Name="client_billing_address" ColumnName="client_billing_address" />
-          <ScalarProperty Name="client_billing_zip" ColumnName="client_billing_zip" />
-          <ScalarProperty Name="client_billing_city" ColumnName="client_billing_city" />
-          <ScalarProperty Name="client_shipping_address" ColumnName="client_shipping_address" />
-          <ScalarProperty Name="client_shipping_zip" ColumnName="client_shipping_zip" />
-          <ScalarProperty Name="client_shipping_city" ColumnName="client_shipping_city" />
           <ScalarProperty Name="is_paid" ColumnName="is_paid" />
           <ScalarProperty Name="is_draft" ColumnName="is_draft" />
           <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
           <ScalarProperty Name="total_tax" ColumnName="total_tax" />
           <ScalarProperty Name="total_all" ColumnName="total_all" />
-          <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
           <ScalarProperty Name="invoice_notes" ColumnName="invoice_notes" />
           <ScalarProperty Name="deleted" ColumnName="deleted" />
-          <ScalarProperty Name="color" ColumnName="color" />
           <ScalarProperty Name="po_number" ColumnName="po_number" />
-          <ScalarProperty Name="logo" ColumnName="logo" />
-          <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
-          <ScalarProperty Name="client_billing_state_id" ColumnName="client_billing_state_id" />
-          <ScalarProperty Name="client_shipping_state_id" ColumnName="client_shipping_state_id" />
-          <ScalarProperty Name="pay_email" ColumnName="pay_email" />
-          <ScalarProperty Name="pay_online" ColumnName="pay_online" />
-          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
-          <ScalarProperty Name="layout" ColumnName="layout" />
-          <ScalarProperty Name="discount" ColumnName="discount" />
-          <ScalarProperty Name="sent" ColumnName="sent" />
-          <ScalarProperty Name="print_id" ColumnName="print_id" />
-          <ScalarProperty Name="type" ColumnName="type" />
-          <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
-          <ScalarProperty Name="number_prefix" ColumnName="number_prefix" />
-          <ScalarProperty Name="second_number" ColumnName="second_number" />
-          <ScalarProperty Name="excise_duty" ColumnName="excise_duty" />
-          <ScalarProperty Name="use_transport" ColumnName="use_transport" />
           <ScalarProperty Name="delivery_note" ColumnName="delivery_note" />
-          <ScalarProperty Name="vehicle_number" ColumnName="vehicle_number" />
-          <ScalarProperty Name="esugam" ColumnName="esugam" />
-          <ScalarProperty Name="lr_number" ColumnName="lr_number" />
-          <ScalarProperty Name="shipping_method" ColumnName="shipping_method" />
-          <ScalarProperty Name="excise_cess" ColumnName="excise_cess" />
           <ScalarProperty Name="cancelled" ColumnName="cancelled" />
-          <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
-          <ScalarProperty Name="product_inline_discount" ColumnName="product_inline_discount" />
-          <ScalarProperty Name="esugam_label" ColumnName="esugam_label" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="po_date" ColumnName="po_date" />
-          <ScalarProperty Name="gst_type" ColumnName="gst_type" />
-          <ScalarProperty Name="reverse_charges" ColumnName="reverse_charges" />
-          <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
-          <ScalarProperty Name="discount_all" ColumnName="discount_all" />
-          <ScalarProperty Name="lr_label" ColumnName="lr_label" />
-          <ScalarProperty Name="transporter_id" ColumnName="transporter_id" />
-          <ScalarProperty Name="client_shipping_name" ColumnName="client_shipping_name" />
-          <ScalarProperty Name="transporter_name" ColumnName="transporter_name" />
-          <ScalarProperty Name="transporter_gstin" ColumnName="transporter_gstin" />
-          <ScalarProperty Name="show_cess" ColumnName="show_cess" />
-          <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
-          <ScalarProperty Name="ship_bill_distance" ColumnName="ship_bill_distance" />
-          <ScalarProperty Name="exchange_country" ColumnName="exchange_country" />
-          <ScalarProperty Name="exchange_curr_id" ColumnName="exchange_curr_id" />
-          <ScalarProperty Name="exchange_export_type" ColumnName="exchange_export_type" />
-          <ScalarProperty Name="exchange_rate" ColumnName="exchange_rate" />
-          <ScalarProperty Name="gst_port_code_id" ColumnName="gst_port_code_id" />
-          <ScalarProperty Name="ship_bill_number" ColumnName="ship_bill_number" />
-          <ScalarProperty Name="ship_bill_date" ColumnName="ship_bill_date" />
-          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
-          <ScalarProperty Name="total_measuring_unit" ColumnName="total_measuring_unit" />
-          <ScalarProperty Name="kerala_cess" ColumnName="kerala_cess" />
-          <ScalarProperty Name="tax_source" ColumnName="tax_source" />
-          <ScalarProperty Name="tax_source_type" ColumnName="tax_source_type" />
-          <ScalarProperty Name="tax_source_enabled" ColumnName="tax_source_enabled" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1181,5 +1122,54 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetClientData" FunctionName="sleekbillModel.Store.GetClientData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sleekbillModel.GetClientData_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+          <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
+          <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+          <ScalarProperty Name="billing_state_id" ColumnName="billing_state_id" />
+          <ScalarProperty Name="shipping_state_id" ColumnName="shipping_state_id" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="details_public" ColumnName="details_public" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="vat_number" ColumnName="vat_number" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getinvoicedetails" FunctionName="sleekbillModel.Store.sp_getinvoicedetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sleekbillModel.sp_getinvoicedetails_Result">
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+          <ScalarProperty Name="pTax" ColumnName="pTax" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
+          <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+          <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+          <ScalarProperty Name="company_address" ColumnName="company_address" />
+          <ScalarProperty Name="company_county" ColumnName="company_county" />
+          <ScalarProperty Name="company_email" ColumnName="company_email" />
+          <ScalarProperty Name="company_name" ColumnName="company_name" />
+          <ScalarProperty Name="company_pin" ColumnName="company_pin" />
+          <ScalarProperty Name="company_zip" ColumnName="company_zip" />
+          <ScalarProperty Name="company_phone" ColumnName="company_phone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

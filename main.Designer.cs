@@ -47,9 +47,9 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblOverdue = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblUnpaid = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -270,9 +270,9 @@
             this.panel2.Controls.Add(this.materialDivider1);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblOverdue);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lblUnpaid);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -313,16 +313,16 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Unpaid Bills: ";
             // 
-            // label6
+            // lblOverdue
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(367, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "10";
+            this.lblOverdue.AutoSize = true;
+            this.lblOverdue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverdue.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblOverdue.Location = new System.Drawing.Point(367, 16);
+            this.lblOverdue.Name = "lblOverdue";
+            this.lblOverdue.Size = new System.Drawing.Size(27, 20);
+            this.lblOverdue.TabIndex = 2;
+            this.lblOverdue.Text = "10";
             // 
             // label3
             // 
@@ -335,16 +335,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Overdue Qoutes :";
             // 
-            // label5
+            // lblUnpaid
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(140, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "1";
+            this.lblUnpaid.AutoSize = true;
+            this.lblUnpaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnpaid.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblUnpaid.Location = new System.Drawing.Point(140, 16);
+            this.lblUnpaid.Name = "lblUnpaid";
+            this.lblUnpaid.Size = new System.Drawing.Size(0, 20);
+            this.lblUnpaid.TabIndex = 2;
             // 
             // label2
             // 
@@ -533,9 +532,9 @@
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblOverdue;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUnpaid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;

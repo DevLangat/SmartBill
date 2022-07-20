@@ -78,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1546, 656);
+            this.panel1.Size = new System.Drawing.Size(964, 656);
             this.panel1.TabIndex = 3;
             // 
             // btnPreview
@@ -405,7 +405,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1552, 723);
+            this.ClientSize = new System.Drawing.Size(970, 723);
             this.Controls.Add(this.panel1);
             this.Name = "frmInvoiceReport";
             this.Text = "frmInvoiceReport";

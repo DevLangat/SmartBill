@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="sleekbillModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="sleekbillModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'sleekbill.dbo.alias_email' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="alias_email">
+          <Property Name="id" Type="int" />
+          <Property Name="client_id" Type="float" />
+          <Property Name="alias" Type="nvarchar" MaxLength="100" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
         <EntityType Name="bill_payments">
           <Key>
             <PropertyRef Name="id" />
@@ -674,11 +682,11 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
-            <PropertyRef Name="product_id" />
+            <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="product_id" Type="int" Nullable="false" />
-          <Property Name="invoice_id" Type="int" />
+          <Property Name="invoice_id" Type="int" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="description" Type="nvarchar(max)" />
           <Property Name="measuring_unit" Type="nvarchar(max)" />
@@ -695,91 +703,32 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Name="cess_value" Type="money" />
           <Property Name="discount_type" Type="int" />
           <Property Name="discount_value" Type="money" />
+          <Property Name="deleted" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="invoices">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="number" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="issue_date" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="due_date" Type="nvarchar(max)" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="number" Type="bigint" Nullable="false" />
+          <Property Name="issue_date" Type="datetime" Nullable="false" />
+          <Property Name="due_date" Type="datetime" />
           <Property Name="company_details_id" Type="int" />
-          <Property Name="client_id" Type="int" />
-          <Property Name="client_name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="client_code" Type="nvarchar(max)" />
-          <Property Name="client_email" Type="nvarchar(max)" />
-          <Property Name="client_telephone" Type="nvarchar(max)" />
-          <Property Name="client_contact" Type="nvarchar(max)" />
-          <Property Name="client_billing_address" Type="nvarchar(max)" />
-          <Property Name="client_billing_zip" Type="nvarchar(max)" />
-          <Property Name="client_billing_city" Type="nvarchar(max)" />
-          <Property Name="client_shipping_address" Type="nvarchar(max)" />
-          <Property Name="client_shipping_zip" Type="nvarchar(max)" />
-          <Property Name="client_shipping_city" Type="nvarchar(max)" />
+          <Property Name="client_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="client_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="client_code" Type="nvarchar" MaxLength="50" />
           <Property Name="is_paid" Type="bit" />
           <Property Name="is_draft" Type="bit" />
-          <Property Name="total_no_tax" Type="nvarchar(max)" />
-          <Property Name="total_tax" Type="nvarchar(max)" />
-          <Property Name="total_all" Type="nvarchar(max)" />
-          <Property Name="internal_notes" Type="nvarchar(max)" />
-          <Property Name="invoice_notes" Type="nvarchar(max)" />
-          <Property Name="deleted" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="color" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="po_number" Type="nvarchar(max)" />
-          <Property Name="logo" Type="nvarchar(max)" />
-          <Property Name="page_size_id" Type="int" />
-          <Property Name="client_billing_state_id" Type="int" />
-          <Property Name="client_shipping_state_id" Type="int" />
-          <Property Name="pay_email" Type="nvarchar(max)" />
-          <Property Name="pay_online" Type="bit" />
-          <Property Name="flag_id" Type="int" />
-          <Property Name="layout" Type="int" Nullable="false" />
-          <Property Name="discount" Type="nvarchar(max)" />
-          <Property Name="sent" Type="bit" />
-          <Property Name="print_id" Type="int" Nullable="false" />
-          <Property Name="type" Type="nvarchar(max)" />
-          <Property Name="fiscal_year" Type="nvarchar(max)" />
-          <Property Name="number_prefix" Type="nvarchar(max)" />
-          <Property Name="second_number" Type="nvarchar(max)" />
-          <Property Name="excise_duty" Type="nvarchar(max)" />
-          <Property Name="use_transport" Type="bit" />
+          <Property Name="total_no_tax" Type="nvarchar" MaxLength="50" />
+          <Property Name="total_tax" Type="nvarchar" MaxLength="50" />
+          <Property Name="total_all" Type="nvarchar" MaxLength="50" />
+          <Property Name="invoice_notes" Type="nvarchar" MaxLength="50" />
+          <Property Name="deleted" Type="nvarchar" MaxLength="50" />
+          <Property Name="po_number" Type="nvarchar" MaxLength="50" />
           <Property Name="delivery_note" Type="nvarchar(max)" />
-          <Property Name="vehicle_number" Type="nvarchar(max)" />
-          <Property Name="esugam" Type="nvarchar(max)" />
-          <Property Name="lr_number" Type="nvarchar(max)" />
-          <Property Name="shipping_method" Type="nvarchar(max)" />
-          <Property Name="excise_cess" Type="nvarchar(max)" />
           <Property Name="cancelled" Type="bit" />
-          <Property Name="quantity_no_decimal" Type="bit" />
-          <Property Name="product_inline_discount" Type="bit" />
-          <Property Name="esugam_label" Type="int" Nullable="false" />
-          <Property Name="po_date" Type="nvarchar(max)" />
-          <Property Name="gst_type" Type="nvarchar" MaxLength="5" />
-          <Property Name="reverse_charges" Type="bit" />
-          <Property Name="supply_state_id" Type="int" />
-          <Property Name="discount_all" Type="nvarchar" MaxLength="15" />
-          <Property Name="lr_label" Type="int" Nullable="false" />
-          <Property Name="transporter_id" Type="nvarchar" MaxLength="40" />
-          <Property Name="client_shipping_name" Type="nvarchar" MaxLength="255" />
-          <Property Name="transporter_name" Type="nvarchar" MaxLength="40" />
-          <Property Name="transporter_gstin" Type="nvarchar" MaxLength="40" />
-          <Property Name="show_cess" Type="bit" />
-          <Property Name="shipping_tax_id" Type="int" />
-          <Property Name="ship_bill_distance" Type="nvarchar" MaxLength="25" />
-          <Property Name="exchange_country" Type="nvarchar" MaxLength="100" />
-          <Property Name="exchange_curr_id" Type="int" />
-          <Property Name="exchange_export_type" Type="nvarchar" MaxLength="100" />
-          <Property Name="exchange_rate" Type="nvarchar" MaxLength="25" />
-          <Property Name="gst_port_code_id" Type="int" />
-          <Property Name="ship_bill_number" Type="nvarchar" MaxLength="60" />
-          <Property Name="ship_bill_date" Type="nvarchar" MaxLength="12" />
-          <Property Name="total_quantity" Type="nvarchar" MaxLength="25" />
-          <Property Name="total_measuring_unit" Type="nvarchar" MaxLength="100" />
-          <Property Name="kerala_cess" Type="bit" />
-          <Property Name="tax_source" Type="nvarchar" MaxLength="25" />
-          <Property Name="tax_source_type" Type="int" Nullable="false" />
-          <Property Name="tax_source_enabled" Type="bit" />
+          <Property Name="Quantity" Type="float" />
+          <Property Name="po_date" Type="datetime" />
         </EntityType>
         <EntityType Name="packing_slip_conversions">
           <Key>
@@ -1030,6 +979,12 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Name="ac_deduct_refunds" Type="nvarchar(max)" />
           <Property Name="ac_education_cess" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'sleekbill.dbo.sqlite_sequence' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="sqlite_sequence">
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="seq" Type="nvarchar(max)" />
+        </EntityType>-->
         <EntityType Name="states">
           <Key>
             <PropertyRef Name="id" />
@@ -1142,6 +1097,9 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Name="year" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
         <Function Name="GetClientData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getinvoicedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inv" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="sleekbillModelStoreContainer">
           <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="bill_products" EntityType="Self.bill_products" Schema="dbo" store:Type="Tables" />
@@ -1199,7 +1157,8 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
     FROM [dbo].[config] AS [config]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sleekbillModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1859,11 +1818,11 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
-            <PropertyRef Name="product_id" />
+            <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="Int32" Nullable="false" />
-          <Property Name="invoice_id" Type="Int32" />
+          <Property Name="invoice_id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1880,91 +1839,32 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Name="cess_value" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="discount_type" Type="Int32" />
           <Property Name="discount_value" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="deleted" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="invoice">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="issue_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="due_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="number" Type="Int64" Nullable="false" />
+          <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="due_date" Type="DateTime" Precision="3" />
           <Property Name="company_details_id" Type="Int32" />
-          <Property Name="client_id" Type="Int32" />
-          <Property Name="client_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="client_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_billing_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_shipping_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_shipping_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="client_shipping_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="client_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="client_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="client_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="is_paid" Type="Boolean" />
           <Property Name="is_draft" Type="Boolean" />
-          <Property Name="total_no_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="total_tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="total_all" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="internal_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="invoice_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="po_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="page_size_id" Type="Int32" />
-          <Property Name="client_billing_state_id" Type="Int32" />
-          <Property Name="client_shipping_state_id" Type="Int32" />
-          <Property Name="pay_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="pay_online" Type="Boolean" />
-          <Property Name="flag_id" Type="Int32" />
-          <Property Name="layout" Type="Int32" Nullable="false" />
-          <Property Name="discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="sent" Type="Boolean" />
-          <Property Name="print_id" Type="Int32" Nullable="false" />
-          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="fiscal_year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="number_prefix" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="second_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="excise_duty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="use_transport" Type="Boolean" />
+          <Property Name="total_no_tax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="total_tax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="total_all" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invoice_notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="po_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="delivery_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="vehicle_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="esugam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="lr_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="shipping_method" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="excise_cess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="cancelled" Type="Boolean" />
-          <Property Name="quantity_no_decimal" Type="Boolean" />
-          <Property Name="product_inline_discount" Type="Boolean" />
-          <Property Name="esugam_label" Type="Int32" Nullable="false" />
-          <Property Name="po_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="gst_type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="reverse_charges" Type="Boolean" />
-          <Property Name="supply_state_id" Type="Int32" />
-          <Property Name="discount_all" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="lr_label" Type="Int32" Nullable="false" />
-          <Property Name="transporter_id" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="client_shipping_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="transporter_name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="transporter_gstin" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="show_cess" Type="Boolean" />
-          <Property Name="shipping_tax_id" Type="Int32" />
-          <Property Name="ship_bill_distance" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="exchange_country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="exchange_curr_id" Type="Int32" />
-          <Property Name="exchange_export_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="exchange_rate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="gst_port_code_id" Type="Int32" />
-          <Property Name="ship_bill_number" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="ship_bill_date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
-          <Property Name="total_quantity" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="total_measuring_unit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="kerala_cess" Type="Boolean" />
-          <Property Name="tax_source" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="tax_source_type" Type="Int32" Nullable="false" />
-          <Property Name="tax_source_enabled" Type="Boolean" />
+          <Property Name="Quantity" Type="Double" />
+          <Property Name="po_date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="packing_slip_conversions">
           <Key>
@@ -2387,6 +2287,9 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <EntitySet Name="versions" EntityType="Self.version" />
           <EntitySet Name="configs" EntityType="Self.config" />
           <FunctionImport Name="GetClientData" ReturnType="Collection(sleekbillModel.GetClientData_Result)" />
+          <FunctionImport Name="sp_getinvoicedetails" ReturnType="Collection(sleekbillModel.sp_getinvoicedetails_Result)">
+            <Parameter Name="inv" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetClientData_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
@@ -2404,6 +2307,30 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Type="String" Name="deleted" Nullable="false" />
           <Property Type="String" Name="vat_number" Nullable="true" />
           <Property Type="Int32" Name="currency_id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getinvoicedetails_Result">
+          <Property Type="Int64" Name="number" Nullable="false" />
+          <Property Type="DateTime" Name="issue_date" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="due_date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="product_name" Nullable="false" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="Double" Name="quantity" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="PAmount" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="pTax" Nullable="true" Precision="19" />
+          <Property Type="String" Name="client_name" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="client_billingaddress" Nullable="true" />
+          <Property Type="String" Name="billing_city" Nullable="true" />
+          <Property Type="String" Name="client_phone" Nullable="true" />
+          <Property Type="String" Name="company_address" Nullable="true" />
+          <Property Type="String" Name="company_county" Nullable="true" />
+          <Property Type="String" Name="company_email" Nullable="true" />
+          <Property Type="String" Name="company_name" Nullable="true" />
+          <Property Type="String" Name="company_pin" Nullable="true" />
+          <Property Type="String" Name="company_zip" Nullable="true" />
+          <Property Type="String" Name="company_phone" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3112,6 +3039,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
                 <ScalarProperty Name="cess_value" ColumnName="cess_value" />
                 <ScalarProperty Name="discount_type" ColumnName="discount_type" />
                 <ScalarProperty Name="discount_value" ColumnName="discount_value" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3126,78 +3054,18 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
                 <ScalarProperty Name="client_id" ColumnName="client_id" />
                 <ScalarProperty Name="client_name" ColumnName="client_name" />
                 <ScalarProperty Name="client_code" ColumnName="client_code" />
-                <ScalarProperty Name="client_email" ColumnName="client_email" />
-                <ScalarProperty Name="client_telephone" ColumnName="client_telephone" />
-                <ScalarProperty Name="client_contact" ColumnName="client_contact" />
-                <ScalarProperty Name="client_billing_address" ColumnName="client_billing_address" />
-                <ScalarProperty Name="client_billing_zip" ColumnName="client_billing_zip" />
-                <ScalarProperty Name="client_billing_city" ColumnName="client_billing_city" />
-                <ScalarProperty Name="client_shipping_address" ColumnName="client_shipping_address" />
-                <ScalarProperty Name="client_shipping_zip" ColumnName="client_shipping_zip" />
-                <ScalarProperty Name="client_shipping_city" ColumnName="client_shipping_city" />
                 <ScalarProperty Name="is_paid" ColumnName="is_paid" />
                 <ScalarProperty Name="is_draft" ColumnName="is_draft" />
                 <ScalarProperty Name="total_no_tax" ColumnName="total_no_tax" />
                 <ScalarProperty Name="total_tax" ColumnName="total_tax" />
                 <ScalarProperty Name="total_all" ColumnName="total_all" />
-                <ScalarProperty Name="internal_notes" ColumnName="internal_notes" />
                 <ScalarProperty Name="invoice_notes" ColumnName="invoice_notes" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
-                <ScalarProperty Name="color" ColumnName="color" />
                 <ScalarProperty Name="po_number" ColumnName="po_number" />
-                <ScalarProperty Name="logo" ColumnName="logo" />
-                <ScalarProperty Name="page_size_id" ColumnName="page_size_id" />
-                <ScalarProperty Name="client_billing_state_id" ColumnName="client_billing_state_id" />
-                <ScalarProperty Name="client_shipping_state_id" ColumnName="client_shipping_state_id" />
-                <ScalarProperty Name="pay_email" ColumnName="pay_email" />
-                <ScalarProperty Name="pay_online" ColumnName="pay_online" />
-                <ScalarProperty Name="flag_id" ColumnName="flag_id" />
-                <ScalarProperty Name="layout" ColumnName="layout" />
-                <ScalarProperty Name="discount" ColumnName="discount" />
-                <ScalarProperty Name="sent" ColumnName="sent" />
-                <ScalarProperty Name="print_id" ColumnName="print_id" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
-                <ScalarProperty Name="number_prefix" ColumnName="number_prefix" />
-                <ScalarProperty Name="second_number" ColumnName="second_number" />
-                <ScalarProperty Name="excise_duty" ColumnName="excise_duty" />
-                <ScalarProperty Name="use_transport" ColumnName="use_transport" />
                 <ScalarProperty Name="delivery_note" ColumnName="delivery_note" />
-                <ScalarProperty Name="vehicle_number" ColumnName="vehicle_number" />
-                <ScalarProperty Name="esugam" ColumnName="esugam" />
-                <ScalarProperty Name="lr_number" ColumnName="lr_number" />
-                <ScalarProperty Name="shipping_method" ColumnName="shipping_method" />
-                <ScalarProperty Name="excise_cess" ColumnName="excise_cess" />
                 <ScalarProperty Name="cancelled" ColumnName="cancelled" />
-                <ScalarProperty Name="quantity_no_decimal" ColumnName="quantity_no_decimal" />
-                <ScalarProperty Name="product_inline_discount" ColumnName="product_inline_discount" />
-                <ScalarProperty Name="esugam_label" ColumnName="esugam_label" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="po_date" ColumnName="po_date" />
-                <ScalarProperty Name="gst_type" ColumnName="gst_type" />
-                <ScalarProperty Name="reverse_charges" ColumnName="reverse_charges" />
-                <ScalarProperty Name="supply_state_id" ColumnName="supply_state_id" />
-                <ScalarProperty Name="discount_all" ColumnName="discount_all" />
-                <ScalarProperty Name="lr_label" ColumnName="lr_label" />
-                <ScalarProperty Name="transporter_id" ColumnName="transporter_id" />
-                <ScalarProperty Name="client_shipping_name" ColumnName="client_shipping_name" />
-                <ScalarProperty Name="transporter_name" ColumnName="transporter_name" />
-                <ScalarProperty Name="transporter_gstin" ColumnName="transporter_gstin" />
-                <ScalarProperty Name="show_cess" ColumnName="show_cess" />
-                <ScalarProperty Name="shipping_tax_id" ColumnName="shipping_tax_id" />
-                <ScalarProperty Name="ship_bill_distance" ColumnName="ship_bill_distance" />
-                <ScalarProperty Name="exchange_country" ColumnName="exchange_country" />
-                <ScalarProperty Name="exchange_curr_id" ColumnName="exchange_curr_id" />
-                <ScalarProperty Name="exchange_export_type" ColumnName="exchange_export_type" />
-                <ScalarProperty Name="exchange_rate" ColumnName="exchange_rate" />
-                <ScalarProperty Name="gst_port_code_id" ColumnName="gst_port_code_id" />
-                <ScalarProperty Name="ship_bill_number" ColumnName="ship_bill_number" />
-                <ScalarProperty Name="ship_bill_date" ColumnName="ship_bill_date" />
-                <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
-                <ScalarProperty Name="total_measuring_unit" ColumnName="total_measuring_unit" />
-                <ScalarProperty Name="kerala_cess" ColumnName="kerala_cess" />
-                <ScalarProperty Name="tax_source" ColumnName="tax_source" />
-                <ScalarProperty Name="tax_source_type" ColumnName="tax_source_type" />
-                <ScalarProperty Name="tax_source_enabled" ColumnName="tax_source_enabled" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3609,6 +3477,34 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
                 <ScalarProperty Name="vat_number" ColumnName="vat_number" />
                 <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getinvoicedetails" FunctionName="sleekbillModel.Store.sp_getinvoicedetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sleekbillModel.sp_getinvoicedetails_Result">
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="due_date" ColumnName="due_date" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+                <ScalarProperty Name="pTax" ColumnName="pTax" />
+                <ScalarProperty Name="client_name" ColumnName="client_name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+                <ScalarProperty Name="company_address" ColumnName="company_address" />
+                <ScalarProperty Name="company_county" ColumnName="company_county" />
+                <ScalarProperty Name="company_email" ColumnName="company_email" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="company_pin" ColumnName="company_pin" />
+                <ScalarProperty Name="company_zip" ColumnName="company_zip" />
+                <ScalarProperty Name="company_phone" ColumnName="company_phone" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

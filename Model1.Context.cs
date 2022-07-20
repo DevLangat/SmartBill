@@ -80,5 +80,14 @@ namespace SmartBill
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetClientData_Result>("GetClientData");
         }
+    
+        public virtual ObjectResult<sp_getinvoicedetails_Result> sp_getinvoicedetails(Nullable<int> inv)
+        {
+            var invParameter = inv.HasValue ?
+                new ObjectParameter("inv", inv) :
+                new ObjectParameter("inv", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoicedetails_Result>("sp_getinvoicedetails", invParameter);
+        }
     }
 }
