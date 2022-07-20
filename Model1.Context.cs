@@ -75,19 +75,16 @@ namespace SmartBill
         public virtual DbSet<vendor> vendors { get; set; }
         public virtual DbSet<version> versions { get; set; }
         public virtual DbSet<config> configs { get; set; }
+        public virtual DbSet<tmpinvdata> tmpinvdatas { get; set; }
     
-        public virtual ObjectResult<GetClientData_Result> GetClientData()
+        public virtual ObjectResult<sp_getinvoices_Result> sp_getinvoices()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetClientData_Result>("GetClientData");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoices_Result>("sp_getinvoices");
         }
     
-        public virtual ObjectResult<sp_getinvoicedetails_Result> sp_getinvoicedetails(Nullable<int> inv)
+        public virtual int sp_getinvoicesforpayment()
         {
-            var invParameter = inv.HasValue ?
-                new ObjectParameter("inv", inv) :
-                new ObjectParameter("inv", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoicedetails_Result>("sp_getinvoicedetails", invParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_getinvoicesforpayment");
         }
     }
 }

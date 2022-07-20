@@ -49,24 +49,23 @@ namespace SmartBill
                 decimal price= Convert.ToDecimal(txtPrice.Text);
                 double quantity=Convert.ToDouble(txtQuantity.Text);
                 var context = new sleekbillEntities();
-                var products = new invoice_products()
-              
+                var products = new product()              
                 {
-                    product_id = prodid,
+                    id = prodid,
                     name = txtPrdctName.Text,
                     description = txtDesc.Text,
                     price = price,
                     tax_id = taxid,
-                    quantity = quantity,
+                    //quantity = quantity,
                     type=cbType.Text,   
                     measuring_unit=cbUOM.Text,
                   
 
                 };
 
-                context.invoice_products.Add(products);
-                var prod = (from sdetails in context.invoice_products
-                                     where sdetails.product_id == prodid
+                context.products.Add(products);
+                var prod = (from sdetails in context.products
+                                     where sdetails.id == prodid
                                      select new { sdetails.name }).ToList();
                 if (prod.Count == 1)
                 {
@@ -74,7 +73,6 @@ namespace SmartBill
 
                     context.SaveChanges();
                     MessageBox.Show("Product Details Updated Successfully", this.Text, MessageBoxButtons.OK);
-
 
                 }
                 else
@@ -97,11 +95,11 @@ namespace SmartBill
             try
             {
                 var context = new sleekbillEntities();
-                var Rcode = context.invoice_products.Select(p => p.product_id).DefaultIfEmpty(0).Max();
-                prodid = (int)Rcode;
+                var Rcode = context.products.Select(p => p.id).DefaultIfEmpty(0).Max();
+                prodid = (int)Rcode+1;
 
-                var clients = (from m in context.invoice_products
-                               select new { m.product_id, m.name, m.type }).ToList();
+                var clients = (from m in context.products
+                               select new { m.id, m.name, m.type }).ToList();
                 dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.DataSource = clients;
                 clear();
@@ -151,5 +149,6 @@ namespace SmartBill
 
             }
         }
+
     }
 }

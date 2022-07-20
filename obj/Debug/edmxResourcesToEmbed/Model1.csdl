@@ -160,7 +160,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -642,16 +642,16 @@
   </EntityType>
   <EntityType Name="invoice_payments">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="payment_id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="payment_id" Type="Int32" />
-    <Property Name="invoice_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="payment_id" Type="Int64" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" />
     <Property Name="amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="deleted" Type="Boolean" Nullable="false" />
     <Property Name="credit_note_id" Type="Int32" />
-    <Property Name="payment_document_id" Type="Int32" />
-    <Property Name="Receiptno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="payment_document_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Receiptno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="invoice_products">
@@ -815,17 +815,17 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="measuring_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="measuring_unit" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="has_tax_included" Type="Boolean" Nullable="false" />
     <Property Name="tax_id" Type="Int32" />
-    <Property Name="deleted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="sku" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="purchase_rate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="deleted" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sku" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="purchase_rate" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="hsn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="sac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="cess_percentage" Type="Int32" Nullable="false" />
@@ -1075,6 +1075,21 @@
     <Property Name="KEY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
+  <EntityType Name="tmpinvdata">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="number" />
+      <PropertyRef Name="issue_date" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="InvoiceValue" Type="Double" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="client_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="number" Type="Int64" Nullable="false" />
+    <Property Name="due_date" Type="DateTime" Precision="3" />
+    <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
   <EntityContainer Name="sleekbillEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="bill_payments" EntityType="Self.bill_payments" />
     <EntitySet Name="bill_products" EntityType="Self.bill_products" />
@@ -1124,50 +1139,17 @@
     <EntitySet Name="vendors" EntityType="Self.vendor" />
     <EntitySet Name="versions" EntityType="Self.version" />
     <EntitySet Name="configs" EntityType="Self.config" />
-    <FunctionImport Name="GetClientData" ReturnType="Collection(sleekbillModel.GetClientData_Result)" />
-    <FunctionImport Name="sp_getinvoicedetails" ReturnType="Collection(sleekbillModel.sp_getinvoicedetails_Result)">
-      <Parameter Name="inv" Mode="In" Type="Int32" />
-    </FunctionImport>
+    <EntitySet Name="tmpinvdatas" EntityType="Self.tmpinvdata" />
+    <FunctionImport Name="sp_getinvoices" ReturnType="Collection(sleekbillModel.sp_getinvoices_Result)" />
+    <FunctionImport Name="sp_getinvoicesforpayment" />
   </EntityContainer>
-  <ComplexType Name="GetClientData_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="name" Nullable="false" />
-    <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="email" Nullable="true" />
-    <Property Type="String" Name="telephone" Nullable="true" />
-    <Property Type="String" Name="billing_address" Nullable="true" />
-    <Property Type="String" Name="billing_zip" Nullable="true" />
-    <Property Type="String" Name="billing_city" Nullable="true" />
-    <Property Type="Int32" Name="billing_state_id" Nullable="true" />
-    <Property Type="Int32" Name="shipping_state_id" Nullable="true" />
-    <Property Type="String" Name="details" Nullable="true" />
-    <Property Type="String" Name="details_public" Nullable="true" />
-    <Property Type="String" Name="deleted" Nullable="false" />
-    <Property Type="String" Name="vat_number" Nullable="true" />
-    <Property Type="Int32" Name="currency_id" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_getinvoicedetails_Result">
-    <Property Type="Int64" Name="number" Nullable="false" />
-    <Property Type="DateTime" Name="issue_date" Nullable="false" Precision="23" />
-    <Property Type="DateTime" Name="due_date" Nullable="true" Precision="23" />
-    <Property Type="String" Name="product_name" Nullable="false" />
-    <Property Type="Int32" Name="product_id" Nullable="false" />
-    <Property Type="Double" Name="quantity" Nullable="false" />
-    <Property Type="String" Name="type" Nullable="false" />
+  <ComplexType Name="sp_getinvoices_Result">
+    <Property Type="Int32" Name="No" Nullable="false" />
+    <Property Type="String" Name="Product" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
     <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
-    <Property Type="Decimal" Name="PAmount" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="pTax" Nullable="true" Precision="19" />
-    <Property Type="String" Name="client_name" Nullable="false" />
-    <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="client_billingaddress" Nullable="true" />
-    <Property Type="String" Name="billing_city" Nullable="true" />
-    <Property Type="String" Name="client_phone" Nullable="true" />
-    <Property Type="String" Name="company_address" Nullable="true" />
-    <Property Type="String" Name="company_county" Nullable="true" />
-    <Property Type="String" Name="company_email" Nullable="true" />
-    <Property Type="String" Name="company_name" Nullable="true" />
-    <Property Type="String" Name="company_pin" Nullable="true" />
-    <Property Type="String" Name="company_zip" Nullable="true" />
-    <Property Type="String" Name="company_phone" Nullable="true" />
+    <Property Type="Double" Name="Value" Nullable="true" />
+    <Property Type="Double" Name="Tax" Nullable="false" />
   </ComplexType>
 </Schema>

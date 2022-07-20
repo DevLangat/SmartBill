@@ -33,14 +33,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.96.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.96.0\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -81,6 +94,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bill.cs">
@@ -101,6 +115,7 @@
     <Compile Include="client_vendor_conversions.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="common.cs" />
     <Compile Include="company_details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -161,32 +176,11 @@
     <Compile Include="frmAddPayment.Designer.cs">
       <DependentUpon>frmAddPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInvoiceReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmInvoiceReport.Designer.cs">
-      <DependentUpon>frmInvoiceReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmpreview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmpreview.Designer.cs">
       <DependentUpon>frmpreview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmsplashscreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmsplashscreen.Designer.cs">
-      <DependentUpon>frmsplashscreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmviewinvoices.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmviewinvoices.Designer.cs">
-      <DependentUpon>frmviewinvoices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GetClientData_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="gst_port_codes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -274,11 +268,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="invoices.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>invoices.xsd</DependentUpon>
-    </Compile>
     <Compile Include="purchase_order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -294,7 +283,7 @@
     <Compile Include="service_tax_services.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_getinvoicedetails_Result.cs">
+    <Compile Include="sp_getinvoices_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -316,6 +305,9 @@
     <Compile Include="tip.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tmpinvdata.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="vendor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -325,17 +317,8 @@
     <EmbeddedResource Include="frmAddPayment.resx">
       <DependentUpon>frmAddPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInvoiceReport.resx">
-      <DependentUpon>frmInvoiceReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmpreview.resx">
       <DependentUpon>frmpreview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmsplashscreen.resx">
-      <DependentUpon>frmsplashscreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmviewinvoices.resx">
-      <DependentUpon>frmviewinvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -367,7 +350,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports\InvoiceReport.rdlc" />
+    <EmbeddedResource Include="Reports\Invoice.rdlc" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -385,17 +368,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="invoices.xsc">
-      <DependentUpon>invoices.xsd</DependentUpon>
-    </None>
-    <None Include="invoices.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>invoices.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="invoices.xss">
-      <DependentUpon>invoices.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

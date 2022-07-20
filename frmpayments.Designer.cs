@@ -40,13 +40,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.cbPayType = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -64,6 +57,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnexport = new MaterialSkin.Controls.MaterialButton();
+            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.due_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -106,6 +107,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnexport);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.dataGridView1);
@@ -141,7 +143,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 435);
+            this.label5.Location = new System.Drawing.Point(9, 444);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 14;
@@ -168,12 +170,12 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
+            this.No,
+            this.number,
+            this.due_date,
+            this.InvoiceValue,
+            this.Balance,
+            this.Paid,
             this.Column8});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -191,58 +193,10 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(854, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(854, 284);
             this.dataGridView1.TabIndex = 13;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Document Number";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Due Date";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Document Amount";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Amount Due";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Payment Amount";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 150;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Action";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column8.ToolTipText = "Edit";
-            this.Column8.Width = 80;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // materialDivider1
             // 
@@ -298,6 +252,7 @@
             this.cbClients.Name = "cbClients";
             this.cbClients.Size = new System.Drawing.Size(147, 21);
             this.cbClients.TabIndex = 4;
+            this.cbClients.SelectedIndexChanged += new System.EventHandler(this.cbClients_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -401,6 +356,82 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Document Data";
             // 
+            // btnexport
+            // 
+            this.btnexport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnexport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnexport.Depth = 0;
+            this.btnexport.HighEmphasis = true;
+            this.btnexport.Icon = null;
+            this.btnexport.Location = new System.Drawing.Point(12, 93);
+            this.btnexport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnexport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnexport.Name = "btnexport";
+            this.btnexport.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnexport.Size = new System.Drawing.Size(147, 36);
+            this.btnexport.TabIndex = 16;
+            this.btnexport.Text = "Export to Excel";
+            this.btnexport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnexport.UseAccentColor = false;
+            this.btnexport.UseVisualStyleBackColor = true;
+            this.btnexport.Click += new System.EventHandler(this.btnexport_Click);
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Action";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column8.ToolTipText = "Edit";
+            this.Column8.Width = 80;
+            // 
+            // Paid
+            // 
+            this.Paid.DataPropertyName = "Paid";
+            this.Paid.HeaderText = "Payment Amount";
+            this.Paid.Name = "Paid";
+            this.Paid.ReadOnly = true;
+            this.Paid.Width = 150;
+            // 
+            // Balance
+            // 
+            this.Balance.DataPropertyName = "Balance";
+            this.Balance.HeaderText = "Amount Due";
+            this.Balance.Name = "Balance";
+            this.Balance.ReadOnly = true;
+            // 
+            // InvoiceValue
+            // 
+            this.InvoiceValue.DataPropertyName = "InvoiceValue";
+            this.InvoiceValue.HeaderText = "Document Amount";
+            this.InvoiceValue.Name = "InvoiceValue";
+            this.InvoiceValue.ReadOnly = true;
+            this.InvoiceValue.Width = 150;
+            // 
+            // due_date
+            // 
+            this.due_date.DataPropertyName = "due_date";
+            this.due_date.HeaderText = "Due Date";
+            this.due_date.Name = "due_date";
+            this.due_date.ReadOnly = true;
+            // 
+            // number
+            // 
+            this.number.DataPropertyName = "number";
+            this.number.HeaderText = "Document Number";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.Width = 150;
+            // 
+            // No
+            // 
+            this.No.DataPropertyName = "id";
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // frmpayments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,6 +443,7 @@
             this.Name = "frmpayments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payments";
+            this.Load += new System.EventHandler(this.frmpayments_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -446,14 +478,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
+        private MaterialSkin.Controls.MaterialButton btnexport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn due_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paid;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
     }
 }

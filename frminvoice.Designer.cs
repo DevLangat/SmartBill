@@ -44,28 +44,28 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtAmountPaid = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbTax = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboproduct = new System.Windows.Forms.ComboBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dpDueDate = new System.Windows.Forms.DateTimePicker();
             this.dpIssueDate = new System.Windows.Forms.DateTimePicker();
             this.cbClients = new System.Windows.Forms.ComboBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtdocnumber = new System.Windows.Forms.TextBox();
+            this.txtponumber = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -127,18 +127,18 @@
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.cbTax);
-            this.panel3.Controls.Add(this.comboBox3);
+            this.panel3.Controls.Add(this.cboproduct);
             this.panel3.Controls.Add(this.materialDivider1);
             this.panel3.Controls.Add(this.comboBox2);
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.dpDueDate);
             this.panel3.Controls.Add(this.dpIssueDate);
             this.panel3.Controls.Add(this.cbClients);
-            this.panel3.Controls.Add(this.txtAddress);
+            this.panel3.Controls.Add(this.txtdesc);
             this.panel3.Controls.Add(this.txtUnitPrice);
             this.panel3.Controls.Add(this.txtQuantity);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.txtPhone);
+            this.panel3.Controls.Add(this.txtdocnumber);
+            this.panel3.Controls.Add(this.txtponumber);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label9);
@@ -183,7 +183,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Cash",
@@ -242,14 +241,14 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
+            this.No,
+            this.Product,
+            this.Description,
+            this.Quantity,
+            this.Price,
+            this.Value,
+            this.tax,
+            this.Action});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -268,58 +267,60 @@
             this.dataGridView1.Size = new System.Drawing.Size(846, 170);
             this.dataGridView1.TabIndex = 13;
             // 
-            // Column1
+            // No
             // 
-            this.Column1.HeaderText = "No";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.No.DataPropertyName = "No";
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
             // 
-            // Column2
+            // Product
             // 
-            this.Column2.HeaderText = "Product/Service";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.Product.DataPropertyName = "Product";
+            this.Product.HeaderText = "Product";
+            this.Product.Name = "Product";
+            this.Product.ReadOnly = true;
             // 
-            // Column3
+            // Description
             // 
-            this.Column3.HeaderText = "Description";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
-            // Column4
+            // Quantity
             // 
-            this.Column4.HeaderText = "QTY";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             // 
-            // Column5
+            // Price
             // 
-            this.Column5.HeaderText = "Unit Price";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
-            // Column6
+            // Value
             // 
-            this.Column6.HeaderText = "Value";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.Value.DataPropertyName = "Value";
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
             // 
-            // Column7
+            // tax
             // 
-            this.Column7.HeaderText = "Tax";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.tax.DataPropertyName = "tax";
+            this.tax.HeaderText = "Tax";
+            this.tax.Name = "tax";
+            this.tax.ReadOnly = true;
             // 
-            // Column8
+            // Action
             // 
-            this.Column8.HeaderText = "Action";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column8.ToolTipText = "Edit";
-            this.Column8.Width = 80;
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
             // 
             // btnAdd
             // 
@@ -332,6 +333,7 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbTax
             // 
@@ -341,13 +343,14 @@
             this.cbTax.Size = new System.Drawing.Size(121, 21);
             this.cbTax.TabIndex = 11;
             // 
-            // comboBox3
+            // cboproduct
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(19, 169);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(175, 21);
-            this.comboBox3.TabIndex = 10;
+            this.cboproduct.FormattingEnabled = true;
+            this.cboproduct.Location = new System.Drawing.Point(19, 169);
+            this.cboproduct.Name = "cboproduct";
+            this.cboproduct.Size = new System.Drawing.Size(175, 21);
+            this.cboproduct.TabIndex = 10;
+            this.cboproduct.SelectedIndexChanged += new System.EventHandler(this.cboproduct_SelectedIndexChanged);
             // 
             // materialDivider1
             // 
@@ -362,7 +365,6 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(657, 53);
             this.comboBox2.Name = "comboBox2";
@@ -402,12 +404,12 @@
             this.cbClients.Size = new System.Drawing.Size(147, 21);
             this.cbClients.TabIndex = 4;
             // 
-            // txtAddress
+            // txtdesc
             // 
-            this.txtAddress.Location = new System.Drawing.Point(217, 169);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(117, 20);
-            this.txtAddress.TabIndex = 1;
+            this.txtdesc.Location = new System.Drawing.Point(217, 169);
+            this.txtdesc.Name = "txtdesc";
+            this.txtdesc.Size = new System.Drawing.Size(117, 20);
+            this.txtdesc.TabIndex = 1;
             // 
             // txtUnitPrice
             // 
@@ -423,19 +425,19 @@
             this.txtQuantity.Size = new System.Drawing.Size(105, 20);
             this.txtQuantity.TabIndex = 1;
             // 
-            // textBox1
+            // txtdocnumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(394, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtdocnumber.Location = new System.Drawing.Point(394, 23);
+            this.txtdocnumber.Name = "txtdocnumber";
+            this.txtdocnumber.Size = new System.Drawing.Size(143, 20);
+            this.txtdocnumber.TabIndex = 1;
             // 
-            // txtPhone
+            // txtponumber
             // 
-            this.txtPhone.Location = new System.Drawing.Point(394, 62);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(143, 20);
-            this.txtPhone.TabIndex = 1;
+            this.txtponumber.Location = new System.Drawing.Point(394, 62);
+            this.txtponumber.Name = "txtponumber";
+            this.txtponumber.Size = new System.Drawing.Size(143, 20);
+            this.txtponumber.TabIndex = 1;
             // 
             // label13
             // 
@@ -496,9 +498,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(249, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 13);
+            this.label8.Size = new System.Drawing.Size(96, 13);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Document Naumber";
+            this.label8.Text = "Document Number";
             // 
             // label10
             // 
@@ -588,18 +590,18 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cbTax;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboproduct;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dpDueDate;
         private System.Windows.Forms.DateTimePicker dpIssueDate;
         private System.Windows.Forms.ComboBox cbClients;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtdesc;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtdocnumber;
+        private System.Windows.Forms.TextBox txtponumber;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
@@ -614,19 +616,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
         private System.Windows.Forms.GroupBox gpPay;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtAmountPaid;
         private System.Windows.Forms.CheckBox chckPay;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tax;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Action;
     }
 }

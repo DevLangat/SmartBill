@@ -14,13 +14,13 @@ namespace SmartBill
     
     public partial class invoice_payments
     {
-        public int id { get; set; }
-        public Nullable<int> payment_id { get; set; }
-        public string invoice_id { get; set; }
+        public long id { get; set; }
+        public long payment_id { get; set; }
+        public Nullable<int> invoice_id { get; set; }
         public decimal amount { get; set; }
         public bool deleted { get; set; }
         public Nullable<int> credit_note_id { get; set; }
-        public Nullable<int> payment_document_id { get; set; }
+        public string payment_document_id { get; set; }
         public string Receiptno { get; set; }
         public string PaymentMode { get; set; }
     }

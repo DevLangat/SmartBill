@@ -18,13 +18,13 @@ namespace SmartBill
         public string name { get; set; }
         public string description { get; set; }
         public string measuring_unit { get; set; }
-        public string price { get; set; }
+        public decimal price { get; set; }
         public bool has_tax_included { get; set; }
         public Nullable<int> tax_id { get; set; }
         public string deleted { get; set; }
         public string type { get; set; }
         public string sku { get; set; }
-        public string purchase_rate { get; set; }
+        public Nullable<decimal> purchase_rate { get; set; }
         public string hsn { get; set; }
         public string sac { get; set; }
         public int cess_percentage { get; set; }
