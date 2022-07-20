@@ -33,5 +33,6 @@ namespace SmartBill
         public Nullable<decimal> cess_value { get; set; }
         public Nullable<int> discount_type { get; set; }
         public Nullable<decimal> discount_value { get; set; }
+        public string deleted { get; set; }
     }
 }

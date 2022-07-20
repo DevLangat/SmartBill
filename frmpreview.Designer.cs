@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btnsave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,15 +50,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1517, 853);
             this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(15, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(363, 828);
-            this.panel2.TabIndex = 0;
             // 
             // panel3
             // 
@@ -77,6 +69,16 @@
             this.reportViewer1.Size = new System.Drawing.Size(1118, 828);
             this.reportViewer1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel2.Controls.Add(this.btnsave);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(15, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(363, 828);
+            this.panel2.TabIndex = 0;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(147, 398);
@@ -86,6 +88,16 @@
             this.button1.Text = "Change Color";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnsave
+            // 
+            this.btnsave.Location = new System.Drawing.Point(56, 38);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 40);
+            this.btnsave.TabIndex = 1;
+            this.btnsave.Text = "Save Document";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // frmpreview
             // 
@@ -97,8 +109,8 @@
             this.Text = "Preview Invoice";
             this.Load += new System.EventHandler(this.frmpreview_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -111,5 +123,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button btnsave;
     }
 }

@@ -12,16 +12,15 @@ namespace SmartBill
     using System;
     using System.Collections.Generic;
     
-    public partial class invoice_payments
+    public partial class tmpinvdata
     {
         public long id { get; set; }
-        public long payment_id { get; set; }
-        public Nullable<int> invoice_id { get; set; }
-        public decimal amount { get; set; }
-        public bool deleted { get; set; }
-        public Nullable<int> credit_note_id { get; set; }
-        public string payment_document_id { get; set; }
-        public string Receiptno { get; set; }
-        public string PaymentMode { get; set; }
+        public Nullable<double> InvoiceValue { get; set; }
+        public Nullable<decimal> Paid { get; set; }
+        public Nullable<decimal> Balance { get; set; }
+        public string client_id { get; set; }
+        public long number { get; set; }
+        public Nullable<System.DateTime> due_date { get; set; }
+        public System.DateTime issue_date { get; set; }
     }
 }

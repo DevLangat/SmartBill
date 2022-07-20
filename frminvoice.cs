@@ -171,12 +171,13 @@ namespace SmartBill
                     return;
                 }
                 int taxid = Convert.ToInt32(cbTax.SelectedValue);
+
                 int docno = Convert.ToInt32(txtdocnumber.Text);
                 int prdid = Convert.ToInt32(cboproduct.SelectedValue);
                 string UoM = "";
                 decimal price = Convert.ToDecimal(txtUnitPrice.Text);
                 double quantity = Convert.ToDouble(txtQuantity.Text);
-                //int client_id = Convert.ToInt32(cbClients.SelectedValue);
+                string client_id =  cbClients.SelectedValue.ToString();
                 string fiscalyear = "";
                 string number = "0";
                 var context = new sleekbillEntities();
@@ -203,13 +204,48 @@ namespace SmartBill
                 {
                     context.Entry(invoicecreation).State = System.Data.Entity.EntityState.Modified;
                     context.SaveChanges();
-                    MessageBox.Show("Invoice Details Updated Successfully", this.Text, MessageBoxButtons.OK);
+                    //MessageBox.Show("Invoice Details Updated Successfully", this.Text, MessageBoxButtons.OK);
                 }
                 else
                 {
                     context.SaveChanges();
-                    MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
+                    //MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
                 }
+                var duedate = dpIssueDate.Value.AddDays(30);
+                //var quantity = Convert.ToDouble(txtQuantity.Text);
+                var invdetails = new invoice()
+
+                {
+                    
+                    number = docno,
+                    due_date = duedate,
+                    issue_date= dpIssueDate.Value.Date,
+                    client_id = client_id,
+                    client_name = cbClients.Text,
+                    total_no_tax = "1",
+                    total_tax = cbTax.Text,
+                    //fiscal_year = fiscalyear,            
+                    po_number=txtponumber.Text,
+                    Quantity=quantity,
+
+                };
+
+                context.invoices.Add(invdetails);
+                var inv = (from sdetails in context.invoices
+                            where sdetails.number == docno
+                            select new { sdetails.number }).ToList();
+                if (inv.Count == 1)
+                {
+                    context.Entry(invdetails).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                    //MessageBox.Show("Invoice Details Updated Successfully", this.Text, MessageBoxButtons.OK);
+                }
+                else
+                {
+                    context.SaveChanges();
+                    //MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
+                }
+                MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
                 generateinvoiceno();
             }
             catch (Exception err)
@@ -283,7 +319,7 @@ namespace SmartBill
             txtdesc.Text = "";
             txtAmountPaid.Text = "";
             //txtdocnumber.Text = "";
-            txtPhone.Text = "";
+            txtponumber.Text = "";
             txtQuantity.Text = "";
             txtUnitPrice.Text = "";
              

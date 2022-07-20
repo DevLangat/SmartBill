@@ -33,5 +33,17 @@ namespace SmartBill
                 panel2.BackColor = colorDialog1.Color;
             }
         }
+
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception err)
+            {
+
+            }
+        }
     }
 }
