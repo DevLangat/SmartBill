@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
+            this.lbl_id = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -78,6 +79,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lbl_id);
             this.tabPage1.Controls.Add(this.cbCounty);
             this.tabPage1.Controls.Add(this.cbCountry);
             this.tabPage1.Controls.Add(this.txtAddress);
@@ -110,6 +112,54 @@
             // cbCounty
             // 
             this.cbCounty.FormattingEnabled = true;
+            this.cbCounty.Items.AddRange(new object[] {
+            "Mombasa",
+            "Kwale",
+            "Kilifi",
+            "Tana River",
+            "Lamu",
+            "Taita Mak Taveta",
+            "Garissa",
+            "Wajir",
+            "Mandera",
+            "Marsabit",
+            "Isiolo",
+            "Meru",
+            "Tharaka-Nithi",
+            "Embu",
+            "Kitui",
+            "Machakos",
+            "Makueni",
+            "Nyandarua",
+            "Nyeri",
+            "Kirinyaga",
+            "Murang’a",
+            "Kiambu The",
+            "Turkana",
+            "West Pokot",
+            "Samburu",
+            "Trans-Nzoia",
+            "Uasin Gishu",
+            "Elgeyo-Marakwet",
+            "Nandi",
+            "Baringo",
+            "Laikipia",
+            "Nakuru",
+            "Narok",
+            "Kajiado",
+            "Kericho",
+            "Bomet",
+            "Kakamega",
+            "Vihiga",
+            "Bungoma",
+            "Busia",
+            "Siaya",
+            "Kisumu",
+            "Homa Bay",
+            "Migori",
+            "Kisii",
+            "Nyamira",
+            "Nairobi"});
             this.cbCounty.Location = new System.Drawing.Point(118, 272);
             this.cbCounty.Name = "cbCounty";
             this.cbCounty.Size = new System.Drawing.Size(164, 21);
@@ -483,6 +533,15 @@
             this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSave.UseAccentColor = false;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(180, 15);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(0, 13);
+            this.lbl_id.TabIndex = 9;
             // 
             // frmCompany
             // 
@@ -495,6 +554,7 @@
             this.Name = "frmCompany";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Company Details";
+            this.Load += new System.EventHandler(this.frmCompany_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -528,5 +588,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_id;
     }
 }

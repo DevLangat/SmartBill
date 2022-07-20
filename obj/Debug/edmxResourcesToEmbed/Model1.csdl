@@ -160,24 +160,24 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="county" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="state_id" Type="Int32" />
     <Property Name="currency_id" Type="Int32" />
     <Property Name="tin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="pan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="stn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="tax_label" Type="Int32" Nullable="false" />
+    <Property Name="tax_label" Type="Int32" />
     <Property Name="service_category_id" Type="Int32" />
-    <Property Name="gstin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="tax_id_label" Type="Int32" Nullable="false" />
     <Property Name="taxation_type" Type="Int32" Nullable="false" />
     <Property Name="signature_picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

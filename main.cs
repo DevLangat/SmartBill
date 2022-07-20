@@ -41,13 +41,13 @@ namespace SmartBill
         private void btnNewInvoice_Click(object sender, EventArgs e)
         {
             frminvoice inv=new frminvoice();
-            inv.ShowDialog();
+            inv.ShowDialog(this);
         }
 
         private void btnCompany_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmCompany frmCompany = new frmCompany();
-            frmCompany.ShowDialog();
+            frmCompany.ShowDialog(this);
         }
 
         private void btnNewProduct_Click(object sender, EventArgs e)
@@ -59,19 +59,25 @@ namespace SmartBill
         private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmpayments frmpayments = new frmpayments();
-            frmpayments.ShowDialog();
+            frmpayments.ShowDialog(this);
         }
 
         private void customerToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmcustomer frmCustomer = new frmcustomer();
-           frmCustomer.ShowDialog();
+           frmCustomer.ShowDialog(this);
         }
 
         private void companyDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCompany frmCompany = new frmCompany();
-             frmCompany.ShowDialog();
+             frmCompany.ShowDialog(this);
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            frmpayments frmpayments=new frmpayments();
+            frmpayments.ShowDialog(this);
         }
     }
 }

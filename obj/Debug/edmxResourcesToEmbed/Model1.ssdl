@@ -168,24 +168,24 @@ warning 6013: The table/view 'sleekbill.dbo.alias_email' does not have a primary
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar(max)" />
     <Property Name="zip" Type="nvarchar(max)" />
-    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="county" Type="nvarchar(max)" />
     <Property Name="email" Type="nvarchar(max)" />
     <Property Name="telephone" Type="nvarchar(max)" />
     <Property Name="website" Type="nvarchar(max)" />
-    <Property Name="logo" Type="nvarchar(max)" />
+    <Property Name="country" Type="nvarchar(max)" />
     <Property Name="details" Type="nvarchar(max)" />
     <Property Name="state_id" Type="int" />
     <Property Name="currency_id" Type="int" />
     <Property Name="tin" Type="nvarchar(max)" />
     <Property Name="pan" Type="nvarchar(max)" />
     <Property Name="stn" Type="nvarchar(max)" />
-    <Property Name="tax_label" Type="int" Nullable="false" />
+    <Property Name="tax_label" Type="int" />
     <Property Name="service_category_id" Type="int" />
-    <Property Name="gstin" Type="nvarchar(max)" />
+    <Property Name="pin" Type="nvarchar(max)" />
     <Property Name="tax_id_label" Type="int" Nullable="false" />
     <Property Name="taxation_type" Type="int" Nullable="false" />
     <Property Name="signature_picture" Type="nvarchar(max)" />
