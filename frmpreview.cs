@@ -55,16 +55,9 @@ namespace SmartBill
 
         }
 
-        private void btnsave_Click(object sender, EventArgs e)
+        private void reportViewer1_Load(object sender, EventArgs e)
         {
-            try
-            {
 
-            }
-            catch(Exception err)
-            {
-
-            }
         }
     }
 }
