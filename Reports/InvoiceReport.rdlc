@@ -11,19 +11,19 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.07292in</Width>
+                  <Width>2.13542in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.03125in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.94792in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -72,7 +72,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Product/Service</Value>
+                                  <Value>Product/Service Name</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -138,7 +138,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>client name</Value>
+                                  <Value>Unit Price</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -442,7 +442,7 @@
             <Top>3.20708in</Top>
             <Left>0.23833in</Left>
             <Height>0.75in</Height>
-            <Width>6.07292in</Width>
+            <Width>7.11458in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -459,8 +459,11 @@
                     <Label>company_name</Label>
                     <Value>=First(Fields!company_name.Value, "invoices")</Value>
                     <Style>
+                      <FontStyle>Normal</FontStyle>
                       <FontFamily>Calisto MT</FontFamily>
-                      <FontSize>20pt</FontSize>
+                      <FontSize>25pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>DarkBlue</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -468,10 +471,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>0.24875in</Top>
-            <Left>2.31125in</Left>
-            <Height>0.41667in</Height>
-            <Width>2.16667in</Width>
+            <Top>0.0925in</Top>
+            <Left>1.4432in</Left>
+            <Height>0.55208in</Height>
+            <Width>2.67014in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -597,8 +600,8 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>1.40722in</Top>
-            <Left>0.23833in</Left>
+            <Top>1.35167in</Top>
+            <Left>0.24875in</Left>
             <Height>0.23611in</Height>
             <Width>1.27083in</Width>
             <ZIndex>5</ZIndex>
@@ -629,7 +632,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>2.26611in</Top>
+            <Top>2.35986in</Top>
             <Left>0.2175in</Left>
             <Height>0.20833in</Height>
             <Width>1in</Width>
@@ -660,7 +663,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox30</rd:DefaultName>
-            <Top>2.50222in</Top>
+            <Top>2.63764in</Top>
             <Left>0.2175in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
@@ -682,7 +685,16 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
+                    <Label>client address</Label>
                     <Value>=First(Fields!client_billingaddress.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!billing_address.Value, "invoices")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -690,10 +702,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>2.75222in</Top>
-            <Left>0.23833in</Left>
+            <Top>2.88764in</Top>
+            <Left>0.2175in</Left>
             <Height>0.25in</Height>
-            <Width>1in</Width>
+            <Width>2in</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -712,7 +724,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>PIN:  </Value>
+                    <Value>Pin:  </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -724,11 +736,511 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox32</rd:DefaultName>
-            <Top>1.65722in</Top>
-            <Left>0.2175in</Left>
+            <Top>1.87944in</Top>
+            <Left>0.23833in</Left>
+            <Height>0.25in</Height>
+            <Width>1.52083in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox33">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>company email</Label>
+                    <Value>=First(Fields!company_email.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox33</rd:DefaultName>
+            <Top>1.61555in</Top>
+            <Left>0.24875in</Left>
+            <Height>0.25in</Height>
+            <Width>1.51042in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox34">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Invoice</Value>
+                    <Style>
+                      <FontSize>14pt</FontSize>
+                      <Color>DarkSlateBlue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox34</rd:DefaultName>
+            <Top>0.32861in</Top>
+            <Left>4.35292in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox35">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>invoice number</Label>
+                    <Value>=First(Fields!number.Value, "invoices")</Value>
+                    <Style>
+                      <Color>DarkSlateBlue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox35</rd:DefaultName>
+            <Top>0.32861in</Top>
+            <Left>5.95708in</Left>
+            <Height>0.25in</Height>
+            <Width>1.04167in</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Rectangle Name="Rectangle2">
+            <ReportItems>
+              <Textbox Name="Textbox36">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Amount Due</Value>
+                        <Style>
+                          <FontSize>14pt</FontSize>
+                          <Color>White</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox36</rd:DefaultName>
+                <Top>0.06597in</Top>
+                <Left>0.16667in</Left>
+                <Height>0.25in</Height>
+                <Width>1.22917in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox37">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Ksh. </Value>
+                        <Style>
+                          <FontSize>14pt</FontSize>
+                          <Color>White</Color>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!PAmount.Value, "invoices")</Value>
+                        <Style>
+                          <FontSize>14pt</FontSize>
+                          <Color>White</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox37</rd:DefaultName>
+                <Top>0.06597in</Top>
+                <Left>1.5625in</Left>
+                <Height>0.25in</Height>
+                <Width>1.35417in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>0.64806in</Top>
+            <Left>4.18625in</Left>
+            <Height>0.43972in</Height>
+            <Width>2.91667in</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>RoyalBlue</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Textbox Name="Textbox38">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Date</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox38</rd:DefaultName>
+            <Top>1.185in</Top>
+            <Left>4.18625in</Left>
+            <Height>0.25in</Height>
+            <Width>0.64583in</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox39">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Due Date</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>1.44889in</Top>
+            <Left>4.18625in</Left>
+            <Height>0.25in</Height>
+            <Width>0.64583in</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox40">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>P.O. BOX</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox40</rd:DefaultName>
+            <Top>1.69889in</Top>
+            <Left>4.18625in</Left>
+            <Height>0.25in</Height>
+            <Width>0.75in</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox41">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>issue date</Label>
+                    <Value>=First(Fields!issue_date.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox41</rd:DefaultName>
+            <Top>1.15722in</Top>
+            <Left>5.19667in</Left>
+            <Height>0.25in</Height>
+            <Width>1.76042in</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox42">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>due date</Label>
+                    <Value>=First(Fields!due_date.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox42</rd:DefaultName>
+            <Top>1.435in</Top>
+            <Left>5.19667in</Left>
+            <Height>0.25in</Height>
+            <Width>1.76042in</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox43">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>address</Label>
+                    <Value>=First(Fields!company_address.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox43</rd:DefaultName>
+            <Top>1.67583in</Top>
+            <Left>5.405in</Left>
+            <Height>0.25in</Height>
+            <Width>1.55208in</Width>
+            <ZIndex>19</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox44">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>client address</Label>
+                    <Value>=First(Fields!client_billingaddress.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!billing_address.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox31</rd:DefaultName>
+            <Top>2.88764in</Top>
+            <Left>4.18625in</Left>
+            <Height>0.25in</Height>
+            <Width>2in</Width>
+            <ZIndex>20</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox45">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>client name</Label>
+                    <Value>=First(Fields!client_name.Value, "invoices")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox30</rd:DefaultName>
+            <Top>2.63764in</Top>
+            <Left>4.18625in</Left>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <ZIndex>21</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox46">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Ship To:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox29</rd:DefaultName>
+            <Top>2.35986in</Top>
+            <Left>4.18625in</Left>
+            <Height>0.20833in</Height>
+            <Width>1in</Width>
+            <ZIndex>22</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox47">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Original for Receipt</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox47</rd:DefaultName>
+            <Top>0.0925in</Top>
+            <Left>5.51958in</Left>
+            <Height>0.25in</Height>
+            <Width>1.45833in</Width>
+            <ZIndex>23</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -741,8 +1253,8 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Height>11.08287cm</Height>
-        <Width>20cm</Width>
+        <Height>14.39333cm</Height>
+        <Width>19.81412cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -753,7 +1265,7 @@
     <Height>5.66667in</Height>
     <Style />
   </Body>
-  <Width>7.87402in</Width>
+  <Width>7.82167in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

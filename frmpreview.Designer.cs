@@ -47,16 +47,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1517, 853);
+            this.panel1.Size = new System.Drawing.Size(1181, 788);
             this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel3.Controls.Add(this.reportViewer1);
-            this.panel3.Location = new System.Drawing.Point(237, 12);
+            this.panel3.Location = new System.Drawing.Point(293, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1265, 828);
+            this.panel3.Size = new System.Drawing.Size(885, 762);
             this.panel3.TabIndex = 0;
             // 
             // panel2
@@ -65,7 +65,7 @@
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Location = new System.Drawing.Point(15, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(216, 828);
+            this.panel2.Size = new System.Drawing.Size(272, 762);
             this.panel2.TabIndex = 0;
             // 
             // btnSave
@@ -87,14 +87,15 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1265, 828);
+            this.reportViewer1.Size = new System.Drawing.Size(885, 762);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // frmpreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1523, 920);
+            this.ClientSize = new System.Drawing.Size(1187, 855);
             this.Controls.Add(this.panel1);
             this.Name = "frmpreview";
             this.Text = "Preview Invoice";
