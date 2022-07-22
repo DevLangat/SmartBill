@@ -54,7 +54,6 @@
             this.Action = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbTax = new System.Windows.Forms.ComboBox();
-            this.cboproduct = new System.Windows.Forms.ComboBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -79,6 +78,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboproduct = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -122,12 +122,12 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.cboproduct);
             this.panel3.Controls.Add(this.chckPay);
             this.panel3.Controls.Add(this.gpPay);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.cbTax);
-            this.panel3.Controls.Add(this.cboproduct);
             this.panel3.Controls.Add(this.materialDivider1);
             this.panel3.Controls.Add(this.comboBox2);
             this.panel3.Controls.Add(this.dateTimePicker1);
@@ -344,15 +344,6 @@
             this.cbTax.Size = new System.Drawing.Size(121, 21);
             this.cbTax.TabIndex = 11;
             // 
-            // cboproduct
-            // 
-            this.cboproduct.FormattingEnabled = true;
-            this.cboproduct.Location = new System.Drawing.Point(19, 169);
-            this.cboproduct.Name = "cboproduct";
-            this.cboproduct.Size = new System.Drawing.Size(175, 21);
-            this.cboproduct.TabIndex = 10;
-            this.cboproduct.SelectedIndexChanged += new System.EventHandler(this.cboproduct_SelectedIndexChanged);
-            // 
             // materialDivider1
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -559,6 +550,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Document Data";
             // 
+            // cboproduct
+            // 
+            this.cboproduct.FormattingEnabled = true;
+            this.cboproduct.Location = new System.Drawing.Point(19, 169);
+            this.cboproduct.Name = "cboproduct";
+            this.cboproduct.Size = new System.Drawing.Size(161, 21);
+            this.cboproduct.TabIndex = 17;
+            // 
             // frminvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,7 +590,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cbTax;
-        private System.Windows.Forms.ComboBox cboproduct;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -631,5 +629,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn tax;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Action;
+        private System.Windows.Forms.ComboBox cboproduct;
     }
 }

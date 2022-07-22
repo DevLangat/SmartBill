@@ -677,7 +677,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
   </EntityType>
   <EntityType Name="invoice_products">
     <Key>
-      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="product_id" Type="int" Nullable="false" />
@@ -837,7 +837,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Pname" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="description" Type="nvarchar" MaxLength="150" />
     <Property Name="measuring_unit" Type="nvarchar" MaxLength="150" />
     <Property Name="price" Type="money" Nullable="false" />
