@@ -64,7 +64,9 @@ namespace SmartBill
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            common.invno = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
+            frmpreview fr = new frmpreview();
+            fr.ShowDialog();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -74,6 +76,8 @@ namespace SmartBill
             {
               
                 common.invno = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
+                //frmpreview fr = new frmpreview();
+                //fr.ShowDialog();
                 frmAddPayment fr = new frmAddPayment();
                 fr.ShowDialog();
                 //string userId = dgtransdetails.SelectedRows[0].Cells[2].Value + string.Empty;

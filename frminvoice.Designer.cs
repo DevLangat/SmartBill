@@ -79,6 +79,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboproduct = new System.Windows.Forms.ComboBox();
+            this.cboinvoices = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -122,6 +124,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.cboinvoices);
             this.panel3.Controls.Add(this.cboproduct);
             this.panel3.Controls.Add(this.chckPay);
             this.panel3.Controls.Add(this.gpPay);
@@ -267,6 +271,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(846, 170);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // No
             // 
@@ -395,6 +400,8 @@
             this.cbClients.Name = "cbClients";
             this.cbClients.Size = new System.Drawing.Size(147, 21);
             this.cbClients.TabIndex = 4;
+            this.cbClients.SelectedIndexChanged += new System.EventHandler(this.cbClients_SelectedIndexChanged);
+            this.cbClients.SelectionChangeCommitted += new System.EventHandler(this.cbClients_SelectionChangeCommitted);
             // 
             // txtdesc
             // 
@@ -558,6 +565,25 @@
             this.cboproduct.Size = new System.Drawing.Size(161, 21);
             this.cboproduct.TabIndex = 17;
             // 
+            // cboinvoices
+            // 
+            this.cboinvoices.FormattingEnabled = true;
+            this.cboinvoices.Location = new System.Drawing.Point(70, 53);
+            this.cboinvoices.Name = "cboinvoices";
+            this.cboinvoices.Size = new System.Drawing.Size(147, 21);
+            this.cboinvoices.TabIndex = 18;
+            this.cboinvoices.SelectedIndexChanged += new System.EventHandler(this.cboinvoices_SelectedIndexChanged);
+            this.cboinvoices.SelectionChangeCommitted += new System.EventHandler(this.cboinvoices_SelectionChangeCommitted);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 56);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Invoices";
+            // 
             // frminvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,5 +656,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tax;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Action;
         private System.Windows.Forms.ComboBox cboproduct;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cboinvoices;
     }
 }

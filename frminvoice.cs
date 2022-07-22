@@ -341,5 +341,50 @@ namespace SmartBill
 
             }
         }
+
+        private void cbClients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbClients_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var context = new sleekbillEntities();
+            string code = cbClients.SelectedValue.ToString();
+            var invoices = (from m in context.invoice_products                           
+                            where m.deleted=="n" 
+                            select new { m.invoice_id }).ToList();
+            foreach (var s in invoices)
+            {
+                cboinvoices.DataSource = invoices.ToArray();
+                cboinvoices.DisplayMember = "invoice_id";
+                cboinvoices.ValueMember = "invoice_id";
+            }
+        }
+
+        private void cboinvoices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cboinvoices_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+            //var context = new sleekbillEntities();
+            int code = Convert.ToInt32(cboinvoices.SelectedValue.ToString());
+            //var invoices = (from m in context.invoice_products
+            //                where m.invoice_id == code
+            //                select new { m.invoice_id, m.type, m.description, m.quantity, m.price, m.tax_id }).ToList();
+            ////dataGridView1.AutoGenerateColumns = false;
+            //dataGridView1.DataSource = invoices;
+            common.invno = cboinvoices.SelectedValue.ToString(); ;
+            frmpreview fr = new frmpreview();
+            fr.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
