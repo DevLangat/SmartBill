@@ -193,6 +193,8 @@ namespace SmartBill
                     quantity = quantity,                  
                     tax_id=taxid,
                     type=cboproduct.Text,
+                    deleted="n",
+
 
                 };
 
@@ -246,7 +248,11 @@ namespace SmartBill
                     //MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
                 }
                 MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
-                generateinvoiceno();
+                //generateinvoiceno();
+                using (sleekbillEntities banks = new sleekbillEntities())
+                {
+                    dataGridView1.DataSource = banks.sp_getinvoices();
+                }
             }
             catch (Exception err)
             {
@@ -264,10 +270,7 @@ namespace SmartBill
                 var Rcode = context.invoice_products.Select(p => p.invoice_id).DefaultIfEmpty(0).Max();
                Rcode= Rcode + 1;
                 txtdocnumber.Text = Rcode.ToString();
-                using (sleekbillEntities banks = new sleekbillEntities())
-                {
-                    dataGridView1.DataSource = banks.sp_getinvoices();
-                }
+                
                 //var invoices = (from m in context.invoice_products
                 //               select new { m.invoice_id,m.type,m.description,m.quantity,m.price,m.tax_id }).ToList();
                 ////dataGridView1.AutoGenerateColumns = false;
@@ -323,6 +326,20 @@ namespace SmartBill
             txtQuantity.Text = "";
             txtUnitPrice.Text = "";
              
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0) // make sure user select at least 1 row 
+            {
+
+                common.invno = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
+                frmpreview fr = new frmpreview();
+                fr.ShowDialog();
+                //string userId = dgtransdetails.SelectedRows[0].Cells[2].Value + string.Empty;
+
+
+            }
         }
     }
 }

@@ -841,7 +841,6 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
     <Property Name="description" Type="nvarchar" MaxLength="150" />
     <Property Name="measuring_unit" Type="nvarchar" MaxLength="150" />
     <Property Name="price" Type="money" Nullable="false" />
-    <Property Name="has_tax_included" Type="bit" Nullable="false" />
     <Property Name="tax_id" Type="int" />
     <Property Name="deleted" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="type" Type="nvarchar" MaxLength="150" Nullable="false" />
@@ -849,7 +848,6 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
     <Property Name="purchase_rate" Type="money" />
     <Property Name="hsn" Type="nvarchar" MaxLength="30" />
     <Property Name="sac" Type="nvarchar" MaxLength="30" />
-    <Property Name="cess_percentage" Type="int" Nullable="false" />
     <Property Name="cess_value" Type="nvarchar" MaxLength="20" />
     <Property Name="purchase_currency_id" Type="int" />
   </EntityType>
@@ -1108,6 +1106,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
     <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="year" Type="nvarchar" MaxLength="4" Nullable="false" />
   </EntityType>
+  <Function Name="sp_getinvoicedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inv" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_getinvoices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_getinvoicesforpayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="sleekbillModelStoreContainer">

@@ -19,7 +19,6 @@ namespace SmartBill
         public string description { get; set; }
         public string measuring_unit { get; set; }
         public decimal price { get; set; }
-        public bool has_tax_included { get; set; }
         public Nullable<int> tax_id { get; set; }
         public string deleted { get; set; }
         public string type { get; set; }
@@ -27,7 +26,6 @@ namespace SmartBill
         public Nullable<decimal> purchase_rate { get; set; }
         public string hsn { get; set; }
         public string sac { get; set; }
-        public int cess_percentage { get; set; }
         public string cess_value { get; set; }
         public Nullable<int> purchase_currency_id { get; set; }
     }

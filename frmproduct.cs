@@ -38,7 +38,12 @@ namespace SmartBill
             }
             if (cbType.Text == "")
             {
-                MessageBox.Show("Missing Product typ  ", this.Text, MessageBoxButtons.OK);
+                MessageBox.Show("Missing Product type  ", this.Text, MessageBoxButtons.OK);
+                return;
+            }
+            if (txtQuantity.Text == "")
+            {
+                MessageBox.Show("Missing Quantity value  ", this.Text, MessageBoxButtons.OK);
                 return;
             }
             try
@@ -59,6 +64,7 @@ namespace SmartBill
                     //quantity = quantity,
                     type=cbType.Text,   
                     measuring_unit=cbUOM.Text,
+                    deleted="n",
                   
 
                 };
@@ -70,7 +76,6 @@ namespace SmartBill
                 if (prod.Count == 1)
                 {
                     context.Entry(products).State = System.Data.Entity.EntityState.Modified;
-
                     context.SaveChanges();
                     MessageBox.Show("Product Details Updated Successfully", this.Text, MessageBoxButtons.OK);
 
