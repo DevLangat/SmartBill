@@ -99,6 +99,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmpreview";
             this.Text = "Preview Invoice";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmpreview_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
