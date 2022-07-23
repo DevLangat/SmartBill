@@ -76,6 +76,7 @@ namespace SmartBill
         public virtual DbSet<version> versions { get; set; }
         public virtual DbSet<config> configs { get; set; }
         public virtual DbSet<tmpinvdata> tmpinvdatas { get; set; }
+        public virtual DbSet<tmpinvdataprint> tmpinvdataprints { get; set; }
     
         public virtual ObjectResult<sp_getinvoicedetails_Result> sp_getinvoicedetails(Nullable<int> inv)
         {
@@ -86,9 +87,13 @@ namespace SmartBill
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoicedetails_Result>("sp_getinvoicedetails", invParameter);
         }
     
-        public virtual ObjectResult<sp_getinvoices_Result> sp_getinvoices()
+        public virtual ObjectResult<sp_getinvoices_Result> sp_getinvoices(Nullable<int> clientid)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoices_Result>("sp_getinvoices");
+            var clientidParameter = clientid.HasValue ?
+                new ObjectParameter("clientid", clientid) :
+                new ObjectParameter("clientid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoices_Result>("sp_getinvoices", clientidParameter);
         }
     
         public virtual int sp_getinvoicesforpayment()

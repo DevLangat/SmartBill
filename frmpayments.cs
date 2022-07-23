@@ -64,7 +64,7 @@ namespace SmartBill
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            common.invno = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
+             common.invno = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
             frmpreview fr = new frmpreview();
             fr.ShowDialog();
         }

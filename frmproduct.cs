@@ -50,8 +50,8 @@ namespace SmartBill
             {
              
                 
-                int taxid   =Convert.ToInt32(cbTax.Text);
-                decimal price= Convert.ToDecimal(txtPrice.Text);
+                var taxid   =Convert.ToDecimal(cbTax.Text);
+               decimal price = Convert.ToDecimal(txtPrice.Text);
                 double quantity=Convert.ToDouble(txtQuantity.Text);
                 var context = new sleekbillEntities();
                 var products = new product()              

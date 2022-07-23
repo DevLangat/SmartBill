@@ -1134,6 +1134,38 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tmpinvdataprints">
+      <EntityTypeMapping TypeName="sleekbillModel.tmpinvdataprint">
+        <MappingFragment StoreEntitySet="tmpinvdataprint">
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+          <ScalarProperty Name="pTax" ColumnName="pTax" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
+          <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+          <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+          <ScalarProperty Name="po_number" ColumnName="po_number" />
+          <ScalarProperty Name="company_address" ColumnName="company_address" />
+          <ScalarProperty Name="company_county" ColumnName="company_county" />
+          <ScalarProperty Name="company_email" ColumnName="company_email" />
+          <ScalarProperty Name="company_name" ColumnName="company_name" />
+          <ScalarProperty Name="company_pin" ColumnName="company_pin" />
+          <ScalarProperty Name="company_zip" ColumnName="company_zip" />
+          <ScalarProperty Name="company_phone" ColumnName="company_phone" />
+          <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_getinvoicedetails" FunctionName="sleekbillModel.Store.sp_getinvoicedetails">
       <ResultMapping>
         <ComplexTypeMapping TypeName="sleekbillModel.sp_getinvoicedetails_Result">
@@ -1152,6 +1184,7 @@
           <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
           <ScalarProperty Name="billing_city" ColumnName="billing_city" />
           <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+          <ScalarProperty Name="po_number" ColumnName="po_number" />
           <ScalarProperty Name="company_address" ColumnName="company_address" />
           <ScalarProperty Name="company_county" ColumnName="company_county" />
           <ScalarProperty Name="company_email" ColumnName="company_email" />
@@ -1159,6 +1192,9 @@
           <ScalarProperty Name="company_pin" ColumnName="company_pin" />
           <ScalarProperty Name="company_zip" ColumnName="company_zip" />
           <ScalarProperty Name="company_phone" ColumnName="company_phone" />
+          <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

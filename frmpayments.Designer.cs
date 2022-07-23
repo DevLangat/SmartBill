@@ -37,9 +37,17 @@
             this.btnPreview = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnexport = new MaterialSkin.Controls.MaterialButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.due_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.cbPayType = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -57,14 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnexport = new MaterialSkin.Controls.MaterialButton();
-            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.due_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -132,6 +132,26 @@
             this.panel3.Size = new System.Drawing.Size(891, 572);
             this.panel3.TabIndex = 1;
             // 
+            // btnexport
+            // 
+            this.btnexport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnexport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnexport.Depth = 0;
+            this.btnexport.HighEmphasis = true;
+            this.btnexport.Icon = null;
+            this.btnexport.Location = new System.Drawing.Point(12, 93);
+            this.btnexport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnexport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnexport.Name = "btnexport";
+            this.btnexport.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnexport.Size = new System.Drawing.Size(147, 36);
+            this.btnexport.TabIndex = 16;
+            this.btnexport.Text = "Export to Excel";
+            this.btnexport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnexport.UseAccentColor = false;
+            this.btnexport.UseVisualStyleBackColor = true;
+            this.btnexport.Click += new System.EventHandler(this.btnexport_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 460);
@@ -161,7 +181,7 @@
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -197,6 +217,62 @@
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // No
+            // 
+            this.No.DataPropertyName = "id";
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // number
+            // 
+            this.number.DataPropertyName = "number";
+            this.number.HeaderText = "Document Number";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.Width = 150;
+            // 
+            // due_date
+            // 
+            this.due_date.DataPropertyName = "due_date";
+            this.due_date.HeaderText = "Due Date";
+            this.due_date.Name = "due_date";
+            this.due_date.ReadOnly = true;
+            // 
+            // InvoiceValue
+            // 
+            this.InvoiceValue.DataPropertyName = "InvoiceValue";
+            this.InvoiceValue.HeaderText = "Document Amount";
+            this.InvoiceValue.Name = "InvoiceValue";
+            this.InvoiceValue.ReadOnly = true;
+            this.InvoiceValue.Width = 150;
+            // 
+            // Balance
+            // 
+            this.Balance.DataPropertyName = "Balance";
+            this.Balance.HeaderText = "Amount Due";
+            this.Balance.Name = "Balance";
+            this.Balance.ReadOnly = true;
+            // 
+            // Paid
+            // 
+            this.Paid.DataPropertyName = "Paid";
+            this.Paid.HeaderText = "Payment Amount";
+            this.Paid.Name = "Paid";
+            this.Paid.ReadOnly = true;
+            this.Paid.Width = 150;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Action";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column8.ToolTipText = "Edit";
+            this.Column8.Width = 80;
             // 
             // materialDivider1
             // 
@@ -355,82 +431,6 @@
             this.label1.Size = new System.Drawing.Size(100, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Document Data";
-            // 
-            // btnexport
-            // 
-            this.btnexport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnexport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnexport.Depth = 0;
-            this.btnexport.HighEmphasis = true;
-            this.btnexport.Icon = null;
-            this.btnexport.Location = new System.Drawing.Point(12, 93);
-            this.btnexport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnexport.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnexport.Name = "btnexport";
-            this.btnexport.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnexport.Size = new System.Drawing.Size(147, 36);
-            this.btnexport.TabIndex = 16;
-            this.btnexport.Text = "Export to Excel";
-            this.btnexport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnexport.UseAccentColor = false;
-            this.btnexport.UseVisualStyleBackColor = true;
-            this.btnexport.Click += new System.EventHandler(this.btnexport_Click);
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Action";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column8.ToolTipText = "Edit";
-            this.Column8.Width = 80;
-            // 
-            // Paid
-            // 
-            this.Paid.DataPropertyName = "Paid";
-            this.Paid.HeaderText = "Payment Amount";
-            this.Paid.Name = "Paid";
-            this.Paid.ReadOnly = true;
-            this.Paid.Width = 150;
-            // 
-            // Balance
-            // 
-            this.Balance.DataPropertyName = "Balance";
-            this.Balance.HeaderText = "Amount Due";
-            this.Balance.Name = "Balance";
-            this.Balance.ReadOnly = true;
-            // 
-            // InvoiceValue
-            // 
-            this.InvoiceValue.DataPropertyName = "InvoiceValue";
-            this.InvoiceValue.HeaderText = "Document Amount";
-            this.InvoiceValue.Name = "InvoiceValue";
-            this.InvoiceValue.ReadOnly = true;
-            this.InvoiceValue.Width = 150;
-            // 
-            // due_date
-            // 
-            this.due_date.DataPropertyName = "due_date";
-            this.due_date.HeaderText = "Due Date";
-            this.due_date.Name = "due_date";
-            this.due_date.ReadOnly = true;
-            // 
-            // number
-            // 
-            this.number.DataPropertyName = "number";
-            this.number.HeaderText = "Document Number";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            this.number.Width = 150;
-            // 
-            // No
-            // 
-            this.No.DataPropertyName = "id";
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // frmpayments
             // 

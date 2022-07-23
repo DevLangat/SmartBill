@@ -677,7 +677,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
   </EntityType>
   <EntityType Name="invoice_products">
     <Key>
-      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="product_id" Type="int" Nullable="false" />
@@ -841,7 +841,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
     <Property Name="description" Type="nvarchar" MaxLength="150" />
     <Property Name="measuring_unit" Type="nvarchar" MaxLength="150" />
     <Property Name="price" Type="money" Nullable="false" />
-    <Property Name="tax_id" Type="int" />
+    <Property Name="tax_id" Type="decimal" Precision="18" Scale="2" />
     <Property Name="deleted" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="type" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="sku" Type="nvarchar" MaxLength="10" />
@@ -1068,6 +1068,47 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
     <Property Name="due_date" Type="datetime" />
     <Property Name="issue_date" Type="datetime" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmpinvdataprint' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tmpinvdataprint">
+    <Key>
+      <PropertyRef Name="number" />
+      <PropertyRef Name="issue_date" />
+      <PropertyRef Name="product_name" />
+      <PropertyRef Name="product_id" />
+      <PropertyRef Name="quantity" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="client_name" />
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="number" Type="bigint" Nullable="false" />
+    <Property Name="issue_date" Type="datetime" Nullable="false" />
+    <Property Name="due_date" Type="datetime" />
+    <Property Name="product_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="float" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="price" Type="money" Nullable="false" />
+    <Property Name="PAmount" Type="money" />
+    <Property Name="pTax" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="client_billingaddress" Type="nvarchar(max)" />
+    <Property Name="billing_city" Type="nvarchar(max)" />
+    <Property Name="client_phone" Type="nvarchar(max)" />
+    <Property Name="po_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="company_address" Type="nvarchar(max)" />
+    <Property Name="company_county" Type="nvarchar(max)" />
+    <Property Name="company_email" Type="nvarchar(max)" />
+    <Property Name="company_name" Type="nvarchar(max)" />
+    <Property Name="company_pin" Type="nvarchar(max)" />
+    <Property Name="company_zip" Type="nvarchar(max)" />
+    <Property Name="company_phone" Type="nvarchar(max)" />
+    <Property Name="TotalValue" Type="money" />
+    <Property Name="TotalAmount" Type="money" />
+    <Property Name="TotalTax" Type="money" />
+  </EntityType>
   <EntityType Name="vendors">
     <Key>
       <PropertyRef Name="id" />
@@ -1109,7 +1150,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
   <Function Name="sp_getinvoicedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="inv" Type="int" Mode="In" />
   </Function>
-  <Function Name="sp_getinvoices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getinvoices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="clientid" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_getinvoicesforpayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="sleekbillModelStoreContainer">
     <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
@@ -1178,6 +1221,36 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
     [tmpinvdata].[due_date] AS [due_date], 
     [tmpinvdata].[issue_date] AS [issue_date]
     FROM [dbo].[tmpinvdata] AS [tmpinvdata]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tmpinvdataprint" EntityType="Self.tmpinvdataprint" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tmpinvdataprint].[number] AS [number], 
+    [tmpinvdataprint].[issue_date] AS [issue_date], 
+    [tmpinvdataprint].[due_date] AS [due_date], 
+    [tmpinvdataprint].[product_name] AS [product_name], 
+    [tmpinvdataprint].[product_id] AS [product_id], 
+    [tmpinvdataprint].[quantity] AS [quantity], 
+    [tmpinvdataprint].[type] AS [type], 
+    [tmpinvdataprint].[price] AS [price], 
+    [tmpinvdataprint].[PAmount] AS [PAmount], 
+    [tmpinvdataprint].[pTax] AS [pTax], 
+    [tmpinvdataprint].[client_name] AS [client_name], 
+    [tmpinvdataprint].[code] AS [code], 
+    [tmpinvdataprint].[client_billingaddress] AS [client_billingaddress], 
+    [tmpinvdataprint].[billing_city] AS [billing_city], 
+    [tmpinvdataprint].[client_phone] AS [client_phone], 
+    [tmpinvdataprint].[po_number] AS [po_number], 
+    [tmpinvdataprint].[company_address] AS [company_address], 
+    [tmpinvdataprint].[company_county] AS [company_county], 
+    [tmpinvdataprint].[company_email] AS [company_email], 
+    [tmpinvdataprint].[company_name] AS [company_name], 
+    [tmpinvdataprint].[company_pin] AS [company_pin], 
+    [tmpinvdataprint].[company_zip] AS [company_zip], 
+    [tmpinvdataprint].[company_phone] AS [company_phone], 
+    [tmpinvdataprint].[TotalValue] AS [TotalValue], 
+    [tmpinvdataprint].[TotalAmount] AS [TotalAmount], 
+    [tmpinvdataprint].[TotalTax] AS [TotalTax]
+    FROM [dbo].[tmpinvdataprint] AS [tmpinvdataprint]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

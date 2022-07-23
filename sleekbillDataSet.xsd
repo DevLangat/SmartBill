@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="invoices" targetNamespace="http://tempuri.org/invoices.xsd" xmlns:mstns="http://tempuri.org/invoices.xsd" xmlns="http://tempuri.org/invoices.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="sleekbillDataSet" targetNamespace="http://tempuri.org/sleekbillDataSet.xsd" xmlns:mstns="http://tempuri.org/sleekbillDataSet.xsd" xmlns="http://tempuri.org/sleekbillDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -56,7 +56,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="invoices" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="invoices" msprop:Generator_DataSetName="invoices">
+  <xs:element name="sleekbillDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="sleekbillDataSet" msprop:Generator_DataSetName="sleekbillDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="sp_getinvoicedetails" msprop:Generator_RowEvHandlerName="sp_getinvoicedetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_getinvoicedetailsRowDeleted" msprop:Generator_RowDeletingName="sp_getinvoicedetailsRowDeleting" msprop:Generator_RowEvArgName="sp_getinvoicedetailsRowChangeEvent" msprop:Generator_TablePropName="sp_getinvoicedetails" msprop:Generator_RowChangedName="sp_getinvoicedetailsRowChanged" msprop:Generator_RowChangingName="sp_getinvoicedetailsRowChanging" msprop:Generator_TableClassName="sp_getinvoicedetailsDataTable" msprop:Generator_RowClassName="sp_getinvoicedetailsRow" msprop:Generator_TableVarName="tablesp_getinvoicedetails" msprop:Generator_UserTableName="sp_getinvoicedetails">

@@ -294,6 +294,11 @@
     <Compile Include="service_tax_services.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sleekbillDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sleekbillDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sp_getinvoicedetails_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -320,6 +325,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tmpinvdata.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmpinvdataprint.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="vendor.cs">
@@ -368,10 +376,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports\InvoiceReport.rdlc" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
     <None Include="invoices.xsc">
       <DependentUpon>invoices.xsd</DependentUpon>
     </None>
@@ -383,6 +388,10 @@
     <None Include="invoices.xss">
       <DependentUpon>invoices.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -396,6 +405,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sleekbillDataSet.xsc">
+      <DependentUpon>sleekbillDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sleekbillDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sleekbillDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sleekbillDataSet.xss">
+      <DependentUpon>sleekbillDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

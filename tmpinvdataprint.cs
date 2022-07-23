@@ -10,8 +10,9 @@
 namespace SmartBill
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_getinvoicedetails_Result
+    public partial class tmpinvdataprint
     {
         public long number { get; set; }
         public System.DateTime issue_date { get; set; }
