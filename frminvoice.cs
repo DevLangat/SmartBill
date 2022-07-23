@@ -84,13 +84,13 @@ namespace SmartBill
                 var context = new sleekbillEntities();
                 var taxes = (from Tdetails in context.products
                             
-                             select new { Tdetails.Pname, Tdetails.id }).ToList();
+                             select new { Tdetails.name, Tdetails.id }).ToList();
 
 
                 foreach (var s in taxes)
                 {
                     cboproduct.DataSource = taxes.ToArray();
-                    cboproduct.DisplayMember = "Pname";
+                    cboproduct.DisplayMember = "name";
                     cboproduct.ValueMember = "id";
                 }
 
@@ -127,7 +127,7 @@ namespace SmartBill
                 var context = new sleekbillEntities();
                 var taxes = (from Tdetails in context.products
                              where Tdetails.id== pid
-                             select new { Tdetails.Pname, Tdetails.price }).ToList();
+                             select new { Tdetails.name, Tdetails.price }).ToList();
                 foreach(var t in taxes)
                 {
                     txtUnitPrice.Text = t.price.ToString();

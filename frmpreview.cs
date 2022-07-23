@@ -35,7 +35,7 @@ namespace SmartBill
         {
             sleekbillEntities context = new sleekbillEntities();
             int invno = Convert.ToInt32(common.invno);
-            var data = context.sp_getinvoicedetails(invno).ToList();
+            var data = context.sp_getinvoicedetails(1).ToList();
          
             var reportDataSource1 = new ReportDataSource();
             reportDataSource1.Name = "invoices";

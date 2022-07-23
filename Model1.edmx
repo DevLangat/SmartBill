@@ -173,7 +173,7 @@ warning 6013: The table/view 'sleekbill.dbo.alias_email' does not have a primary
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" />
           <Property Name="address" Type="nvarchar(max)" />
           <Property Name="zip" Type="nvarchar(max)" />
@@ -682,7 +682,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="invoice_id" />
           </Key>
           <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="product_id" Type="int" Nullable="false" />
@@ -842,7 +842,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Pname" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="150" />
           <Property Name="measuring_unit" Type="nvarchar" MaxLength="150" />
           <Property Name="price" Type="money" Nullable="false" />
@@ -1350,7 +1350,7 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1846,7 +1846,7 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="invoice_id" />
           </Key>
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="Int32" Nullable="false" />
@@ -2006,7 +2006,7 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Pname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="measuring_unit" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
@@ -3221,7 +3221,7 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
             <EntityTypeMapping TypeName="sleekbillModel.product">
               <MappingFragment StoreEntitySet="products">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Pname" ColumnName="Pname" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
                 <ScalarProperty Name="price" ColumnName="price" />

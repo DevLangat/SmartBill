@@ -849,7 +849,7 @@
       <EntityTypeMapping TypeName="sleekbillModel.product">
         <MappingFragment StoreEntitySet="products">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Pname" ColumnName="Pname" />
+          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
           <ScalarProperty Name="price" ColumnName="price" />

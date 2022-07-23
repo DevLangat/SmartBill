@@ -15,7 +15,7 @@ namespace SmartBill
     public partial class product
     {
         public int id { get; set; }
-        public string Pname { get; set; }
+        public string name { get; set; }
         public string description { get; set; }
         public string measuring_unit { get; set; }
         public decimal price { get; set; }
