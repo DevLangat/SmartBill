@@ -40,5 +40,9 @@ namespace SmartBill
         public Nullable<decimal> TotalValue { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
         public Nullable<decimal> TotalTax { get; set; }
+        public Nullable<decimal> invTotals { get; set; }
+        public Nullable<decimal> ValueTotals { get; set; }
+        public Nullable<decimal> TaxTotals { get; set; }
+        public Nullable<decimal> Balance { get; set; }
     }
 }

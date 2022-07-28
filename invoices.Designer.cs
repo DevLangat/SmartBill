@@ -331,6 +331,14 @@ namespace SmartBill {
             
             private global::System.Data.DataColumn columnTotalTax;
             
+            private global::System.Data.DataColumn columninvTotals;
+            
+            private global::System.Data.DataColumn columnValueTotals;
+            
+            private global::System.Data.DataColumn columnTaxTotals;
+            
+            private global::System.Data.DataColumn columnBalance;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_getinvoicedetailsDataTable() {
@@ -574,6 +582,38 @@ namespace SmartBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn invTotalsColumn {
+                get {
+                    return this.columninvTotals;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ValueTotalsColumn {
+                get {
+                    return this.columnValueTotals;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TaxTotalsColumn {
+                get {
+                    return this.columnTaxTotals;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BalanceColumn {
+                get {
+                    return this.columnBalance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -635,7 +675,11 @@ namespace SmartBill {
                         string company_phone, 
                         decimal TotalValue, 
                         decimal TotalAmount, 
-                        decimal TotalTax) {
+                        decimal TotalTax, 
+                        decimal invTotals, 
+                        decimal ValueTotals, 
+                        decimal TaxTotals, 
+                        decimal Balance) {
                 sp_getinvoicedetailsRow rowsp_getinvoicedetailsRow = ((sp_getinvoicedetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         number,
@@ -663,7 +707,11 @@ namespace SmartBill {
                         company_phone,
                         TotalValue,
                         TotalAmount,
-                        TotalTax};
+                        TotalTax,
+                        invTotals,
+                        ValueTotals,
+                        TaxTotals,
+                        Balance};
                 rowsp_getinvoicedetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_getinvoicedetailsRow);
                 return rowsp_getinvoicedetailsRow;
@@ -712,6 +760,10 @@ namespace SmartBill {
                 this.columnTotalValue = base.Columns["TotalValue"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
                 this.columnTotalTax = base.Columns["TotalTax"];
+                this.columninvTotals = base.Columns["invTotals"];
+                this.columnValueTotals = base.Columns["ValueTotals"];
+                this.columnTaxTotals = base.Columns["TaxTotals"];
+                this.columnBalance = base.Columns["Balance"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -769,6 +821,14 @@ namespace SmartBill {
                 base.Columns.Add(this.columnTotalAmount);
                 this.columnTotalTax = new global::System.Data.DataColumn("TotalTax", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalTax);
+                this.columninvTotals = new global::System.Data.DataColumn("invTotals", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninvTotals);
+                this.columnValueTotals = new global::System.Data.DataColumn("ValueTotals", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValueTotals);
+                this.columnTaxTotals = new global::System.Data.DataColumn("TaxTotals", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTaxTotals);
+                this.columnBalance = new global::System.Data.DataColumn("Balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBalance);
                 this.columnnumber.AllowDBNull = false;
                 this.columnissue_date.AllowDBNull = false;
                 this.columnproduct_name.AllowDBNull = false;
@@ -1309,6 +1369,70 @@ namespace SmartBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal invTotals {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_getinvoicedetails.invTotalsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'invTotals\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getinvoicedetails.invTotalsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal ValueTotals {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_getinvoicedetails.ValueTotalsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ValueTotals\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getinvoicedetails.ValueTotalsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal TaxTotals {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_getinvoicedetails.TaxTotalsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TaxTotals\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getinvoicedetails.TaxTotalsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Balance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_getinvoicedetails.BalanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Balance\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getinvoicedetails.BalanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isdue_dateNull() {
                 return this.IsNull(this.tablesp_getinvoicedetails.due_dateColumn);
             }
@@ -1510,6 +1634,54 @@ namespace SmartBill {
             public void SetTotalTaxNull() {
                 this[this.tablesp_getinvoicedetails.TotalTaxColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsinvTotalsNull() {
+                return this.IsNull(this.tablesp_getinvoicedetails.invTotalsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetinvTotalsNull() {
+                this[this.tablesp_getinvoicedetails.invTotalsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsValueTotalsNull() {
+                return this.IsNull(this.tablesp_getinvoicedetails.ValueTotalsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetValueTotalsNull() {
+                this[this.tablesp_getinvoicedetails.ValueTotalsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTaxTotalsNull() {
+                return this.IsNull(this.tablesp_getinvoicedetails.TaxTotalsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTaxTotalsNull() {
+                this[this.tablesp_getinvoicedetails.TaxTotalsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBalanceNull() {
+                return this.IsNull(this.tablesp_getinvoicedetails.BalanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBalanceNull() {
+                this[this.tablesp_getinvoicedetails.BalanceColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1697,6 +1869,10 @@ namespace SmartBill.invoicesTableAdapters {
             tableMapping.ColumnMappings.Add("TotalValue", "TotalValue");
             tableMapping.ColumnMappings.Add("TotalAmount", "TotalAmount");
             tableMapping.ColumnMappings.Add("TotalTax", "TotalTax");
+            tableMapping.ColumnMappings.Add("invTotals", "invTotals");
+            tableMapping.ColumnMappings.Add("ValueTotals", "ValueTotals");
+            tableMapping.ColumnMappings.Add("TaxTotals", "TaxTotals");
+            tableMapping.ColumnMappings.Add("Balance", "Balance");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

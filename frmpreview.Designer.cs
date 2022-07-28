@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmpreview));
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,28 +48,29 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1127, 721);
+            this.panel1.Size = new System.Drawing.Size(1352, 789);
             this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel3.Controls.Add(this.reportViewer1);
-            this.panel3.Location = new System.Drawing.Point(293, 12);
+            this.panel3.Location = new System.Drawing.Point(242, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(832, 762);
+            this.panel3.Size = new System.Drawing.Size(1031, 837);
             this.panel3.TabIndex = 0;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "invoices";
+            reportDataSource1.Value = null;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SmartBill.Reports.InvoiceReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(832, 762);
+            this.reportViewer1.Size = new System.Drawing.Size(1031, 837);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -80,7 +80,7 @@
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Location = new System.Drawing.Point(15, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(272, 762);
+            this.panel2.Size = new System.Drawing.Size(221, 762);
             this.panel2.TabIndex = 0;
             // 
             // btnSave
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 788);
+            this.ClientSize = new System.Drawing.Size(1358, 856);
             this.Controls.Add(this.panel1);
             this.Name = "frmpreview";
             this.Text = "Preview Invoice";

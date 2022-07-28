@@ -674,6 +674,9 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
     <Property Name="payment_document_id" Type="nvarchar" MaxLength="50" />
     <Property Name="Receiptno" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="BankId" Type="nchar" MaxLength="10" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="invoice_products">
     <Key>
@@ -1108,6 +1111,90 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdataprint' does not have a pri
     <Property Name="TotalValue" Type="money" />
     <Property Name="TotalAmount" Type="money" />
     <Property Name="TotalTax" Type="money" />
+    <Property Name="invTotals" Type="money" />
+    <Property Name="ValueTotals" Type="money" />
+    <Property Name="TaxTotals" Type="money" />
+    <Property Name="Balance" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmppayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tmppayments">
+    <Key>
+      <PropertyRef Name="Paid" />
+    </Key>
+    <Property Name="Paid" Type="money" Nullable="false" />
+    <Property Name="invoice_id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmpReceiptsdata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tmpReceiptsdata">
+    <Key>
+      <PropertyRef Name="issue_date" />
+      <PropertyRef Name="product_name" />
+      <PropertyRef Name="product_id" />
+      <PropertyRef Name="quantity" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="client_name" />
+      <PropertyRef Name="code" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="InvoiceNumber" />
+    </Key>
+    <Property Name="issue_date" Type="datetime" Nullable="false" />
+    <Property Name="due_date" Type="datetime" />
+    <Property Name="product_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="float" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="price" Type="money" Nullable="false" />
+    <Property Name="PAmount" Type="money" />
+    <Property Name="pTax" Type="nvarchar" MaxLength="50" />
+    <Property Name="client_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="client_billingaddress" Type="nvarchar(max)" />
+    <Property Name="billing_city" Type="nvarchar(max)" />
+    <Property Name="billing_zip" Type="nvarchar(max)" />
+    <Property Name="vat_number" Type="nvarchar(max)" />
+    <Property Name="client_phone" Type="nvarchar(max)" />
+    <Property Name="po_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="company_address" Type="nvarchar(max)" />
+    <Property Name="company_county" Type="nvarchar(max)" />
+    <Property Name="company_email" Type="nvarchar(max)" />
+    <Property Name="company_name" Type="nvarchar(max)" />
+    <Property Name="company_pin" Type="nvarchar(max)" />
+    <Property Name="company_zip" Type="nvarchar(max)" />
+    <Property Name="company_phone" Type="nvarchar(max)" />
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="InvoiceValue" Type="float" />
+    <Property Name="Paid" Type="money" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="client_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="InvoiceNumber" Type="bigint" Nullable="false" />
+    <Property Name="AmountPaid" Type="money" />
+    <Property Name="Receiptdate" Type="date" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="20" />
+    <Property Name="receiptno" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmpstatementdata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tmpstatementdata">
+    <Key>
+      <PropertyRef Name="INVOICE_DATE" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="INVOICE_NO" />
+    </Key>
+    <Property Name="INVOICE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="INVOICE_NO" Type="bigint" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+    <Property Name="PAYMENT_DATE" Type="date" />
+    <Property Name="RECEIVING_BANK" Type="nvarchar" MaxLength="50" />
+    <Property Name="TRANS_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="EXPECTED_PAYMENT_LESS_WHT" Type="float" />
+    <Property Name="EXPECTED_WITHHOLDING_TAX" Type="float" />
+    <Property Name="PAYMENT_RECEIVED" Type="money" />
+    <Property Name="BALANCE" Type="money" />
   </EntityType>
   <EntityType Name="vendors">
     <Key>
@@ -1147,6 +1234,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdataprint' does not have a pri
     <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="year" Type="nvarchar" MaxLength="4" Nullable="false" />
   </EntityType>
+  <Function Name="sp_getcustomestatements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="client_code" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_getinvoicedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="inv" Type="int" Mode="In" />
   </Function>
@@ -1154,6 +1244,15 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdataprint' does not have a pri
     <Parameter Name="clientid" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_getinvoicesforpayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getReceiptdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="recNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="inv" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="custId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startdate" Type="datetime" Mode="In" />
+    <Parameter Name="enddate" Type="datetime" Mode="In" />
+  </Function>
   <EntityContainer Name="sleekbillModelStoreContainer">
     <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="bill_products" EntityType="Self.bill_products" Schema="dbo" store:Type="Tables" />
@@ -1249,8 +1348,72 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdataprint' does not have a pri
     [tmpinvdataprint].[company_phone] AS [company_phone], 
     [tmpinvdataprint].[TotalValue] AS [TotalValue], 
     [tmpinvdataprint].[TotalAmount] AS [TotalAmount], 
-    [tmpinvdataprint].[TotalTax] AS [TotalTax]
+    [tmpinvdataprint].[TotalTax] AS [TotalTax], 
+    [tmpinvdataprint].[invTotals] AS [invTotals], 
+    [tmpinvdataprint].[ValueTotals] AS [ValueTotals], 
+    [tmpinvdataprint].[TaxTotals] AS [TaxTotals], 
+    [tmpinvdataprint].[Balance] AS [Balance]
     FROM [dbo].[tmpinvdataprint] AS [tmpinvdataprint]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tmppayments" EntityType="Self.tmppayments" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tmppayments].[Paid] AS [Paid], 
+    [tmppayments].[invoice_id] AS [invoice_id]
+    FROM [dbo].[tmppayments] AS [tmppayments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tmpReceiptsdata" EntityType="Self.tmpReceiptsdata" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tmpReceiptsdata].[issue_date] AS [issue_date], 
+    [tmpReceiptsdata].[due_date] AS [due_date], 
+    [tmpReceiptsdata].[product_name] AS [product_name], 
+    [tmpReceiptsdata].[product_id] AS [product_id], 
+    [tmpReceiptsdata].[quantity] AS [quantity], 
+    [tmpReceiptsdata].[type] AS [type], 
+    [tmpReceiptsdata].[price] AS [price], 
+    [tmpReceiptsdata].[PAmount] AS [PAmount], 
+    [tmpReceiptsdata].[pTax] AS [pTax], 
+    [tmpReceiptsdata].[client_name] AS [client_name], 
+    [tmpReceiptsdata].[code] AS [code], 
+    [tmpReceiptsdata].[client_billingaddress] AS [client_billingaddress], 
+    [tmpReceiptsdata].[billing_city] AS [billing_city], 
+    [tmpReceiptsdata].[billing_zip] AS [billing_zip], 
+    [tmpReceiptsdata].[vat_number] AS [vat_number], 
+    [tmpReceiptsdata].[client_phone] AS [client_phone], 
+    [tmpReceiptsdata].[po_number] AS [po_number], 
+    [tmpReceiptsdata].[company_address] AS [company_address], 
+    [tmpReceiptsdata].[company_county] AS [company_county], 
+    [tmpReceiptsdata].[company_email] AS [company_email], 
+    [tmpReceiptsdata].[company_name] AS [company_name], 
+    [tmpReceiptsdata].[company_pin] AS [company_pin], 
+    [tmpReceiptsdata].[company_zip] AS [company_zip], 
+    [tmpReceiptsdata].[company_phone] AS [company_phone], 
+    [tmpReceiptsdata].[id] AS [id], 
+    [tmpReceiptsdata].[InvoiceValue] AS [InvoiceValue], 
+    [tmpReceiptsdata].[Paid] AS [Paid], 
+    [tmpReceiptsdata].[Balance] AS [Balance], 
+    [tmpReceiptsdata].[client_id] AS [client_id], 
+    [tmpReceiptsdata].[InvoiceNumber] AS [InvoiceNumber], 
+    [tmpReceiptsdata].[AmountPaid] AS [AmountPaid], 
+    [tmpReceiptsdata].[Receiptdate] AS [Receiptdate], 
+    [tmpReceiptsdata].[PaymentMode] AS [PaymentMode], 
+    [tmpReceiptsdata].[receiptno] AS [receiptno]
+    FROM [dbo].[tmpReceiptsdata] AS [tmpReceiptsdata]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tmpstatementdata" EntityType="Self.tmpstatementdata" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tmpstatementdata].[INVOICE_DATE] AS [INVOICE_DATE], 
+    [tmpstatementdata].[Status] AS [Status], 
+    [tmpstatementdata].[INVOICE_NO] AS [INVOICE_NO], 
+    [tmpstatementdata].[DESCRIPTION] AS [DESCRIPTION], 
+    [tmpstatementdata].[PAYMENT_DATE] AS [PAYMENT_DATE], 
+    [tmpstatementdata].[RECEIVING_BANK] AS [RECEIVING_BANK], 
+    [tmpstatementdata].[TRANS_NO] AS [TRANS_NO], 
+    [tmpstatementdata].[Amount] AS [Amount], 
+    [tmpstatementdata].[EXPECTED_PAYMENT_LESS_WHT] AS [EXPECTED_PAYMENT_LESS_WHT], 
+    [tmpstatementdata].[EXPECTED_WITHHOLDING_TAX] AS [EXPECTED_WITHHOLDING_TAX], 
+    [tmpstatementdata].[PAYMENT_RECEIVED] AS [PAYMENT_RECEIVED], 
+    [tmpstatementdata].[BALANCE] AS [BALANCE]
+    FROM [dbo].[tmpstatementdata] AS [tmpstatementdata]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

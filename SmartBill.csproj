@@ -131,6 +131,11 @@
     <Compile Include="currency.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="customerstatements.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerstatements.xsd</DependentUpon>
+    </Compile>
     <Compile Include="debit_notes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -176,11 +181,29 @@
     <Compile Include="frmAddPayment.Designer.cs">
       <DependentUpon>frmAddPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomerStatementPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerStatementPreview.Designer.cs">
+      <DependentUpon>frmCustomerStatementPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmcustomerstatements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmcustomerstatements.Designer.cs">
+      <DependentUpon>frmcustomerstatements.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmpreview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmpreview.Designer.cs">
       <DependentUpon>frmpreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReceiptspreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReceiptspreview.Designer.cs">
+      <DependentUpon>frmReceiptspreview.cs</DependentUpon>
     </Compile>
     <Compile Include="frmsplashscreen.cs">
       <SubType>Form</SubType>
@@ -247,8 +270,8 @@
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.Designer.cs">
@@ -270,6 +293,11 @@
     </Compile>
     <Compile Include="payment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="payments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payments.xsd</DependentUpon>
     </Compile>
     <Compile Include="payment_documents.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -294,15 +322,16 @@
     <Compile Include="service_tax_services.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sleekbillDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sleekbillDataSet.xsd</DependentUpon>
+    <Compile Include="sp_getcustomestatements_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_getinvoicedetails_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_getinvoices_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_getReceiptdetails_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -330,6 +359,15 @@
     <Compile Include="tmpinvdataprint.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tmppayment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmpReceiptsdata.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmpstatementdata.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="vendor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -339,8 +377,17 @@
     <EmbeddedResource Include="frmAddPayment.resx">
       <DependentUpon>frmAddPayment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerStatementPreview.resx">
+      <DependentUpon>frmCustomerStatementPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmcustomerstatements.resx">
+      <DependentUpon>frmcustomerstatements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmpreview.resx">
       <DependentUpon>frmpreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReceiptspreview.resx">
+      <DependentUpon>frmReceiptspreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsplashscreen.resx">
       <DependentUpon>frmsplashscreen.cs</DependentUpon>
@@ -375,8 +422,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\CustomerStatementReport.rdlc" />
     <EmbeddedResource Include="Reports\InvoiceReport.rdlc" />
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\ReceiptsReports.rdlc" />
+    <None Include="customerstatements.xsc">
+      <DependentUpon>customerstatements.xsd</DependentUpon>
+    </None>
+    <None Include="customerstatements.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerstatements.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="customerstatements.xss">
+      <DependentUpon>customerstatements.xsd</DependentUpon>
+    </None>
     <None Include="invoices.xsc">
       <DependentUpon>invoices.xsd</DependentUpon>
     </None>
@@ -396,6 +455,17 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="payments.xsc">
+      <DependentUpon>payments.xsd</DependentUpon>
+    </None>
+    <None Include="payments.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>payments.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="payments.xss">
+      <DependentUpon>payments.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -405,17 +475,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="sleekbillDataSet.xsc">
-      <DependentUpon>sleekbillDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="sleekbillDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sleekbillDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="sleekbillDataSet.xss">
-      <DependentUpon>sleekbillDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

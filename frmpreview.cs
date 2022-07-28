@@ -42,6 +42,9 @@ namespace SmartBill
             reportDataSource1.Value = data;
             reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SmartBill.Reports.InvoiceReport.rdlc";
+            this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.RefreshReport();
 
            

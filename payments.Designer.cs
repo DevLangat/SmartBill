@@ -20,17 +20,17 @@ namespace SmartBill {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("sleekbillDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("payments")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class sleekbillDataSet : global::System.Data.DataSet {
+    public partial class payments : global::System.Data.DataSet {
         
-        private sp_getinvoicedetailsDataTable tablesp_getinvoicedetails;
+        private sp_getReceiptdetailsDataTable tablesp_getReceiptdetails;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public sleekbillDataSet() {
+        public payments() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SmartBill {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected sleekbillDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected payments(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace SmartBill {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["sp_getinvoicedetails"] != null)) {
-                    base.Tables.Add(new sp_getinvoicedetailsDataTable(ds.Tables["sp_getinvoicedetails"]));
+                if ((ds.Tables["sp_getReceiptdetails"] != null)) {
+                    base.Tables.Add(new sp_getReceiptdetailsDataTable(ds.Tables["sp_getReceiptdetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SmartBill {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public sp_getinvoicedetailsDataTable sp_getinvoicedetails {
+        public sp_getReceiptdetailsDataTable sp_getReceiptdetails {
             get {
-                return this.tablesp_getinvoicedetails;
+                return this.tablesp_getReceiptdetails;
             }
         }
         
@@ -127,7 +127,7 @@ namespace SmartBill {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            sleekbillDataSet cln = ((sleekbillDataSet)(base.Clone()));
+            payments cln = ((payments)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace SmartBill {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["sp_getinvoicedetails"] != null)) {
-                    base.Tables.Add(new sp_getinvoicedetailsDataTable(ds.Tables["sp_getinvoicedetails"]));
+                if ((ds.Tables["sp_getReceiptdetails"] != null)) {
+                    base.Tables.Add(new sp_getReceiptdetailsDataTable(ds.Tables["sp_getReceiptdetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SmartBill {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablesp_getinvoicedetails = ((sp_getinvoicedetailsDataTable)(base.Tables["sp_getinvoicedetails"]));
+            this.tablesp_getReceiptdetails = ((sp_getReceiptdetailsDataTable)(base.Tables["sp_getReceiptdetails"]));
             if ((initTable == true)) {
-                if ((this.tablesp_getinvoicedetails != null)) {
-                    this.tablesp_getinvoicedetails.InitVars();
+                if ((this.tablesp_getReceiptdetails != null)) {
+                    this.tablesp_getReceiptdetails.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace SmartBill {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "sleekbillDataSet";
+            this.DataSetName = "payments";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/sleekbillDataSet.xsd";
+            this.Namespace = "http://tempuri.org/payments.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablesp_getinvoicedetails = new sp_getinvoicedetailsDataTable();
-            base.Tables.Add(this.tablesp_getinvoicedetails);
+            this.tablesp_getReceiptdetails = new sp_getReceiptdetailsDataTable();
+            base.Tables.Add(this.tablesp_getReceiptdetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializesp_getinvoicedetails() {
+        private bool ShouldSerializesp_getReceiptdetails() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace SmartBill {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            sleekbillDataSet ds = new sleekbillDataSet();
+            payments ds = new payments();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,16 +270,30 @@ namespace SmartBill {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void sp_getinvoicedetailsRowChangeEventHandler(object sender, sp_getinvoicedetailsRowChangeEvent e);
+        public delegate void sp_getReceiptdetailsRowChangeEventHandler(object sender, sp_getReceiptdetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class sp_getinvoicedetailsDataTable : global::System.Data.TypedTableBase<sp_getinvoicedetailsRow> {
+        public partial class sp_getReceiptdetailsDataTable : global::System.Data.TypedTableBase<sp_getReceiptdetailsRow> {
             
-            private global::System.Data.DataColumn columnnumber;
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnInvoiceValue;
+            
+            private global::System.Data.DataColumn columnPaid;
+            
+            private global::System.Data.DataColumn columnBalance;
+            
+            private global::System.Data.DataColumn columnclient_id;
+            
+            private global::System.Data.DataColumn columnInvoiceNumber;
+            
+            private global::System.Data.DataColumn columnAmountPaid;
+            
+            private global::System.Data.DataColumn columnreceiptno;
             
             private global::System.Data.DataColumn columnissue_date;
             
@@ -325,16 +339,18 @@ namespace SmartBill {
             
             private global::System.Data.DataColumn columncompany_phone;
             
-            private global::System.Data.DataColumn columnTotalValue;
+            private global::System.Data.DataColumn columnReceiptdate;
             
-            private global::System.Data.DataColumn columnTotalAmount;
+            private global::System.Data.DataColumn columnPaymentMode;
             
-            private global::System.Data.DataColumn columnTotalTax;
+            private global::System.Data.DataColumn columnvat_number;
+            
+            private global::System.Data.DataColumn columnbilling_zip;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_getinvoicedetailsDataTable() {
-                this.TableName = "sp_getinvoicedetails";
+            public sp_getReceiptdetailsDataTable() {
+                this.TableName = "sp_getReceiptdetails";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -342,7 +358,7 @@ namespace SmartBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal sp_getinvoicedetailsDataTable(global::System.Data.DataTable table) {
+            internal sp_getReceiptdetailsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -359,16 +375,72 @@ namespace SmartBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected sp_getinvoicedetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected sp_getReceiptdetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn numberColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnnumber;
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn InvoiceValueColumn {
+                get {
+                    return this.columnInvoiceValue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PaidColumn {
+                get {
+                    return this.columnPaid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BalanceColumn {
+                get {
+                    return this.columnBalance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn client_idColumn {
+                get {
+                    return this.columnclient_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn InvoiceNumberColumn {
+                get {
+                    return this.columnInvoiceNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AmountPaidColumn {
+                get {
+                    return this.columnAmountPaid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn receiptnoColumn {
+                get {
+                    return this.columnreceiptno;
                 }
             }
             
@@ -550,25 +622,33 @@ namespace SmartBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalValueColumn {
+            public global::System.Data.DataColumn ReceiptdateColumn {
                 get {
-                    return this.columnTotalValue;
+                    return this.columnReceiptdate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalAmountColumn {
+            public global::System.Data.DataColumn PaymentModeColumn {
                 get {
-                    return this.columnTotalAmount;
+                    return this.columnPaymentMode;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalTaxColumn {
+            public global::System.Data.DataColumn vat_numberColumn {
                 get {
-                    return this.columnTotalTax;
+                    return this.columnvat_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn billing_zipColumn {
+                get {
+                    return this.columnbilling_zip;
                 }
             }
             
@@ -583,34 +663,41 @@ namespace SmartBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_getinvoicedetailsRow this[int index] {
+            public sp_getReceiptdetailsRow this[int index] {
                 get {
-                    return ((sp_getinvoicedetailsRow)(this.Rows[index]));
+                    return ((sp_getReceiptdetailsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_getinvoicedetailsRowChangeEventHandler sp_getinvoicedetailsRowChanging;
+            public event sp_getReceiptdetailsRowChangeEventHandler sp_getReceiptdetailsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_getinvoicedetailsRowChangeEventHandler sp_getinvoicedetailsRowChanged;
+            public event sp_getReceiptdetailsRowChangeEventHandler sp_getReceiptdetailsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_getinvoicedetailsRowChangeEventHandler sp_getinvoicedetailsRowDeleting;
+            public event sp_getReceiptdetailsRowChangeEventHandler sp_getReceiptdetailsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_getinvoicedetailsRowChangeEventHandler sp_getinvoicedetailsRowDeleted;
+            public event sp_getReceiptdetailsRowChangeEventHandler sp_getReceiptdetailsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Addsp_getinvoicedetailsRow(sp_getinvoicedetailsRow row) {
+            public void Addsp_getReceiptdetailsRow(sp_getReceiptdetailsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_getinvoicedetailsRow Addsp_getinvoicedetailsRow(
-                        long number, 
+            public sp_getReceiptdetailsRow Addsp_getReceiptdetailsRow(
+                        long id, 
+                        double InvoiceValue, 
+                        decimal Paid, 
+                        decimal Balance, 
+                        string client_id, 
+                        long InvoiceNumber, 
+                        decimal AmountPaid, 
+                        string receiptno, 
                         System.DateTime issue_date, 
                         System.DateTime due_date, 
                         string product_name, 
@@ -633,12 +720,20 @@ namespace SmartBill {
                         string company_pin, 
                         string company_zip, 
                         string company_phone, 
-                        decimal TotalValue, 
-                        decimal TotalAmount, 
-                        decimal TotalTax) {
-                sp_getinvoicedetailsRow rowsp_getinvoicedetailsRow = ((sp_getinvoicedetailsRow)(this.NewRow()));
+                        System.DateTime Receiptdate, 
+                        string PaymentMode, 
+                        string vat_number, 
+                        string billing_zip) {
+                sp_getReceiptdetailsRow rowsp_getReceiptdetailsRow = ((sp_getReceiptdetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        number,
+                        id,
+                        InvoiceValue,
+                        Paid,
+                        Balance,
+                        client_id,
+                        InvoiceNumber,
+                        AmountPaid,
+                        receiptno,
                         issue_date,
                         due_date,
                         product_name,
@@ -661,18 +756,19 @@ namespace SmartBill {
                         company_pin,
                         company_zip,
                         company_phone,
-                        TotalValue,
-                        TotalAmount,
-                        TotalTax};
-                rowsp_getinvoicedetailsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsp_getinvoicedetailsRow);
-                return rowsp_getinvoicedetailsRow;
+                        Receiptdate,
+                        PaymentMode,
+                        vat_number,
+                        billing_zip};
+                rowsp_getReceiptdetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsp_getReceiptdetailsRow);
+                return rowsp_getReceiptdetailsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                sp_getinvoicedetailsDataTable cln = ((sp_getinvoicedetailsDataTable)(base.Clone()));
+                sp_getReceiptdetailsDataTable cln = ((sp_getReceiptdetailsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -680,13 +776,20 @@ namespace SmartBill {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new sp_getinvoicedetailsDataTable();
+                return new sp_getReceiptdetailsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnnumber = base.Columns["number"];
+                this.columnid = base.Columns["id"];
+                this.columnInvoiceValue = base.Columns["InvoiceValue"];
+                this.columnPaid = base.Columns["Paid"];
+                this.columnBalance = base.Columns["Balance"];
+                this.columnclient_id = base.Columns["client_id"];
+                this.columnInvoiceNumber = base.Columns["InvoiceNumber"];
+                this.columnAmountPaid = base.Columns["AmountPaid"];
+                this.columnreceiptno = base.Columns["receiptno"];
                 this.columnissue_date = base.Columns["issue_date"];
                 this.columndue_date = base.Columns["due_date"];
                 this.columnproduct_name = base.Columns["product_name"];
@@ -709,16 +812,31 @@ namespace SmartBill {
                 this.columncompany_pin = base.Columns["company_pin"];
                 this.columncompany_zip = base.Columns["company_zip"];
                 this.columncompany_phone = base.Columns["company_phone"];
-                this.columnTotalValue = base.Columns["TotalValue"];
-                this.columnTotalAmount = base.Columns["TotalAmount"];
-                this.columnTotalTax = base.Columns["TotalTax"];
+                this.columnReceiptdate = base.Columns["Receiptdate"];
+                this.columnPaymentMode = base.Columns["PaymentMode"];
+                this.columnvat_number = base.Columns["vat_number"];
+                this.columnbilling_zip = base.Columns["billing_zip"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnnumber = new global::System.Data.DataColumn("number", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnumber);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnInvoiceValue = new global::System.Data.DataColumn("InvoiceValue", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInvoiceValue);
+                this.columnPaid = new global::System.Data.DataColumn("Paid", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaid);
+                this.columnBalance = new global::System.Data.DataColumn("Balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBalance);
+                this.columnclient_id = new global::System.Data.DataColumn("client_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclient_id);
+                this.columnInvoiceNumber = new global::System.Data.DataColumn("InvoiceNumber", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInvoiceNumber);
+                this.columnAmountPaid = new global::System.Data.DataColumn("AmountPaid", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmountPaid);
+                this.columnreceiptno = new global::System.Data.DataColumn("receiptno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreceiptno);
                 this.columnissue_date = new global::System.Data.DataColumn("issue_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnissue_date);
                 this.columndue_date = new global::System.Data.DataColumn("due_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -763,13 +881,18 @@ namespace SmartBill {
                 base.Columns.Add(this.columncompany_zip);
                 this.columncompany_phone = new global::System.Data.DataColumn("company_phone", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncompany_phone);
-                this.columnTotalValue = new global::System.Data.DataColumn("TotalValue", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalValue);
-                this.columnTotalAmount = new global::System.Data.DataColumn("TotalAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalAmount);
-                this.columnTotalTax = new global::System.Data.DataColumn("TotalTax", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalTax);
-                this.columnnumber.AllowDBNull = false;
+                this.columnReceiptdate = new global::System.Data.DataColumn("Receiptdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceiptdate);
+                this.columnPaymentMode = new global::System.Data.DataColumn("PaymentMode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentMode);
+                this.columnvat_number = new global::System.Data.DataColumn("vat_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvat_number);
+                this.columnbilling_zip = new global::System.Data.DataColumn("billing_zip", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbilling_zip);
+                this.columnid.AllowDBNull = false;
+                this.columnclient_id.MaxLength = 50;
+                this.columnInvoiceNumber.AllowDBNull = false;
+                this.columnreceiptno.MaxLength = 20;
                 this.columnissue_date.AllowDBNull = false;
                 this.columnproduct_name.AllowDBNull = false;
                 this.columnproduct_name.MaxLength = 2147483647;
@@ -794,32 +917,35 @@ namespace SmartBill {
                 this.columncompany_pin.MaxLength = 2147483647;
                 this.columncompany_zip.MaxLength = 2147483647;
                 this.columncompany_phone.MaxLength = 2147483647;
+                this.columnPaymentMode.MaxLength = 20;
+                this.columnvat_number.MaxLength = 2147483647;
+                this.columnbilling_zip.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_getinvoicedetailsRow Newsp_getinvoicedetailsRow() {
-                return ((sp_getinvoicedetailsRow)(this.NewRow()));
+            public sp_getReceiptdetailsRow Newsp_getReceiptdetailsRow() {
+                return ((sp_getReceiptdetailsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new sp_getinvoicedetailsRow(builder);
+                return new sp_getReceiptdetailsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(sp_getinvoicedetailsRow);
+                return typeof(sp_getReceiptdetailsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.sp_getinvoicedetailsRowChanged != null)) {
-                    this.sp_getinvoicedetailsRowChanged(this, new sp_getinvoicedetailsRowChangeEvent(((sp_getinvoicedetailsRow)(e.Row)), e.Action));
+                if ((this.sp_getReceiptdetailsRowChanged != null)) {
+                    this.sp_getReceiptdetailsRowChanged(this, new sp_getReceiptdetailsRowChangeEvent(((sp_getReceiptdetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -827,8 +953,8 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.sp_getinvoicedetailsRowChanging != null)) {
-                    this.sp_getinvoicedetailsRowChanging(this, new sp_getinvoicedetailsRowChangeEvent(((sp_getinvoicedetailsRow)(e.Row)), e.Action));
+                if ((this.sp_getReceiptdetailsRowChanging != null)) {
+                    this.sp_getReceiptdetailsRowChanging(this, new sp_getReceiptdetailsRowChangeEvent(((sp_getReceiptdetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -836,8 +962,8 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.sp_getinvoicedetailsRowDeleted != null)) {
-                    this.sp_getinvoicedetailsRowDeleted(this, new sp_getinvoicedetailsRowChangeEvent(((sp_getinvoicedetailsRow)(e.Row)), e.Action));
+                if ((this.sp_getReceiptdetailsRowDeleted != null)) {
+                    this.sp_getReceiptdetailsRowDeleted(this, new sp_getReceiptdetailsRowChangeEvent(((sp_getReceiptdetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -845,14 +971,14 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.sp_getinvoicedetailsRowDeleting != null)) {
-                    this.sp_getinvoicedetailsRowDeleting(this, new sp_getinvoicedetailsRowChangeEvent(((sp_getinvoicedetailsRow)(e.Row)), e.Action));
+                if ((this.sp_getReceiptdetailsRowDeleting != null)) {
+                    this.sp_getReceiptdetailsRowDeleting(this, new sp_getReceiptdetailsRowChangeEvent(((sp_getReceiptdetailsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Removesp_getinvoicedetailsRow(sp_getinvoicedetailsRow row) {
+            public void Removesp_getReceiptdetailsRow(sp_getReceiptdetailsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -861,7 +987,7 @@ namespace SmartBill {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                sleekbillDataSet ds = new sleekbillDataSet();
+                payments ds = new payments();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -879,7 +1005,7 @@ namespace SmartBill {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "sp_getinvoicedetailsDataTable";
+                attribute2.FixedValue = "sp_getReceiptdetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -923,25 +1049,132 @@ namespace SmartBill {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class sp_getinvoicedetailsRow : global::System.Data.DataRow {
+        public partial class sp_getReceiptdetailsRow : global::System.Data.DataRow {
             
-            private sp_getinvoicedetailsDataTable tablesp_getinvoicedetails;
+            private sp_getReceiptdetailsDataTable tablesp_getReceiptdetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal sp_getinvoicedetailsRow(global::System.Data.DataRowBuilder rb) : 
+            internal sp_getReceiptdetailsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablesp_getinvoicedetails = ((sp_getinvoicedetailsDataTable)(this.Table));
+                this.tablesp_getReceiptdetails = ((sp_getReceiptdetailsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public long number {
+            public long id {
                 get {
-                    return ((long)(this[this.tablesp_getinvoicedetails.numberColumn]));
+                    return ((long)(this[this.tablesp_getReceiptdetails.idColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.numberColumn] = value;
+                    this[this.tablesp_getReceiptdetails.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double InvoiceValue {
+                get {
+                    try {
+                        return ((double)(this[this.tablesp_getReceiptdetails.InvoiceValueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InvoiceValue\' in table \'sp_getReceiptdetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.InvoiceValueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Paid {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_getReceiptdetails.PaidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Paid\' in table \'sp_getReceiptdetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.PaidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Balance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_getReceiptdetails.BalanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Balance\' in table \'sp_getReceiptdetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.BalanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string client_id {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_getReceiptdetails.client_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'client_id\' in table \'sp_getReceiptdetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.client_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public long InvoiceNumber {
+                get {
+                    return ((long)(this[this.tablesp_getReceiptdetails.InvoiceNumberColumn]));
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.InvoiceNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal AmountPaid {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_getReceiptdetails.AmountPaidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AmountPaid\' in table \'sp_getReceiptdetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.AmountPaidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string receiptno {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_getReceiptdetails.receiptnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'receiptno\' in table \'sp_getReceiptdetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.receiptnoColumn] = value;
                 }
             }
             
@@ -949,10 +1182,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime issue_date {
                 get {
-                    return ((global::System.DateTime)(this[this.tablesp_getinvoicedetails.issue_dateColumn]));
+                    return ((global::System.DateTime)(this[this.tablesp_getReceiptdetails.issue_dateColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.issue_dateColumn] = value;
+                    this[this.tablesp_getReceiptdetails.issue_dateColumn] = value;
                 }
             }
             
@@ -961,14 +1194,14 @@ namespace SmartBill {
             public System.DateTime due_date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablesp_getinvoicedetails.due_dateColumn]));
+                        return ((global::System.DateTime)(this[this.tablesp_getReceiptdetails.due_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'due_date\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'due_date\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.due_dateColumn] = value;
+                    this[this.tablesp_getReceiptdetails.due_dateColumn] = value;
                 }
             }
             
@@ -976,10 +1209,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string product_name {
                 get {
-                    return ((string)(this[this.tablesp_getinvoicedetails.product_nameColumn]));
+                    return ((string)(this[this.tablesp_getReceiptdetails.product_nameColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.product_nameColumn] = value;
+                    this[this.tablesp_getReceiptdetails.product_nameColumn] = value;
                 }
             }
             
@@ -987,10 +1220,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int product_id {
                 get {
-                    return ((int)(this[this.tablesp_getinvoicedetails.product_idColumn]));
+                    return ((int)(this[this.tablesp_getReceiptdetails.product_idColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.product_idColumn] = value;
+                    this[this.tablesp_getReceiptdetails.product_idColumn] = value;
                 }
             }
             
@@ -998,10 +1231,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double quantity {
                 get {
-                    return ((double)(this[this.tablesp_getinvoicedetails.quantityColumn]));
+                    return ((double)(this[this.tablesp_getReceiptdetails.quantityColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.quantityColumn] = value;
+                    this[this.tablesp_getReceiptdetails.quantityColumn] = value;
                 }
             }
             
@@ -1009,10 +1242,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string type {
                 get {
-                    return ((string)(this[this.tablesp_getinvoicedetails.typeColumn]));
+                    return ((string)(this[this.tablesp_getReceiptdetails.typeColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.typeColumn] = value;
+                    this[this.tablesp_getReceiptdetails.typeColumn] = value;
                 }
             }
             
@@ -1020,10 +1253,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal price {
                 get {
-                    return ((decimal)(this[this.tablesp_getinvoicedetails.priceColumn]));
+                    return ((decimal)(this[this.tablesp_getReceiptdetails.priceColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.priceColumn] = value;
+                    this[this.tablesp_getReceiptdetails.priceColumn] = value;
                 }
             }
             
@@ -1032,14 +1265,14 @@ namespace SmartBill {
             public decimal PAmount {
                 get {
                     try {
-                        return ((decimal)(this[this.tablesp_getinvoicedetails.PAmountColumn]));
+                        return ((decimal)(this[this.tablesp_getReceiptdetails.PAmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PAmount\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAmount\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.PAmountColumn] = value;
+                    this[this.tablesp_getReceiptdetails.PAmountColumn] = value;
                 }
             }
             
@@ -1048,14 +1281,14 @@ namespace SmartBill {
             public string pTax {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.pTaxColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.pTaxColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pTax\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pTax\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.pTaxColumn] = value;
+                    this[this.tablesp_getReceiptdetails.pTaxColumn] = value;
                 }
             }
             
@@ -1063,10 +1296,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string client_name {
                 get {
-                    return ((string)(this[this.tablesp_getinvoicedetails.client_nameColumn]));
+                    return ((string)(this[this.tablesp_getReceiptdetails.client_nameColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.client_nameColumn] = value;
+                    this[this.tablesp_getReceiptdetails.client_nameColumn] = value;
                 }
             }
             
@@ -1074,10 +1307,10 @@ namespace SmartBill {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string code {
                 get {
-                    return ((string)(this[this.tablesp_getinvoicedetails.codeColumn]));
+                    return ((string)(this[this.tablesp_getReceiptdetails.codeColumn]));
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.codeColumn] = value;
+                    this[this.tablesp_getReceiptdetails.codeColumn] = value;
                 }
             }
             
@@ -1086,15 +1319,15 @@ namespace SmartBill {
             public string client_billingaddress {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.client_billingaddressColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.client_billingaddressColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'client_billingaddress\' in table \'sp_getinvoicedetails\' is D" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'client_billingaddress\' in table \'sp_getReceiptdetails\' is D" +
                                 "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.client_billingaddressColumn] = value;
+                    this[this.tablesp_getReceiptdetails.client_billingaddressColumn] = value;
                 }
             }
             
@@ -1103,14 +1336,14 @@ namespace SmartBill {
             public string billing_city {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.billing_cityColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.billing_cityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'billing_city\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'billing_city\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.billing_cityColumn] = value;
+                    this[this.tablesp_getReceiptdetails.billing_cityColumn] = value;
                 }
             }
             
@@ -1119,14 +1352,14 @@ namespace SmartBill {
             public string client_phone {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.client_phoneColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.client_phoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'client_phone\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'client_phone\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.client_phoneColumn] = value;
+                    this[this.tablesp_getReceiptdetails.client_phoneColumn] = value;
                 }
             }
             
@@ -1135,14 +1368,14 @@ namespace SmartBill {
             public string po_number {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.po_numberColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.po_numberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'po_number\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'po_number\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.po_numberColumn] = value;
+                    this[this.tablesp_getReceiptdetails.po_numberColumn] = value;
                 }
             }
             
@@ -1151,15 +1384,15 @@ namespace SmartBill {
             public string company_address {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.company_addressColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.company_addressColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_address\' in table \'sp_getinvoicedetails\' is DBNull." +
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_address\' in table \'sp_getReceiptdetails\' is DBNull." +
                                 "", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.company_addressColumn] = value;
+                    this[this.tablesp_getReceiptdetails.company_addressColumn] = value;
                 }
             }
             
@@ -1168,14 +1401,14 @@ namespace SmartBill {
             public string company_county {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.company_countyColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.company_countyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_county\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_county\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.company_countyColumn] = value;
+                    this[this.tablesp_getReceiptdetails.company_countyColumn] = value;
                 }
             }
             
@@ -1184,14 +1417,14 @@ namespace SmartBill {
             public string company_email {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.company_emailColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.company_emailColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_email\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_email\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.company_emailColumn] = value;
+                    this[this.tablesp_getReceiptdetails.company_emailColumn] = value;
                 }
             }
             
@@ -1200,14 +1433,14 @@ namespace SmartBill {
             public string company_name {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.company_nameColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.company_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_name\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_name\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.company_nameColumn] = value;
+                    this[this.tablesp_getReceiptdetails.company_nameColumn] = value;
                 }
             }
             
@@ -1216,14 +1449,14 @@ namespace SmartBill {
             public string company_pin {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.company_pinColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.company_pinColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_pin\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_pin\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.company_pinColumn] = value;
+                    this[this.tablesp_getReceiptdetails.company_pinColumn] = value;
                 }
             }
             
@@ -1232,14 +1465,14 @@ namespace SmartBill {
             public string company_zip {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.company_zipColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.company_zipColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_zip\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_zip\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.company_zipColumn] = value;
+                    this[this.tablesp_getReceiptdetails.company_zipColumn] = value;
                 }
             }
             
@@ -1248,267 +1481,367 @@ namespace SmartBill {
             public string company_phone {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_getinvoicedetails.company_phoneColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.company_phoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'company_phone\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_phone\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.company_phoneColumn] = value;
+                    this[this.tablesp_getReceiptdetails.company_phoneColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal TotalValue {
+            public System.DateTime Receiptdate {
                 get {
                     try {
-                        return ((decimal)(this[this.tablesp_getinvoicedetails.TotalValueColumn]));
+                        return ((global::System.DateTime)(this[this.tablesp_getReceiptdetails.ReceiptdateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalValue\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Receiptdate\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.TotalValueColumn] = value;
+                    this[this.tablesp_getReceiptdetails.ReceiptdateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal TotalAmount {
+            public string PaymentMode {
                 get {
                     try {
-                        return ((decimal)(this[this.tablesp_getinvoicedetails.TotalAmountColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.PaymentModeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalAmount\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentMode\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.TotalAmountColumn] = value;
+                    this[this.tablesp_getReceiptdetails.PaymentModeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal TotalTax {
+            public string vat_number {
                 get {
                     try {
-                        return ((decimal)(this[this.tablesp_getinvoicedetails.TotalTaxColumn]));
+                        return ((string)(this[this.tablesp_getReceiptdetails.vat_numberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalTax\' in table \'sp_getinvoicedetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'vat_number\' in table \'sp_getReceiptdetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_getinvoicedetails.TotalTaxColumn] = value;
+                    this[this.tablesp_getReceiptdetails.vat_numberColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string billing_zip {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_getReceiptdetails.billing_zipColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'billing_zip\' in table \'sp_getReceiptdetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_getReceiptdetails.billing_zipColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsInvoiceValueNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.InvoiceValueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetInvoiceValueNull() {
+                this[this.tablesp_getReceiptdetails.InvoiceValueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPaidNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.PaidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPaidNull() {
+                this[this.tablesp_getReceiptdetails.PaidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBalanceNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.BalanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBalanceNull() {
+                this[this.tablesp_getReceiptdetails.BalanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isclient_idNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.client_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setclient_idNull() {
+                this[this.tablesp_getReceiptdetails.client_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAmountPaidNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.AmountPaidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAmountPaidNull() {
+                this[this.tablesp_getReceiptdetails.AmountPaidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsreceiptnoNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.receiptnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetreceiptnoNull() {
+                this[this.tablesp_getReceiptdetails.receiptnoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isdue_dateNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.due_dateColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.due_dateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setdue_dateNull() {
-                this[this.tablesp_getinvoicedetails.due_dateColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.due_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPAmountNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.PAmountColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.PAmountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPAmountNull() {
-                this[this.tablesp_getinvoicedetails.PAmountColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.PAmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IspTaxNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.pTaxColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.pTaxColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetpTaxNull() {
-                this[this.tablesp_getinvoicedetails.pTaxColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.pTaxColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isclient_billingaddressNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.client_billingaddressColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.client_billingaddressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setclient_billingaddressNull() {
-                this[this.tablesp_getinvoicedetails.client_billingaddressColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.client_billingaddressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isbilling_cityNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.billing_cityColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.billing_cityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setbilling_cityNull() {
-                this[this.tablesp_getinvoicedetails.billing_cityColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.billing_cityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isclient_phoneNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.client_phoneColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.client_phoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setclient_phoneNull() {
-                this[this.tablesp_getinvoicedetails.client_phoneColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.client_phoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Ispo_numberNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.po_numberColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.po_numberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setpo_numberNull() {
-                this[this.tablesp_getinvoicedetails.po_numberColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.po_numberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscompany_addressNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.company_addressColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.company_addressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcompany_addressNull() {
-                this[this.tablesp_getinvoicedetails.company_addressColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.company_addressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscompany_countyNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.company_countyColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.company_countyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcompany_countyNull() {
-                this[this.tablesp_getinvoicedetails.company_countyColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.company_countyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscompany_emailNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.company_emailColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.company_emailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcompany_emailNull() {
-                this[this.tablesp_getinvoicedetails.company_emailColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.company_emailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscompany_nameNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.company_nameColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.company_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcompany_nameNull() {
-                this[this.tablesp_getinvoicedetails.company_nameColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.company_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscompany_pinNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.company_pinColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.company_pinColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcompany_pinNull() {
-                this[this.tablesp_getinvoicedetails.company_pinColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.company_pinColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscompany_zipNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.company_zipColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.company_zipColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcompany_zipNull() {
-                this[this.tablesp_getinvoicedetails.company_zipColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.company_zipColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscompany_phoneNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.company_phoneColumn);
+                return this.IsNull(this.tablesp_getReceiptdetails.company_phoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcompany_phoneNull() {
-                this[this.tablesp_getinvoicedetails.company_phoneColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_getReceiptdetails.company_phoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTotalValueNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.TotalValueColumn);
+            public bool IsReceiptdateNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.ReceiptdateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTotalValueNull() {
-                this[this.tablesp_getinvoicedetails.TotalValueColumn] = global::System.Convert.DBNull;
+            public void SetReceiptdateNull() {
+                this[this.tablesp_getReceiptdetails.ReceiptdateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTotalAmountNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.TotalAmountColumn);
+            public bool IsPaymentModeNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.PaymentModeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTotalAmountNull() {
-                this[this.tablesp_getinvoicedetails.TotalAmountColumn] = global::System.Convert.DBNull;
+            public void SetPaymentModeNull() {
+                this[this.tablesp_getReceiptdetails.PaymentModeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTotalTaxNull() {
-                return this.IsNull(this.tablesp_getinvoicedetails.TotalTaxColumn);
+            public bool Isvat_numberNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.vat_numberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTotalTaxNull() {
-                this[this.tablesp_getinvoicedetails.TotalTaxColumn] = global::System.Convert.DBNull;
+            public void Setvat_numberNull() {
+                this[this.tablesp_getReceiptdetails.vat_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isbilling_zipNull() {
+                return this.IsNull(this.tablesp_getReceiptdetails.billing_zipColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setbilling_zipNull() {
+                this[this.tablesp_getReceiptdetails.billing_zipColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1516,22 +1849,22 @@ namespace SmartBill {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class sp_getinvoicedetailsRowChangeEvent : global::System.EventArgs {
+        public class sp_getReceiptdetailsRowChangeEvent : global::System.EventArgs {
             
-            private sp_getinvoicedetailsRow eventRow;
+            private sp_getReceiptdetailsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_getinvoicedetailsRowChangeEvent(sp_getinvoicedetailsRow row, global::System.Data.DataRowAction action) {
+            public sp_getReceiptdetailsRowChangeEvent(sp_getReceiptdetailsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_getinvoicedetailsRow Row {
+            public sp_getReceiptdetailsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1547,7 +1880,7 @@ namespace SmartBill {
         }
     }
 }
-namespace SmartBill.sleekbillDataSetTableAdapters {
+namespace SmartBill.paymentsTableAdapters {
     
     
     /// <summary>
@@ -1559,7 +1892,7 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class sp_getinvoicedetailsTableAdapter : global::System.ComponentModel.Component {
+    public partial class sp_getReceiptdetailsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1573,7 +1906,7 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public sp_getinvoicedetailsTableAdapter() {
+        public sp_getReceiptdetailsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1670,8 +2003,15 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sp_getinvoicedetails";
-            tableMapping.ColumnMappings.Add("number", "number");
+            tableMapping.DataSetTable = "sp_getReceiptdetails";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("InvoiceValue", "InvoiceValue");
+            tableMapping.ColumnMappings.Add("Paid", "Paid");
+            tableMapping.ColumnMappings.Add("Balance", "Balance");
+            tableMapping.ColumnMappings.Add("client_id", "client_id");
+            tableMapping.ColumnMappings.Add("InvoiceNumber", "InvoiceNumber");
+            tableMapping.ColumnMappings.Add("AmountPaid", "AmountPaid");
+            tableMapping.ColumnMappings.Add("receiptno", "receiptno");
             tableMapping.ColumnMappings.Add("issue_date", "issue_date");
             tableMapping.ColumnMappings.Add("due_date", "due_date");
             tableMapping.ColumnMappings.Add("product_name", "product_name");
@@ -1694,9 +2034,10 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("company_pin", "company_pin");
             tableMapping.ColumnMappings.Add("company_zip", "company_zip");
             tableMapping.ColumnMappings.Add("company_phone", "company_phone");
-            tableMapping.ColumnMappings.Add("TotalValue", "TotalValue");
-            tableMapping.ColumnMappings.Add("TotalAmount", "TotalAmount");
-            tableMapping.ColumnMappings.Add("TotalTax", "TotalTax");
+            tableMapping.ColumnMappings.Add("Receiptdate", "Receiptdate");
+            tableMapping.ColumnMappings.Add("PaymentMode", "PaymentMode");
+            tableMapping.ColumnMappings.Add("vat_number", "vat_number");
+            tableMapping.ColumnMappings.Add("billing_zip", "billing_zip");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1713,9 +2054,10 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.sp_getinvoicedetails";
+            this._commandCollection[0].CommandText = "dbo.sp_getReceiptdetails";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@recNo", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inv", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1723,13 +2065,19 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(sleekbillDataSet.sp_getinvoicedetailsDataTable dataTable, global::System.Nullable<int> inv) {
+        public virtual int Fill(payments.sp_getReceiptdetailsDataTable dataTable, string recNo, global::System.Nullable<int> inv) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((inv.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(inv.Value));
+            if ((recNo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(recNo));
+            }
+            if ((inv.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(inv.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1742,15 +2090,21 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual sleekbillDataSet.sp_getinvoicedetailsDataTable GetData(global::System.Nullable<int> inv) {
+        public virtual payments.sp_getReceiptdetailsDataTable GetData(string recNo, global::System.Nullable<int> inv) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((inv.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(inv.Value));
-            }
-            else {
+            if ((recNo == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            sleekbillDataSet.sp_getinvoicedetailsDataTable dataTable = new sleekbillDataSet.sp_getinvoicedetailsDataTable();
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(recNo));
+            }
+            if ((inv.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(inv.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            payments.sp_getReceiptdetailsDataTable dataTable = new payments.sp_getReceiptdetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1824,7 +2178,7 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(sleekbillDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(payments dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1834,7 +2188,7 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(sleekbillDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(payments dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1844,7 +2198,7 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(sleekbillDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(payments dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1878,7 +2232,7 @@ namespace SmartBill.sleekbillDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(sleekbillDataSet dataSet) {
+        public virtual int UpdateAll(payments dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

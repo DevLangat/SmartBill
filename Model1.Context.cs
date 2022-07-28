@@ -77,6 +77,18 @@ namespace SmartBill
         public virtual DbSet<config> configs { get; set; }
         public virtual DbSet<tmpinvdata> tmpinvdatas { get; set; }
         public virtual DbSet<tmpinvdataprint> tmpinvdataprints { get; set; }
+        public virtual DbSet<tmppayment> tmppayments { get; set; }
+        public virtual DbSet<tmpReceiptsdata> tmpReceiptsdatas { get; set; }
+        public virtual DbSet<tmpstatementdata> tmpstatementdatas { get; set; }
+    
+        public virtual ObjectResult<sp_getcustomestatements_Result> sp_getcustomestatements(string client_code)
+        {
+            var client_codeParameter = client_code != null ?
+                new ObjectParameter("client_code", client_code) :
+                new ObjectParameter("client_code", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getcustomestatements_Result>("sp_getcustomestatements", client_codeParameter);
+        }
     
         public virtual ObjectResult<sp_getinvoicedetails_Result> sp_getinvoicedetails(Nullable<int> inv)
         {
@@ -99,6 +111,36 @@ namespace SmartBill
         public virtual int sp_getinvoicesforpayment()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_getinvoicesforpayment");
+        }
+    
+        public virtual ObjectResult<sp_getReceiptdetails_Result> sp_getReceiptdetails(string recNo, Nullable<int> inv)
+        {
+            var recNoParameter = recNo != null ?
+                new ObjectParameter("recNo", recNo) :
+                new ObjectParameter("recNo", typeof(string));
+    
+            var invParameter = inv.HasValue ?
+                new ObjectParameter("inv", inv) :
+                new ObjectParameter("inv", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getReceiptdetails_Result>("sp_getReceiptdetails", recNoParameter, invParameter);
+        }
+    
+        public virtual int sp_getStatement(string custId, Nullable<System.DateTime> startdate, Nullable<System.DateTime> enddate)
+        {
+            var custIdParameter = custId != null ?
+                new ObjectParameter("custId", custId) :
+                new ObjectParameter("custId", typeof(string));
+    
+            var startdateParameter = startdate.HasValue ?
+                new ObjectParameter("startdate", startdate) :
+                new ObjectParameter("startdate", typeof(System.DateTime));
+    
+            var enddateParameter = enddate.HasValue ?
+                new ObjectParameter("enddate", enddate) :
+                new ObjectParameter("enddate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_getStatement", custIdParameter, startdateParameter, enddateParameter);
         }
     }
 }

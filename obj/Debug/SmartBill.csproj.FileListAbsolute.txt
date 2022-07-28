@@ -197,7 +197,9 @@ E:\CSharp Projects\SmartBill\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.re
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.csproj.AssemblyReference.cache
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.csproj.SuggestedBindingRedirects.cache
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmAddPayment.resources
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmCustomerStatementPreview.resources
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmpreview.resources
+E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmReceiptspreview.resources
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmsplashscreen.resources
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.main.resources
 E:\CSharp Projects\SmartBill\obj\Debug\SmartBill.frmCompany.resources
