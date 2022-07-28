@@ -1114,7 +1114,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
         <Function Name="sp_getinvoicedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="inv" Type="int" Mode="In" />
         </Function>
-        <Function Name="sp_getinvoices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getinvoices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="invoiceno" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_getinvoicesforpayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="sleekbillModelStoreContainer">
           <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
@@ -2331,7 +2333,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <FunctionImport Name="sp_getinvoicedetails" ReturnType="Collection(sleekbillModel.sp_getinvoicedetails_Result)">
             <Parameter Name="inv" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_getinvoices" ReturnType="Collection(sleekbillModel.sp_getinvoices_Result)" />
+          <FunctionImport Name="sp_getinvoices" ReturnType="Collection(sleekbillModel.sp_getinvoices_Result)">
+            <Parameter Name="invoiceno" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="sp_getinvoicesforpayment" />
         </EntityContainer>
         <ComplexType Name="sp_getinvoicedetails_Result">

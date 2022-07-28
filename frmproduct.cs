@@ -46,6 +46,11 @@ namespace SmartBill
                 MessageBox.Show("Missing Quantity value  ", this.Text, MessageBoxButtons.OK);
                 return;
             }
+            if (txtPrice.Text == "")
+            {
+                MessageBox.Show("Missing Price value  ", this.Text, MessageBoxButtons.OK);
+                return;
+            }
             try
             {
              

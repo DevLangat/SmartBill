@@ -170,6 +170,8 @@ namespace SmartBill
                     MessageBox.Show("Missing Document Number ,please provide ", this.Text, MessageBoxButtons.OK);
                     return;
                 }
+                var context = new sleekbillEntities();
+                var companyid = (from m in context.company_details select m.id).FirstOrDefault();
                 int taxid = Convert.ToInt32(cbTax.SelectedValue);
 
                 int docno = Convert.ToInt32(txtdocnumber.Text);
@@ -180,7 +182,7 @@ namespace SmartBill
                 string client_id =  cbClients.SelectedValue.ToString();
                 string fiscalyear = "";
                 string number = "0";
-                var context = new sleekbillEntities();
+              
                 var invoicecreation = new invoice_products()
 
                 {
@@ -194,6 +196,7 @@ namespace SmartBill
                     tax_id=taxid,
                     type=cboproduct.Text,
                     deleted="n",
+                    
 
 
                 };
@@ -226,8 +229,9 @@ namespace SmartBill
                     client_name = cbClients.Text,
                     total_no_tax = "1",
                     total_tax = cbTax.Text,
+                    company_details_id= companyid,
                     //fiscal_year = fiscalyear,            
-                    po_number=txtponumber.Text,
+                    po_number =txtponumber.Text,
                     Quantity=quantity,
 
                 };

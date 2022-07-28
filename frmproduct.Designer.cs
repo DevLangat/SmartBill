@@ -32,9 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbUOM = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,6 +50,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
+            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,27 +90,12 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.product_id,
             this.type,
-            this.name});
+            this.pname});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(518, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(331, 409);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // product_id
-            // 
-            this.product_id.HeaderText = "Product ID";
-            this.product_id.Name = "product_id";
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Product Type";
-            this.type.Name = "type";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Product Name";
-            this.name.Name = "name";
             // 
             // panel3
             // 
@@ -306,6 +291,24 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // product_id
+            // 
+            this.product_id.DataPropertyName = "id";
+            this.product_id.HeaderText = "Product ID";
+            this.product_id.Name = "product_id";
+            // 
+            // type
+            // 
+            this.type.DataPropertyName = "type";
+            this.type.HeaderText = "Product Type";
+            this.type.Name = "type";
+            // 
+            // pname
+            // 
+            this.pname.DataPropertyName = "Pname";
+            this.pname.HeaderText = "Product Name";
+            this.pname.Name = "pname";
+            // 
             // frmproduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +358,6 @@
         private System.Windows.Forms.ComboBox cbUOM;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pname;
     }
 }
