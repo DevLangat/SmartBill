@@ -96,5 +96,11 @@ namespace SmartBill
             frmpayments frmpayments=new frmpayments();
             frmpayments.ShowDialog(this);
         }
+
+        private void customerStatementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmcustomerstatements frmcustomerstatements = new frmcustomerstatements();
+            frmcustomerstatements.ShowDialog(this);
+        }
     }
 }

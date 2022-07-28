@@ -15,11 +15,11 @@ namespace SmartBill
     public partial class product
     {
         public int id { get; set; }
-        public string Pname { get; set; }
+        public string name { get; set; }
         public string description { get; set; }
         public string measuring_unit { get; set; }
         public decimal price { get; set; }
-        public Nullable<int> tax_id { get; set; }
+        public Nullable<decimal> tax_id { get; set; }
         public string deleted { get; set; }
         public string type { get; set; }
         public string sku { get; set; }

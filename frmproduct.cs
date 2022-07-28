@@ -55,14 +55,14 @@ namespace SmartBill
             {
              
                 
-                int taxid   =Convert.ToInt32(cbTax.Text);
-                decimal price= Convert.ToDecimal(txtPrice.Text);
+                var taxid   =Convert.ToDecimal(cbTax.Text);
+               decimal price = Convert.ToDecimal(txtPrice.Text);
                 double quantity=Convert.ToDouble(txtQuantity.Text);
                 var context = new sleekbillEntities();
                 var products = new product()              
                 {
                     id = prodid,
-                    Pname = txtPrdctName.Text,
+                    name = txtPrdctName.Text,
                     description = txtDesc.Text,
                     price = price,
                     tax_id = taxid,
@@ -77,7 +77,7 @@ namespace SmartBill
                 context.products.Add(products);
                 var prod = (from sdetails in context.products
                                      where sdetails.id == prodid
-                                     select new { sdetails.Pname }).ToList();
+                                     select new { sdetails.name }).ToList();
                 if (prod.Count == 1)
                 {
                     context.Entry(products).State = System.Data.Entity.EntityState.Modified;
@@ -109,7 +109,7 @@ namespace SmartBill
                 prodid = (int)Rcode+1;
 
                 var clients = (from m in context.products
-                               select new { m.id, m.Pname, m.type }).ToList();
+                               select new { m.id, m.name, m.type }).ToList();
                 dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.DataSource = clients;
                 clear();

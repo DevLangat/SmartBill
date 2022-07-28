@@ -8,27 +8,27 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.77259in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.13542in</Width>
+                  <Width>2.14758in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.74481in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.03125in</Width>
+                  <Width>1.04341in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.82116in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.94792in</Width>
+                  <Width>1.30731in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.375in</Height>
+                  <Height>0.38542in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -41,6 +41,8 @@
                                 <TextRun>
                                   <Value>No</Value>
                                   <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>13pt</FontSize>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -54,7 +56,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <BackgroundColor>#3d6b86</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -74,6 +76,8 @@
                                 <TextRun>
                                   <Value>Product/Service Name</Value>
                                   <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>13pt</FontSize>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -87,7 +91,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <BackgroundColor>#3d6b86</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -107,6 +111,8 @@
                                 <TextRun>
                                   <Value>Qty</Value>
                                   <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>13pt</FontSize>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -120,7 +126,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <BackgroundColor>#3d6b86</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -140,6 +146,8 @@
                                 <TextRun>
                                   <Value>Unit Price</Value>
                                   <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>13pt</FontSize>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -153,7 +161,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <BackgroundColor>#3d6b86</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -173,6 +181,8 @@
                                 <TextRun>
                                   <Value>Tax</Value>
                                   <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>13pt</FontSize>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -186,7 +196,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <BackgroundColor>#3d6b86</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -206,6 +216,8 @@
                                 <TextRun>
                                   <Value>Total</Value>
                                   <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>13pt</FontSize>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -219,7 +231,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <BackgroundColor>#3d6b86</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -243,7 +255,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!number.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -253,7 +268,7 @@
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>Dotted</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -273,7 +288,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!product_name.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -283,7 +301,7 @@
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>Dotted</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -303,17 +321,23 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!quantity.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>quantity</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>Dotted</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -325,25 +349,31 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="client_name">
+                        <Textbox Name="price">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!client_name.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!price.Value</Value>
+                                  <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>client_name</rd:DefaultName>
+                          <rd:DefaultName>price</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>Dotted</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -355,25 +385,31 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="pTax">
+                        <Textbox Name="TotalTax">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!pTax.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!TotalTax.Value</Value>
+                                  <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>pTax</rd:DefaultName>
+                          <rd:DefaultName>TotalTax</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>Dotted</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -385,25 +421,31 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PAmount1">
+                        <Textbox Name="TotalAmount">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PAmount.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!TotalAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Leelawadee UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PAmount1</rd:DefaultName>
+                          <rd:DefaultName>TotalAmount</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>Dotted</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -437,55 +479,20 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <FixedColumnHeaders>true</FixedColumnHeaders>
             <KeepTogether>true</KeepTogether>
             <DataSetName>invoices</DataSetName>
-            <Top>3.20708in</Top>
-            <Left>0.23833in</Left>
-            <Height>0.75in</Height>
-            <Width>7.11458in</Width>
+            <Top>3.06917in</Top>
+            <Left>0.221in</Left>
+            <Height>0.76042in</Height>
+            <Width>6.83686in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <FontFamily>Leelawadee UI</FontFamily>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox23">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Label>company_name</Label>
-                    <Value>=First(Fields!company_name.Value, "invoices")</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Calisto MT</FontFamily>
-                      <FontSize>25pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>DarkBlue</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>0.0925in</Top>
-            <Left>1.4432in</Left>
-            <Height>0.55208in</Height>
-            <Width>2.67014in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox24">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -495,18 +502,20 @@
                   <TextRun>
                     <Label>company_name</Label>
                     <Value>=First(Fields!company_name.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>0.60167in</Top>
-            <Left>0.23833in</Left>
+            <Top>0.13292in</Top>
+            <Left>0.221in</Left>
             <Height>0.20833in</Height>
             <Width>1.13542in</Width>
-            <ZIndex>2</ZIndex>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -526,17 +535,19 @@
                   <TextRun>
                     <Label>company addess</Label>
                     <Value>=First(Fields!company_address.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>0.85167in</Top>
-            <Left>0.2175in</Left>
+            <Top>0.36903in</Top>
+            <Left>0.221in</Left>
             <Height>0.20833in</Height>
             <Width>1.14583in</Width>
-            <ZIndex>3</ZIndex>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -556,25 +567,31 @@
                   <TextRun>
                     <Label>company county</Label>
                     <Value>=First(Fields!company_county.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=First(Fields!company_zip.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>1.08778in</Top>
-            <Left>0.23833in</Left>
+            <Top>0.61902in</Top>
+            <Left>0.221in</Left>
             <Height>0.25in</Height>
-            <Width>1.85417in</Width>
-            <ZIndex>4</ZIndex>
+            <Width>1.88542in</Width>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -594,17 +611,19 @@
                   <TextRun>
                     <Label>company phone</Label>
                     <Value>=First(Fields!company_phone.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>1.35167in</Top>
-            <Left>0.24875in</Left>
+            <Top>0.88291in</Top>
+            <Left>0.221in</Left>
             <Height>0.23611in</Height>
-            <Width>1.27083in</Width>
-            <ZIndex>5</ZIndex>
+            <Width>1.29166in</Width>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -624,6 +643,7 @@
                   <TextRun>
                     <Value>Bill To:</Value>
                     <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -632,11 +652,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>2.35986in</Top>
-            <Left>0.2175in</Left>
+            <Top>1.76486in</Top>
+            <Left>0.221in</Left>
             <Height>0.20833in</Height>
             <Width>1in</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -663,50 +683,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox30</rd:DefaultName>
-            <Top>2.63764in</Top>
-            <Left>0.2175in</Left>
+            <Top>1.98708in</Top>
+            <Left>0.221in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
-            <ZIndex>7</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox31">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Label>client address</Label>
-                    <Value>=First(Fields!client_billingaddress.Value, "invoices")</Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!billing_address.Value, "invoices")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>2.88764in</Top>
-            <Left>0.2175in</Left>
-            <Height>0.25in</Height>
-            <Width>2in</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -725,22 +706,26 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Pin:  </Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=First(Fields!company_pin.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox32</rd:DefaultName>
-            <Top>1.87944in</Top>
-            <Left>0.23833in</Left>
+            <Top>1.3968in</Top>
+            <Left>0.221in</Left>
             <Height>0.25in</Height>
             <Width>1.52083in</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -760,84 +745,20 @@
                   <TextRun>
                     <Label>company email</Label>
                     <Value>=First(Fields!company_email.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>1.61555in</Top>
-            <Left>0.24875in</Left>
+            <Top>1.11902in</Top>
+            <Left>0.221in</Left>
             <Height>0.25in</Height>
-            <Width>1.51042in</Width>
-            <ZIndex>10</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox34">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Invoice</Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
-                      <Color>DarkSlateBlue</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox34</rd:DefaultName>
-            <Top>0.32861in</Top>
-            <Left>4.35292in</Left>
-            <Height>0.25in</Height>
-            <Width>1in</Width>
-            <ZIndex>11</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox35">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Label>invoice number</Label>
-                    <Value>=First(Fields!number.Value, "invoices")</Value>
-                    <Style>
-                      <Color>DarkSlateBlue</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>0.32861in</Top>
-            <Left>5.95708in</Left>
-            <Height>0.25in</Height>
-            <Width>1.04167in</Width>
-            <ZIndex>12</ZIndex>
+            <Width>1.54167in</Width>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -859,6 +780,7 @@
                       <TextRun>
                         <Value>Amount Due</Value>
                         <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
                           <FontSize>14pt</FontSize>
                           <Color>White</Color>
                         </Style>
@@ -869,8 +791,8 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox36</rd:DefaultName>
                 <Top>0.06597in</Top>
-                <Left>0.16667in</Left>
-                <Height>0.25in</Height>
+                <Left>0.0104in</Left>
+                <Height>0.34597in</Height>
                 <Width>1.22917in</Width>
                 <Style>
                   <Border>
@@ -891,14 +813,17 @@
                       <TextRun>
                         <Value>Ksh. </Value>
                         <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
                           <FontSize>14pt</FontSize>
                           <Color>White</Color>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!PAmount.Value, "invoices")</Value>
+                        <Value>=First(Fields!Balance.Value, "invoices")</Value>
                         <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
                           <FontSize>14pt</FontSize>
+                          <Format>#,0.00;(#,0.00)</Format>
                           <Color>White</Color>
                         </Style>
                       </TextRun>
@@ -907,10 +832,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox37</rd:DefaultName>
-                <Top>0.06597in</Top>
-                <Left>1.5625in</Left>
-                <Height>0.25in</Height>
-                <Width>1.35417in</Width>
+                <Top>0.07986in</Top>
+                <Left>1.30901in</Left>
+                <Height>0.34597in</Height>
+                <Width>1.82641in</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -924,16 +849,16 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>0.64806in</Top>
-            <Left>4.18625in</Left>
+            <Top>0.05556in</Top>
+            <Left>3.92241in</Left>
             <Height>0.43972in</Height>
-            <Width>2.91667in</Width>
-            <ZIndex>13</ZIndex>
+            <Width>3.13542in</Width>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>RoyalBlue</BackgroundColor>
+              <BackgroundColor>#3d6b86</BackgroundColor>
             </Style>
           </Rectangle>
           <Textbox Name="Textbox38">
@@ -944,18 +869,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Date</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox38</rd:DefaultName>
-            <Top>1.185in</Top>
-            <Left>4.18625in</Left>
-            <Height>0.25in</Height>
+            <Top>0.60638in</Top>
+            <Left>3.92241in</Left>
+            <Height>0.27778in</Height>
             <Width>0.64583in</Width>
-            <ZIndex>14</ZIndex>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -974,18 +902,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Due Date</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>1.44889in</Top>
-            <Left>4.18625in</Left>
-            <Height>0.25in</Height>
-            <Width>0.64583in</Width>
-            <ZIndex>15</ZIndex>
+            <Top>0.92582in</Top>
+            <Left>3.92241in</Left>
+            <Height>0.30555in</Height>
+            <Width>0.94098in</Width>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1003,19 +934,22 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>P.O. BOX</Value>
-                    <Style />
+                    <Value>PO. Number</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                      <FontSize>14pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox40</rd:DefaultName>
-            <Top>1.69889in</Top>
-            <Left>4.18625in</Left>
-            <Height>0.25in</Height>
-            <Width>0.75in</Width>
-            <ZIndex>16</ZIndex>
+            <Top>1.25915in</Top>
+            <Left>3.9224in</Left>
+            <Height>0.35417in</Height>
+            <Width>1.16667in</Width>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1035,18 +969,22 @@
                   <TextRun>
                     <Label>issue date</Label>
                     <Value>=First(Fields!issue_date.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <Format>MM/dd/yyyy</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
-            <Top>1.15722in</Top>
-            <Left>5.19667in</Left>
-            <Height>0.25in</Height>
-            <Width>1.76042in</Width>
-            <ZIndex>17</ZIndex>
+            <Top>0.52306in</Top>
+            <Left>5.25574in</Left>
+            <Height>0.33333in</Height>
+            <Width>1.77778in</Width>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1066,88 +1004,22 @@
                   <TextRun>
                     <Label>due date</Label>
                     <Value>=First(Fields!due_date.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <Format>MM/dd/yyyy</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox42</rd:DefaultName>
-            <Top>1.435in</Top>
-            <Left>5.19667in</Left>
-            <Height>0.25in</Height>
-            <Width>1.76042in</Width>
-            <ZIndex>18</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox43">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Label>address</Label>
-                    <Value>=First(Fields!company_address.Value, "invoices")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox43</rd:DefaultName>
-            <Top>1.67583in</Top>
-            <Left>5.405in</Left>
-            <Height>0.25in</Height>
-            <Width>1.55208in</Width>
-            <ZIndex>19</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox44">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Label>client address</Label>
-                    <Value>=First(Fields!client_billingaddress.Value, "invoices")</Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!billing_address.Value, "invoices")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>2.88764in</Top>
-            <Left>4.18625in</Left>
-            <Height>0.25in</Height>
-            <Width>2in</Width>
-            <ZIndex>20</ZIndex>
+            <Top>0.89805in</Top>
+            <Left>5.25573in</Left>
+            <Height>0.29166in</Height>
+            <Width>1.77779in</Width>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1167,18 +1039,20 @@
                   <TextRun>
                     <Label>client name</Label>
                     <Value>=First(Fields!client_name.Value, "invoices")</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox30</rd:DefaultName>
-            <Top>2.63764in</Top>
-            <Left>4.18625in</Left>
-            <Height>0.25in</Height>
+            <Top>1.90499in</Top>
+            <Left>3.92241in</Left>
+            <Height>0.20833in</Height>
             <Width>1in</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1198,6 +1072,7 @@
                   <TextRun>
                     <Value>Ship To:</Value>
                     <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1206,10 +1081,459 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>2.35986in</Top>
-            <Left>4.18625in</Left>
-            <Height>0.20833in</Height>
+            <Top>1.62721in</Top>
+            <Left>3.92241in</Left>
+            <Height>0.22222in</Height>
             <Width>1in</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>billing_address</Label>
+                    <Value>=First(Fields!client_billingaddress.Value, "invoices")</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Label>billing_city</Label>
+                    <Value>=First(Fields!billing_city.Value, "invoices")</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>2.27875in</Top>
+            <Left>0.221in</Left>
+            <Height>0.21875in</Height>
+            <Width>1.875in</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>billing_address</Label>
+                    <Value>=First(Fields!client_billingaddress.Value, "invoices")</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Label>billing_city</Label>
+                    <Value>=First(Fields!billing_city.Value, "invoices")</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>2.1411in</Top>
+            <Left>3.92241in</Left>
+            <Height>0.23611in</Height>
+            <Width>1.86458in</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Rectangle Name="Rectangle3">
+            <ReportItems>
+              <Textbox Name="Textbox20">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Subtotal</Value>
+                        <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
+                          <FontSize>11pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox20</rd:DefaultName>
+                <Top>0.02778in</Top>
+                <Left>0.19099in</Left>
+                <Height>0.25in</Height>
+                <Width>0.75in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox22">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Total Tax</Value>
+                        <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
+                          <FontSize>11pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox20</rd:DefaultName>
+                <Top>0.30556in</Top>
+                <Left>0.18751in</Left>
+                <Height>0.25in</Height>
+                <Width>0.75in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox26">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Ksh. </Value>
+                        <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
+                          <FontSize>11pt</FontSize>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!ValueTotals.Value, "invoices")</Value>
+                        <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
+                          <FontSize>11pt</FontSize>
+                          <Format>#,0.00;(#,0.00)</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox26</rd:DefaultName>
+                <Left>1.33334in</Left>
+                <Height>0.25in</Height>
+                <Width>1.33331in</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox27">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Ksh. </Value>
+                        <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
+                          <FontSize>11pt</FontSize>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!TaxTotals.Value, "invoices")</Value>
+                        <Style>
+                          <FontFamily>Leelawadee UI</FontFamily>
+                          <FontSize>11pt</FontSize>
+                          <Format>#,0.00;(#,0.00)</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox27</rd:DefaultName>
+                <Top>0.30556in</Top>
+                <Left>1.33334in</Left>
+                <Height>0.31944in</Height>
+                <Width>1.33333in</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Rectangle Name="Rectangle4">
+                <ReportItems>
+                  <Textbox Name="Textbox25">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style>
+                              <FontFamily>Leelawadee UI</FontFamily>
+                              <FontSize>13pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox20</rd:DefaultName>
+                    <Top>0.05556in</Top>
+                    <Left>0.16667in</Left>
+                    <Height>0.40972in</Height>
+                    <Width>0.75in</Width>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox28">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Ksh. </Value>
+                            <Style>
+                              <FontFamily>Leelawadee UI</FontFamily>
+                              <FontSize>13pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                          <TextRun>
+                            <Value>=First(Fields!invTotals.Value, "invoices")</Value>
+                            <Style>
+                              <FontFamily>Leelawadee UI</FontFamily>
+                              <FontSize>13pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Format>#,0.00;(#,0.00)</Format>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox28</rd:DefaultName>
+                    <Top>0.05556in</Top>
+                    <Left>1.33332in</Left>
+                    <Height>0.30208in</Height>
+                    <Width>1.61458in</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>0.59722in</Top>
+                <Left>0.00001in</Left>
+                <Height>0.46528in</Height>
+                <Width>3.13542in</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>#3d6b86</BackgroundColor>
+                </Style>
+              </Rectangle>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>5.58554in</Top>
+            <Left>3.84947in</Left>
+            <Height>1.12847in</Height>
+            <Width>3.13543in</Width>
+            <ZIndex>19</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>client phone</Label>
+                    <Value>=First(Fields!client_phone.Value, "invoices")</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>2.52528in</Top>
+            <Left>0.221in</Left>
+            <Height>0.22917in</Height>
+            <Width>1.23958in</Width>
+            <ZIndex>20</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>client phone</Label>
+                    <Value>=First(Fields!client_phone.Value, "invoices")</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>2.3911in</Top>
+            <Left>3.9224in</Left>
+            <Height>0.22917in</Height>
+            <Width>1.23958in</Width>
+            <ZIndex>21</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox43">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>ponumb</Label>
+                    <Value>=First(Fields!po_number.Value, "invoices")</Value>
+                    <Style>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <Format>MM/dd/yyyy</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox42</rd:DefaultName>
+            <Top>1.25915in</Top>
+            <Left>6.00055in</Left>
+            <Height>0.29166in</Height>
+            <Width>1.00866in</Width>
             <ZIndex>22</ZIndex>
             <Style>
               <Border>
@@ -1221,25 +1545,32 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox47">
+          <Textbox Name="Textbox1">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Original for Receipt</Value>
-                    <Style />
+                    <Value>Authorized Signatory</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Leelawadee UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#545454</Color>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox47</rd:DefaultName>
-            <Top>0.0925in</Top>
-            <Left>5.51958in</Left>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>5.58554in</Top>
+            <Left>0.33558in</Left>
             <Height>0.25in</Height>
-            <Width>1.45833in</Width>
+            <Width>1.64584in</Width>
             <ZIndex>23</ZIndex>
             <Style>
               <Border>
@@ -1253,8 +1584,8 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Height>14.39333cm</Height>
-        <Width>19.81412cm</Width>
+        <Height>17.63568cm</Height>
+        <Width>19.25849cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1262,11 +1593,161 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>5.66667in</Height>
+    <Height>6.98485in</Height>
     <Style />
   </Body>
-  <Width>7.82167in</Width>
+  <Width>7.61333in</Width>
   <Page>
+    <PageHeader>
+      <Height>1.00918in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox47">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Original for Receipt</Value>
+                  <Style>
+                    <FontFamily>Leelawadee UI</FontFamily>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox47</rd:DefaultName>
+          <Left>5.09254in</Left>
+          <Height>0.32168in</Height>
+          <Width>1.94098in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox34">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Invoice</Value>
+                  <Style>
+                    <FontFamily>Leelawadee UI</FontFamily>
+                    <FontSize>26pt</FontSize>
+                    <Color>Teal</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox34</rd:DefaultName>
+          <Top>0.44445in</Top>
+          <Left>3.92241in</Left>
+          <Height>0.48611in</Height>
+          <Width>1.39584in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox35">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>no</Label>
+                  <Value>=First(Fields!number.Value, "invoices")</Value>
+                  <Style>
+                    <FontFamily>Leelawadee UI</FontFamily>
+                    <FontSize>26pt</FontSize>
+                    <Color>Teal</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox35</rd:DefaultName>
+          <Top>0.39112in</Top>
+          <Left>6.346in</Left>
+          <Height>0.53943in</Height>
+          <Width>0.71183in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox23">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>company_name</Label>
+                  <Value>=First(Fields!company_name.Value, "invoices")</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Leelawadee UI</FontFamily>
+                    <FontSize>25pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#3d6b86</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox23</rd:DefaultName>
+          <Top>0.13194in</Top>
+          <Left>0.221in</Left>
+          <Height>0.55208in</Height>
+          <Width>2.84028in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>
@@ -1277,18 +1758,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="sleekbillDataSet">
+    <DataSource Name="sleekbillDataSet2">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>516a14f1-6f52-4f89-b3d7-1865551ec6ba</rd:DataSourceID>
+      <rd:DataSourceID>af2a26a8-a147-4e47-9f4c-82c4ccc87d0f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="invoices">
       <Query>
-        <DataSourceName>sleekbillDataSet</DataSourceName>
+        <DataSourceName>sleekbillDataSet2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1324,6 +1805,14 @@
           <DataField>price</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="PAmount">
+          <DataField>PAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pTax">
+          <DataField>pTax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="client_name">
           <DataField>client_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1332,32 +1821,20 @@
           <DataField>code</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="billing_address">
-          <DataField>billing_address</DataField>
+        <Field Name="client_billingaddress">
+          <DataField>client_billingaddress</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="billing_city">
           <DataField>billing_city</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="telephone">
-          <DataField>telephone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PAmount">
-          <DataField>PAmount</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="pTax">
-          <DataField>pTax</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="client_billingaddress">
-          <DataField>client_billingaddress</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="client_phone">
           <DataField>client_phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="po_number">
+          <DataField>po_number</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="company_address">
@@ -1388,10 +1865,38 @@
           <DataField>company_phone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="TotalValue">
+          <DataField>TotalValue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalTax">
+          <DataField>TotalTax</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="invTotals">
+          <DataField>invTotals</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ValueTotals">
+          <DataField>ValueTotals</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TaxTotals">
+          <DataField>TaxTotals</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>sleekbillDataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\CSharp Projects\Rotich\SmartBill\invoices.xsd</rd:SchemaPath>
+        <rd:DataSetName>invoices</rd:DataSetName>
+        <rd:SchemaPath>E:\CSharp Projects\SmartBill\invoices.xsd</rd:SchemaPath>
         <rd:TableName>sp_getinvoicedetails</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

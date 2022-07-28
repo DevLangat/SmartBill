@@ -484,6 +484,7 @@
             this.customerStatementsToolStripMenuItem.Name = "customerStatementsToolStripMenuItem";
             this.customerStatementsToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.customerStatementsToolStripMenuItem.Text = "Customer Statements";
+            this.customerStatementsToolStripMenuItem.Click += new System.EventHandler(this.customerStatementsToolStripMenuItem_Click);
             // 
             // paymentsToolStripMenuItem
             // 

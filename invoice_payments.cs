@@ -23,5 +23,8 @@ namespace SmartBill
         public string payment_document_id { get; set; }
         public string Receiptno { get; set; }
         public string PaymentMode { get; set; }
+        public Nullable<System.DateTime> PaymentDate { get; set; }
+        public string BankId { get; set; }
+        public string BankName { get; set; }
     }
 }

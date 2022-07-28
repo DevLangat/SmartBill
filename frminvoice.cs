@@ -15,6 +15,7 @@ namespace SmartBill
     {
         DataRow dr;
         DataTable dt = new DataTable();
+        long Rcode;
         public frminvoice()
         {
             InitializeComponent();
@@ -84,13 +85,13 @@ namespace SmartBill
                 var context = new sleekbillEntities();
                 var taxes = (from Tdetails in context.products
                             
-                             select new { Tdetails.Pname, Tdetails.id }).ToList();
+                             select new { Tdetails.name, Tdetails.id }).ToList();
 
 
                 foreach (var s in taxes)
                 {
                     cboproduct.DataSource = taxes.ToArray();
-                    cboproduct.DisplayMember = "Pname";
+                    cboproduct.DisplayMember = "name";
                     cboproduct.ValueMember = "id";
                 }
 
@@ -127,7 +128,7 @@ namespace SmartBill
                 var context = new sleekbillEntities();
                 var taxes = (from Tdetails in context.products
                              where Tdetails.id== pid
-                             select new { Tdetails.Pname, Tdetails.price }).ToList();
+                             select new { Tdetails.name, Tdetails.price }).ToList();
                 foreach(var t in taxes)
                 {
                     txtUnitPrice.Text = t.price.ToString();
@@ -200,10 +201,11 @@ namespace SmartBill
 
 
                 };
+                Rcode = Rcode + 1;
 
                 context.invoice_products.Add(invoicecreation);
                 var prod = (from sdetails in context.invoice_products
-                            where sdetails.invoice_id == docno
+                            where sdetails.id == Rcode
                             select new { sdetails.invoice_id }).ToList();
                 if (prod.Count == 1)
                 {
@@ -216,6 +218,7 @@ namespace SmartBill
                     context.SaveChanges();
                     //MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
                 }
+                var companyid = (from n in context.company_details select n.id).FirstOrDefault();
                 var duedate = dpIssueDate.Value.AddDays(30);
                 //var quantity = Convert.ToDouble(txtQuantity.Text);
                 var invdetails = new invoice()
@@ -233,29 +236,30 @@ namespace SmartBill
                     //fiscal_year = fiscalyear,            
                     po_number =txtponumber.Text,
                     Quantity=quantity,
+                    company_details_id= companyid,
 
                 };
 
                 context.invoices.Add(invdetails);
                 var inv = (from sdetails in context.invoices
-                            where sdetails.number == docno
+                            where sdetails.id == docno
                             select new { sdetails.number }).ToList();
-                if (inv.Count == 1)
-                {
-                    context.Entry(invdetails).State = System.Data.Entity.EntityState.Modified;
-                    context.SaveChanges();
-                    //MessageBox.Show("Invoice Details Updated Successfully", this.Text, MessageBoxButtons.OK);
-                }
-                else
-                {
+                //if (inv.Count == 1)
+                //{
+                //    context.Entry(invdetails).State = System.Data.Entity.EntityState.Modified;
+                //    context.SaveChanges();
+                //    //MessageBox.Show("Invoice Details Updated Successfully", this.Text, MessageBoxButtons.OK);
+                //}
+                //else
+                //{
                     context.SaveChanges();
                     //MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
-                }
+                //}
                 MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
                 //generateinvoiceno();
                 using (sleekbillEntities banks = new sleekbillEntities())
                 {
-                    dataGridView1.DataSource = banks.sp_getinvoices();
+                    dataGridView1.DataSource = banks.sp_getinvoices(docno);
                 }
             }
             catch (Exception err)
@@ -271,7 +275,7 @@ namespace SmartBill
             try
             {
                 var context = new sleekbillEntities();
-                var Rcode = context.invoice_products.Select(p => p.invoice_id).DefaultIfEmpty(0).Max();
+                  Rcode = context.invoice_products.Select(p => p.id).DefaultIfEmpty(0).Max();
                Rcode= Rcode + 1;
                 txtdocnumber.Text = Rcode.ToString();
                 
@@ -354,9 +358,11 @@ namespace SmartBill
         private void cbClients_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var context = new sleekbillEntities();
+            cboinvoices.DataSource = null;
             string code = cbClients.SelectedValue.ToString();
-            var invoices = (from m in context.invoice_products                           
-                            where m.deleted=="n" 
+            var invoices = (from m in context.invoice_products   
+                            join n in context.invoices on m.invoice_id equals n.number
+                            where m.deleted=="n"  && n.client_id==cbClients.SelectedValue.ToString()
                             select new { m.invoice_id }).ToList();
             foreach (var s in invoices)
             {

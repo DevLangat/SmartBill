@@ -37,6 +37,9 @@
             this.btnPreview = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cboinvoices = new System.Windows.Forms.ComboBox();
+            this.cboproduct = new System.Windows.Forms.ComboBox();
             this.chckPay = new System.Windows.Forms.CheckBox();
             this.gpPay = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -78,9 +81,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboproduct = new System.Windows.Forms.ComboBox();
-            this.cboinvoices = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -160,6 +160,33 @@
             this.panel3.Size = new System.Drawing.Size(882, 567);
             this.panel3.TabIndex = 1;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 56);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Invoices";
+            // 
+            // cboinvoices
+            // 
+            this.cboinvoices.FormattingEnabled = true;
+            this.cboinvoices.Location = new System.Drawing.Point(70, 53);
+            this.cboinvoices.Name = "cboinvoices";
+            this.cboinvoices.Size = new System.Drawing.Size(147, 21);
+            this.cboinvoices.TabIndex = 18;
+            this.cboinvoices.SelectedIndexChanged += new System.EventHandler(this.cboinvoices_SelectedIndexChanged);
+            this.cboinvoices.SelectionChangeCommitted += new System.EventHandler(this.cboinvoices_SelectionChangeCommitted);
+            // 
+            // cboproduct
+            // 
+            this.cboproduct.FormattingEnabled = true;
+            this.cboproduct.Location = new System.Drawing.Point(19, 169);
+            this.cboproduct.Name = "cboproduct";
+            this.cboproduct.Size = new System.Drawing.Size(161, 21);
+            this.cboproduct.TabIndex = 17;
+            // 
             // chckPay
             // 
             this.chckPay.AutoSize = true;
@@ -236,10 +263,10 @@
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -556,33 +583,6 @@
             this.label1.Size = new System.Drawing.Size(100, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Document Data";
-            // 
-            // cboproduct
-            // 
-            this.cboproduct.FormattingEnabled = true;
-            this.cboproduct.Location = new System.Drawing.Point(19, 169);
-            this.cboproduct.Name = "cboproduct";
-            this.cboproduct.Size = new System.Drawing.Size(161, 21);
-            this.cboproduct.TabIndex = 17;
-            // 
-            // cboinvoices
-            // 
-            this.cboinvoices.FormattingEnabled = true;
-            this.cboinvoices.Location = new System.Drawing.Point(70, 53);
-            this.cboinvoices.Name = "cboinvoices";
-            this.cboinvoices.Size = new System.Drawing.Size(147, 21);
-            this.cboinvoices.TabIndex = 18;
-            this.cboinvoices.SelectedIndexChanged += new System.EventHandler(this.cboinvoices_SelectedIndexChanged);
-            this.cboinvoices.SelectionChangeCommitted += new System.EventHandler(this.cboinvoices_SelectionChangeCommitted);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 56);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 13);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Invoices";
             // 
             // frminvoice
             // 
