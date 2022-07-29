@@ -85,7 +85,7 @@ namespace SmartBill
                 var context = new sleekbillEntities();
                 var taxes = (from Tdetails in context.products
                             
-                             select new { Tdetails.name, Tdetails.id }).ToList();
+                             select new { Tdetails.Pname, Tdetails.id }).ToList();
 
 
                 foreach (var s in taxes)
@@ -128,7 +128,7 @@ namespace SmartBill
                 var context = new sleekbillEntities();
                 var taxes = (from Tdetails in context.products
                              where Tdetails.id== pid
-                             select new { Tdetails.name, Tdetails.price }).ToList();
+                             select new { Tdetails.Pname, Tdetails.price }).ToList();
                 foreach(var t in taxes)
                 {
                     txtUnitPrice.Text = t.price.ToString();
@@ -218,7 +218,7 @@ namespace SmartBill
                     context.SaveChanges();
                     //MessageBox.Show("Invoice Details submitted Successfully", this.Text, MessageBoxButtons.OK);
                 }
-                var companyid = (from n in context.company_details select n.id).FirstOrDefault();
+                  companyid = (from n in context.company_details select n.id).FirstOrDefault();
                 var duedate = dpIssueDate.Value.AddDays(30);
                 //var quantity = Convert.ToDouble(txtQuantity.Text);
                 var invdetails = new invoice()
@@ -236,8 +236,7 @@ namespace SmartBill
                     //fiscal_year = fiscalyear,            
                     po_number =txtponumber.Text,
                     Quantity=quantity,
-                    company_details_id= companyid,
-
+                
                 };
 
                 context.invoices.Add(invdetails);

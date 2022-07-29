@@ -22,13 +22,12 @@ namespace SmartBill
         public string type { get; set; }
         public decimal price { get; set; }
         public Nullable<decimal> PAmount { get; set; }
-        public string pTax { get; set; }
+        public Nullable<decimal> pTax { get; set; }
         public string client_name { get; set; }
         public string code { get; set; }
         public string client_billingaddress { get; set; }
         public string billing_city { get; set; }
         public string client_phone { get; set; }
-        public string po_number { get; set; }
         public string company_address { get; set; }
         public string company_county { get; set; }
         public string company_email { get; set; }
@@ -36,12 +35,5 @@ namespace SmartBill
         public string company_pin { get; set; }
         public string company_zip { get; set; }
         public string company_phone { get; set; }
-        public Nullable<decimal> TotalValue { get; set; }
-        public Nullable<decimal> TotalAmount { get; set; }
-        public Nullable<decimal> TotalTax { get; set; }
-        public Nullable<decimal> invTotals { get; set; }
-        public Nullable<decimal> ValueTotals { get; set; }
-        public Nullable<decimal> TaxTotals { get; set; }
-        public Nullable<decimal> Balance { get; set; }
     }
 }

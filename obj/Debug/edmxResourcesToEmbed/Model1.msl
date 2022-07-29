@@ -852,7 +852,7 @@
       <EntityTypeMapping TypeName="sleekbillModel.product">
         <MappingFragment StoreEntitySet="products">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Pname" ColumnName="Pname" />
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="measuring_unit" ColumnName="measuring_unit" />
           <ScalarProperty Name="price" ColumnName="price" />
@@ -1131,45 +1131,9 @@
           <ScalarProperty Name="Paid" ColumnName="Paid" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
           <ScalarProperty Name="client_id" ColumnName="client_id" />
-          <ScalarProperty Name="number" ColumnName="number" />
-          <ScalarProperty Name="due_date" ColumnName="due_date" />
-          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tmpinvdataprints">
-      <EntityTypeMapping TypeName="sleekbillModel.tmpinvdataprint">
-        <MappingFragment StoreEntitySet="tmpinvdataprint">
-          <ScalarProperty Name="number" ColumnName="number" />
-          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
-          <ScalarProperty Name="due_date" ColumnName="due_date" />
-          <ScalarProperty Name="product_name" ColumnName="product_name" />
-          <ScalarProperty Name="product_id" ColumnName="product_id" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
-          <ScalarProperty Name="type" ColumnName="type" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="PAmount" ColumnName="PAmount" />
-          <ScalarProperty Name="pTax" ColumnName="pTax" />
-          <ScalarProperty Name="client_name" ColumnName="client_name" />
-          <ScalarProperty Name="code" ColumnName="code" />
-          <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
-          <ScalarProperty Name="billing_city" ColumnName="billing_city" />
-          <ScalarProperty Name="client_phone" ColumnName="client_phone" />
-          <ScalarProperty Name="po_number" ColumnName="po_number" />
-          <ScalarProperty Name="company_address" ColumnName="company_address" />
-          <ScalarProperty Name="company_county" ColumnName="company_county" />
-          <ScalarProperty Name="company_email" ColumnName="company_email" />
-          <ScalarProperty Name="company_name" ColumnName="company_name" />
-          <ScalarProperty Name="company_pin" ColumnName="company_pin" />
-          <ScalarProperty Name="company_zip" ColumnName="company_zip" />
-          <ScalarProperty Name="company_phone" ColumnName="company_phone" />
-          <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
-          <ScalarProperty Name="invTotals" ColumnName="invTotals" />
-          <ScalarProperty Name="ValueTotals" ColumnName="ValueTotals" />
-          <ScalarProperty Name="TaxTotals" ColumnName="TaxTotals" />
-          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="receiptno" ColumnName="receiptno" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1197,8 +1161,6 @@
           <ScalarProperty Name="code" ColumnName="code" />
           <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
           <ScalarProperty Name="billing_city" ColumnName="billing_city" />
-          <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
-          <ScalarProperty Name="vat_number" ColumnName="vat_number" />
           <ScalarProperty Name="client_phone" ColumnName="client_phone" />
           <ScalarProperty Name="po_number" ColumnName="po_number" />
           <ScalarProperty Name="company_address" ColumnName="company_address" />
@@ -1224,17 +1186,17 @@
     <EntitySetMapping Name="tmpstatementdatas">
       <EntityTypeMapping TypeName="sleekbillModel.tmpstatementdata">
         <MappingFragment StoreEntitySet="tmpstatementdata">
-          <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE_DATE" />
+          <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE DATE" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="INVOICE_NO" ColumnName="INVOICE_NO" />
+          <ScalarProperty Name="INVOICE_NO_" ColumnName="INVOICE NO." />
           <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-          <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT_DATE" />
-          <ScalarProperty Name="RECEIVING_BANK" ColumnName="RECEIVING_BANK" />
-          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="EXPECTED_PAYMENT_LESS_WHT" ColumnName="EXPECTED_PAYMENT_LESS_WHT" />
-          <ScalarProperty Name="EXPECTED_WITHHOLDING_TAX" ColumnName="EXPECTED_WITHHOLDING_TAX" />
-          <ScalarProperty Name="PAYMENT_RECEIVED" ColumnName="PAYMENT_RECEIVED" />
+          <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT DATE" />
+          <ScalarProperty Name="RECEIVING_BANK" ColumnName="RECEIVING BANK" />
+          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS NO" />
+          <ScalarProperty Name="Amount_KES_" ColumnName="Amount(KES)" />
+          <ScalarProperty Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" ColumnName="EXPECTED PAYMENT  LESS WHT (KSH)" />
+          <ScalarProperty Name="EXPECTED_WITHHOLDING_TAX__KSH_" ColumnName="EXPECTED WITHHOLDING TAX (KSH)" />
+          <ScalarProperty Name="PAYMENT_RECEIVED" ColumnName="PAYMENT RECEIVED" />
           <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -1242,17 +1204,17 @@
     <FunctionImportMapping FunctionImportName="sp_getcustomestatements" FunctionName="sleekbillModel.Store.sp_getcustomestatements">
       <ResultMapping>
         <ComplexTypeMapping TypeName="sleekbillModel.sp_getcustomestatements_Result">
-          <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE_DATE" />
+          <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE DATE" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="INVOICE_NO" ColumnName="INVOICE_NO" />
+          <ScalarProperty Name="INVOICE_NO_" ColumnName="INVOICE NO." />
           <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-          <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT_DATE" />
-          <ScalarProperty Name="RECEIVING_BANK" ColumnName="RECEIVING_BANK" />
-          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="EXPECTED_PAYMENT_LESS_WHT" ColumnName="EXPECTED_PAYMENT_LESS_WHT" />
-          <ScalarProperty Name="EXPECTED_WITHHOLDING_TAX" ColumnName="EXPECTED_WITHHOLDING_TAX" />
-          <ScalarProperty Name="PAYMENT_RECEIVED" ColumnName="PAYMENT_RECEIVED" />
+          <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT DATE" />
+          <ScalarProperty Name="RECEIVING_BANK" ColumnName="RECEIVING BANK" />
+          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS NO" />
+          <ScalarProperty Name="Amount_KES_" ColumnName="Amount(KES)" />
+          <ScalarProperty Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" ColumnName="EXPECTED PAYMENT  LESS WHT (KSH)" />
+          <ScalarProperty Name="EXPECTED_WITHHOLDING_TAX__KSH_" ColumnName="EXPECTED WITHHOLDING TAX (KSH)" />
+          <ScalarProperty Name="PAYMENT_RECEIVED" ColumnName="PAYMENT RECEIVED" />
           <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
           <ScalarProperty Name="client_name" ColumnName="client_name" />
           <ScalarProperty Name="code" ColumnName="code" />
@@ -1287,7 +1249,6 @@
           <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
           <ScalarProperty Name="billing_city" ColumnName="billing_city" />
           <ScalarProperty Name="client_phone" ColumnName="client_phone" />
-          <ScalarProperty Name="po_number" ColumnName="po_number" />
           <ScalarProperty Name="company_address" ColumnName="company_address" />
           <ScalarProperty Name="company_county" ColumnName="company_county" />
           <ScalarProperty Name="company_email" ColumnName="company_email" />
@@ -1295,13 +1256,6 @@
           <ScalarProperty Name="company_pin" ColumnName="company_pin" />
           <ScalarProperty Name="company_zip" ColumnName="company_zip" />
           <ScalarProperty Name="company_phone" ColumnName="company_phone" />
-          <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
-          <ScalarProperty Name="invTotals" ColumnName="invTotals" />
-          <ScalarProperty Name="ValueTotals" ColumnName="ValueTotals" />
-          <ScalarProperty Name="TaxTotals" ColumnName="TaxTotals" />
-          <ScalarProperty Name="Balance" ColumnName="Balance" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -1335,8 +1289,6 @@
           <ScalarProperty Name="code" ColumnName="code" />
           <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
           <ScalarProperty Name="billing_city" ColumnName="billing_city" />
-          <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
-          <ScalarProperty Name="vat_number" ColumnName="vat_number" />
           <ScalarProperty Name="client_phone" ColumnName="client_phone" />
           <ScalarProperty Name="po_number" ColumnName="po_number" />
           <ScalarProperty Name="company_address" ColumnName="company_address" />

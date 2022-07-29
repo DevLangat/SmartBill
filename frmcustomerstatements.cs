@@ -17,5 +17,22 @@ namespace SmartBill
         {
             InitializeComponent();
         }
+
+        private void btnload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var prdid = Convert.ToString(cbType.SelectedValue);
+                var context = new sleekbillEntities();
+                context.sp_getStatement(cbClient.SelectedValue.ToString(),dtStartdate.Value.Date,dtEnddate.Value.Date, prdid);
+                common.custoid = cbClient.SelectedValue.ToString();
+                frmCustomerStatementPreview fr = new frmCustomerStatementPreview();
+                    fr.Show();
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
     }
 }

@@ -34,14 +34,14 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnload = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtEnddate = new System.Windows.Forms.DateTimePicker();
+            this.dtStartdate = new System.Windows.Forms.DateTimePicker();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.cbClient = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.cbClient = new System.Windows.Forms.ComboBox();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.dtStartdate = new System.Windows.Forms.DateTimePicker();
-            this.dtEnddate = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,6 +88,7 @@
             this.btnload.TabIndex = 3;
             this.btnload.Text = "Load";
             this.btnload.UseVisualStyleBackColor = false;
+            this.btnload.Click += new System.EventHandler(this.btnload_Click);
             // 
             // groupBox2
             // 
@@ -105,6 +106,42 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Statement";
+            // 
+            // dtEnddate
+            // 
+            this.dtEnddate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtEnddate.Location = new System.Drawing.Point(355, 90);
+            this.dtEnddate.Name = "dtEnddate";
+            this.dtEnddate.Size = new System.Drawing.Size(138, 20);
+            this.dtEnddate.TabIndex = 12;
+            // 
+            // dtStartdate
+            // 
+            this.dtStartdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtStartdate.Location = new System.Drawing.Point(355, 36);
+            this.dtStartdate.Name = "dtStartdate";
+            this.dtStartdate.Size = new System.Drawing.Size(138, 20);
+            this.dtStartdate.TabIndex = 11;
+            // 
+            // cbType
+            // 
+            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Product",
+            "Service"});
+            this.cbType.Location = new System.Drawing.Point(128, 90);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(121, 21);
+            this.cbType.TabIndex = 10;
+            // 
+            // cbClient
+            // 
+            this.cbClient.FormattingEnabled = true;
+            this.cbClient.Location = new System.Drawing.Point(128, 43);
+            this.cbClient.Name = "cbClient";
+            this.cbClient.Size = new System.Drawing.Size(121, 21);
+            this.cbClient.TabIndex = 9;
             // 
             // label6
             // 
@@ -141,42 +178,6 @@
             this.label12.Size = new System.Drawing.Size(115, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Type(Product/Service)";
-            // 
-            // cbClient
-            // 
-            this.cbClient.FormattingEnabled = true;
-            this.cbClient.Location = new System.Drawing.Point(128, 43);
-            this.cbClient.Name = "cbClient";
-            this.cbClient.Size = new System.Drawing.Size(121, 21);
-            this.cbClient.TabIndex = 9;
-            // 
-            // cbType
-            // 
-            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Items.AddRange(new object[] {
-            "Product",
-            "Service"});
-            this.cbType.Location = new System.Drawing.Point(128, 90);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(121, 21);
-            this.cbType.TabIndex = 10;
-            // 
-            // dtStartdate
-            // 
-            this.dtStartdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtStartdate.Location = new System.Drawing.Point(355, 36);
-            this.dtStartdate.Name = "dtStartdate";
-            this.dtStartdate.Size = new System.Drawing.Size(138, 20);
-            this.dtStartdate.TabIndex = 11;
-            // 
-            // dtEnddate
-            // 
-            this.dtEnddate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEnddate.Location = new System.Drawing.Point(355, 90);
-            this.dtEnddate.Name = "dtEnddate";
-            this.dtEnddate.Size = new System.Drawing.Size(138, 20);
-            this.dtEnddate.TabIndex = 12;
             // 
             // frmcustomerstatements
             // 

@@ -679,6 +679,9 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Name="payment_document_id" Type="nvarchar" MaxLength="50" />
           <Property Name="Receiptno" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="BankId" Type="nchar" MaxLength="10" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
@@ -846,7 +849,7 @@ warning 6002: The table/view 'sleekbill.dbo.config' does not have a primary key 
           <Property Name="description" Type="nvarchar" MaxLength="150" />
           <Property Name="measuring_unit" Type="nvarchar" MaxLength="150" />
           <Property Name="price" Type="money" Nullable="false" />
-          <Property Name="tax_id" Type="int" />
+          <Property Name="tax_id" Type="decimal" Precision="18" Scale="2" />
           <Property Name="deleted" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="type" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="sku" Type="nvarchar" MaxLength="10" />
@@ -1073,6 +1076,100 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Property Name="due_date" Type="datetime" />
           <Property Name="issue_date" Type="datetime" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmpinvdata1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tmpinvdata1">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="InvoiceNumber" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="InvoiceValue" Type="float" />
+          <Property Name="Paid" Type="money" />
+          <Property Name="Balance" Type="money" />
+          <Property Name="client_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceNumber" Type="bigint" Nullable="false" />
+          <Property Name="AmountPaid" Type="money" />
+          <Property Name="receiptno" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmppayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tmppayments">
+          <Key>
+            <PropertyRef Name="Paid" />
+          </Key>
+          <Property Name="Paid" Type="money" Nullable="false" />
+          <Property Name="invoice_id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmpReceiptsdata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tmpReceiptsdata">
+          <Key>
+            <PropertyRef Name="issue_date" />
+            <PropertyRef Name="product_name" />
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="quantity" />
+            <PropertyRef Name="type" />
+            <PropertyRef Name="price" />
+            <PropertyRef Name="client_name" />
+            <PropertyRef Name="code" />
+            <PropertyRef Name="id" />
+            <PropertyRef Name="InvoiceNumber" />
+          </Key>
+          <Property Name="issue_date" Type="datetime" Nullable="false" />
+          <Property Name="due_date" Type="datetime" />
+          <Property Name="product_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="float" Nullable="false" />
+          <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="price" Type="money" Nullable="false" />
+          <Property Name="PAmount" Type="money" />
+          <Property Name="pTax" Type="nvarchar" MaxLength="50" />
+          <Property Name="client_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="client_billingaddress" Type="nvarchar(max)" />
+          <Property Name="billing_city" Type="nvarchar(max)" />
+          <Property Name="client_phone" Type="nvarchar(max)" />
+          <Property Name="po_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="company_address" Type="nvarchar(max)" />
+          <Property Name="company_county" Type="nvarchar(max)" />
+          <Property Name="company_email" Type="nvarchar(max)" />
+          <Property Name="company_name" Type="nvarchar(max)" />
+          <Property Name="company_pin" Type="nvarchar(max)" />
+          <Property Name="company_zip" Type="nvarchar(max)" />
+          <Property Name="company_phone" Type="nvarchar(max)" />
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="InvoiceValue" Type="float" />
+          <Property Name="Paid" Type="money" />
+          <Property Name="Balance" Type="money" />
+          <Property Name="client_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceNumber" Type="bigint" Nullable="false" />
+          <Property Name="AmountPaid" Type="money" />
+          <Property Name="Receiptdate" Type="date" />
+          <Property Name="PaymentMode" Type="nvarchar" MaxLength="20" />
+          <Property Name="receiptno" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sleekbill.dbo.tmpstatementdata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tmpstatementdata">
+          <Key>
+            <PropertyRef Name="INVOICE DATE" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="INVOICE NO." />
+          </Key>
+          <Property Name="INVOICE DATE" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="INVOICE NO." Type="bigint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="PAYMENT DATE" Type="date" />
+          <Property Name="RECEIVING BANK" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRANS NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount(KES)" Type="money" />
+          <Property Name="EXPECTED PAYMENT  LESS WHT (KSH)" Type="float" />
+          <Property Name="EXPECTED WITHHOLDING TAX (KSH)" Type="float" />
+          <Property Name="PAYMENT RECEIVED" Type="money" />
+          <Property Name="BALANCE" Type="money" />
+        </EntityType>
         <EntityType Name="vendors">
           <Key>
             <PropertyRef Name="id" />
@@ -1111,6 +1208,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="year" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
+        <Function Name="sp_getcustomestatements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="client_code" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="sp_getinvoicedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="inv" Type="int" Mode="In" />
         </Function>
@@ -1118,6 +1218,16 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Parameter Name="invoiceno" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_getinvoicesforpayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getReceiptdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="recNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="inv" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="custId" Type="nvarchar" Mode="In" />
+          <Parameter Name="startdate" Type="datetime" Mode="In" />
+          <Parameter Name="enddate" Type="datetime" Mode="In" />
+          <Parameter Name="serv" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="sleekbillModelStoreContainer">
           <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="bill_products" EntityType="Self.bill_products" Schema="dbo" store:Type="Tables" />
@@ -1185,6 +1295,76 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
     [tmpinvdata].[due_date] AS [due_date], 
     [tmpinvdata].[issue_date] AS [issue_date]
     FROM [dbo].[tmpinvdata] AS [tmpinvdata]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tmpinvdata1" EntityType="Self.tmpinvdata1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tmpinvdata1].[id] AS [id], 
+    [tmpinvdata1].[InvoiceValue] AS [InvoiceValue], 
+    [tmpinvdata1].[Paid] AS [Paid], 
+    [tmpinvdata1].[Balance] AS [Balance], 
+    [tmpinvdata1].[client_id] AS [client_id], 
+    [tmpinvdata1].[InvoiceNumber] AS [InvoiceNumber], 
+    [tmpinvdata1].[AmountPaid] AS [AmountPaid], 
+    [tmpinvdata1].[receiptno] AS [receiptno]
+    FROM [dbo].[tmpinvdata1] AS [tmpinvdata1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tmppayments" EntityType="Self.tmppayments" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tmppayments].[Paid] AS [Paid], 
+    [tmppayments].[invoice_id] AS [invoice_id]
+    FROM [dbo].[tmppayments] AS [tmppayments]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tmpReceiptsdata" EntityType="Self.tmpReceiptsdata" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tmpReceiptsdata].[issue_date] AS [issue_date], 
+    [tmpReceiptsdata].[due_date] AS [due_date], 
+    [tmpReceiptsdata].[product_name] AS [product_name], 
+    [tmpReceiptsdata].[product_id] AS [product_id], 
+    [tmpReceiptsdata].[quantity] AS [quantity], 
+    [tmpReceiptsdata].[type] AS [type], 
+    [tmpReceiptsdata].[price] AS [price], 
+    [tmpReceiptsdata].[PAmount] AS [PAmount], 
+    [tmpReceiptsdata].[pTax] AS [pTax], 
+    [tmpReceiptsdata].[client_name] AS [client_name], 
+    [tmpReceiptsdata].[code] AS [code], 
+    [tmpReceiptsdata].[client_billingaddress] AS [client_billingaddress], 
+    [tmpReceiptsdata].[billing_city] AS [billing_city], 
+    [tmpReceiptsdata].[client_phone] AS [client_phone], 
+    [tmpReceiptsdata].[po_number] AS [po_number], 
+    [tmpReceiptsdata].[company_address] AS [company_address], 
+    [tmpReceiptsdata].[company_county] AS [company_county], 
+    [tmpReceiptsdata].[company_email] AS [company_email], 
+    [tmpReceiptsdata].[company_name] AS [company_name], 
+    [tmpReceiptsdata].[company_pin] AS [company_pin], 
+    [tmpReceiptsdata].[company_zip] AS [company_zip], 
+    [tmpReceiptsdata].[company_phone] AS [company_phone], 
+    [tmpReceiptsdata].[id] AS [id], 
+    [tmpReceiptsdata].[InvoiceValue] AS [InvoiceValue], 
+    [tmpReceiptsdata].[Paid] AS [Paid], 
+    [tmpReceiptsdata].[Balance] AS [Balance], 
+    [tmpReceiptsdata].[client_id] AS [client_id], 
+    [tmpReceiptsdata].[InvoiceNumber] AS [InvoiceNumber], 
+    [tmpReceiptsdata].[AmountPaid] AS [AmountPaid], 
+    [tmpReceiptsdata].[Receiptdate] AS [Receiptdate], 
+    [tmpReceiptsdata].[PaymentMode] AS [PaymentMode], 
+    [tmpReceiptsdata].[receiptno] AS [receiptno]
+    FROM [dbo].[tmpReceiptsdata] AS [tmpReceiptsdata]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tmpstatementdata" EntityType="Self.tmpstatementdata" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tmpstatementdata].[INVOICE DATE] AS [INVOICE DATE], 
+    [tmpstatementdata].[Status] AS [Status], 
+    [tmpstatementdata].[INVOICE NO.] AS [INVOICE NO.], 
+    [tmpstatementdata].[DESCRIPTION] AS [DESCRIPTION], 
+    [tmpstatementdata].[PAYMENT DATE] AS [PAYMENT DATE], 
+    [tmpstatementdata].[RECEIVING BANK] AS [RECEIVING BANK], 
+    [tmpstatementdata].[TRANS NO] AS [TRANS NO], 
+    [tmpstatementdata].[Amount(KES)] AS [Amount(KES)], 
+    [tmpstatementdata].[EXPECTED PAYMENT  LESS WHT (KSH)] AS [EXPECTED PAYMENT  LESS WHT (KSH)], 
+    [tmpstatementdata].[EXPECTED WITHHOLDING TAX (KSH)] AS [EXPECTED WITHHOLDING TAX (KSH)], 
+    [tmpstatementdata].[PAYMENT RECEIVED] AS [PAYMENT RECEIVED], 
+    [tmpstatementdata].[BALANCE] AS [BALANCE]
+    FROM [dbo].[tmpstatementdata] AS [tmpstatementdata]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema>
@@ -1845,6 +2025,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Property Name="payment_document_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Receiptno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="BankId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="invoice_products">
           <Key>
@@ -2012,7 +2195,7 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="measuring_unit" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="tax_id" Type="Int32" />
+          <Property Name="tax_id" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="deleted" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="sku" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -2280,6 +2463,92 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Property Name="due_date" Type="DateTime" Precision="3" />
           <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="tmpinvdata1">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="InvoiceNumber" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="InvoiceValue" Type="Double" />
+          <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="client_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceNumber" Type="Int64" Nullable="false" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="receiptno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tmppayment">
+          <Key>
+            <PropertyRef Name="Paid" />
+          </Key>
+          <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="invoice_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tmpReceiptsdata">
+          <Key>
+            <PropertyRef Name="issue_date" />
+            <PropertyRef Name="product_name" />
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="quantity" />
+            <PropertyRef Name="type" />
+            <PropertyRef Name="price" />
+            <PropertyRef Name="client_name" />
+            <PropertyRef Name="code" />
+            <PropertyRef Name="id" />
+            <PropertyRef Name="InvoiceNumber" />
+          </Key>
+          <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="due_date" Type="DateTime" Precision="3" />
+          <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Double" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pTax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="client_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="client_billingaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="client_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="po_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="company_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_county" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_pin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="InvoiceValue" Type="Double" />
+          <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="client_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceNumber" Type="Int64" Nullable="false" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Receiptdate" Type="DateTime" Precision="0" />
+          <Property Name="PaymentMode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="receiptno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tmpstatementdata">
+          <Key>
+            <PropertyRef Name="INVOICE_DATE" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="INVOICE_NO_" />
+          </Key>
+          <Property Name="INVOICE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="INVOICE_NO_" Type="Int64" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PAYMENT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="RECEIVING_BANK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TRANS_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_KES_" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" Type="Double" />
+          <Property Name="EXPECTED_WITHHOLDING_TAX__KSH_" Type="Double" />
+          <Property Name="PAYMENT_RECEIVED" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BALANCE" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
         <EntityContainer Name="sleekbillEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="bill_payments" EntityType="Self.bill_payments" />
           <EntitySet Name="bill_products" EntityType="Self.bill_products" />
@@ -2330,6 +2599,13 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <EntitySet Name="versions" EntityType="Self.version" />
           <EntitySet Name="configs" EntityType="Self.config" />
           <EntitySet Name="tmpinvdatas" EntityType="Self.tmpinvdata" />
+          <EntitySet Name="tmpinvdata1" EntityType="Self.tmpinvdata1" />
+          <EntitySet Name="tmppayments" EntityType="Self.tmppayment" />
+          <EntitySet Name="tmpReceiptsdatas" EntityType="Self.tmpReceiptsdata" />
+          <EntitySet Name="tmpstatementdatas" EntityType="Self.tmpstatementdata" />
+          <FunctionImport Name="sp_getcustomestatements" ReturnType="Collection(sleekbillModel.sp_getcustomestatements_Result)">
+            <Parameter Name="client_code" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sp_getinvoicedetails" ReturnType="Collection(sleekbillModel.sp_getinvoicedetails_Result)">
             <Parameter Name="inv" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -2337,7 +2613,43 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
             <Parameter Name="invoiceno" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_getinvoicesforpayment" />
+          <FunctionImport Name="sp_getReceiptdetails" ReturnType="Collection(sleekbillModel.sp_getReceiptdetails_Result)">
+            <Parameter Name="recNo" Mode="In" Type="String" />
+            <Parameter Name="inv" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getStatement">
+            <Parameter Name="custId" Mode="In" Type="String" />
+            <Parameter Name="startdate" Mode="In" Type="DateTime" />
+            <Parameter Name="enddate" Mode="In" Type="DateTime" />
+            <Parameter Name="serv" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="sp_getcustomestatements_Result">
+          <Property Type="DateTime" Name="INVOICE_DATE" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
+          <Property Type="Int64" Name="INVOICE_NO_" Nullable="false" />
+          <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+          <Property Type="DateTime" Name="PAYMENT_DATE" Nullable="true" />
+          <Property Type="String" Name="RECEIVING_BANK" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TRANS_NO" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Amount_KES_" Nullable="true" Precision="19" />
+          <Property Type="Double" Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" Nullable="true" />
+          <Property Type="Double" Name="EXPECTED_WITHHOLDING_TAX__KSH_" Nullable="true" />
+          <Property Type="Decimal" Name="PAYMENT_RECEIVED" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="BALANCE" Nullable="true" Precision="19" />
+          <Property Type="String" Name="client_name" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="client_billingaddress" Nullable="true" />
+          <Property Type="String" Name="billing_city" Nullable="true" />
+          <Property Type="String" Name="client_phone" Nullable="true" />
+          <Property Type="String" Name="company_address" Nullable="true" />
+          <Property Type="String" Name="company_county" Nullable="true" />
+          <Property Type="String" Name="company_email" Nullable="true" />
+          <Property Type="String" Name="company_name" Nullable="true" />
+          <Property Type="String" Name="company_pin" Nullable="true" />
+          <Property Type="String" Name="company_zip" Nullable="true" />
+          <Property Type="String" Name="company_phone" Nullable="true" />
+        </ComplexType>
         <ComplexType Name="sp_getinvoicedetails_Result">
           <Property Type="Int64" Name="number" Nullable="false" />
           <Property Type="DateTime" Name="issue_date" Nullable="false" Precision="23" />
@@ -2370,6 +2682,40 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
           <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
           <Property Type="Double" Name="Value" Nullable="true" />
           <Property Type="Double" Name="Tax" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getReceiptdetails_Result">
+          <Property Type="DateTime" Name="issue_date" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="due_date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="product_name" Nullable="false" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="Double" Name="quantity" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="PAmount" Nullable="true" Precision="19" />
+          <Property Type="String" Name="pTax" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="client_name" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="client_billingaddress" Nullable="true" />
+          <Property Type="String" Name="billing_city" Nullable="true" />
+          <Property Type="String" Name="client_phone" Nullable="true" />
+          <Property Type="String" Name="po_number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="company_address" Nullable="true" />
+          <Property Type="String" Name="company_county" Nullable="true" />
+          <Property Type="String" Name="company_email" Nullable="true" />
+          <Property Type="String" Name="company_name" Nullable="true" />
+          <Property Type="String" Name="company_pin" Nullable="true" />
+          <Property Type="String" Name="company_zip" Nullable="true" />
+          <Property Type="String" Name="company_phone" Nullable="true" />
+          <Property Type="Int64" Name="id" Nullable="false" />
+          <Property Type="Double" Name="InvoiceValue" Nullable="true" />
+          <Property Type="Decimal" Name="Paid" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="19" />
+          <Property Type="String" Name="client_id" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="InvoiceNumber" Nullable="false" />
+          <Property Type="Decimal" Name="AmountPaid" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="Receiptdate" Nullable="true" />
+          <Property Type="String" Name="PaymentMode" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="receiptno" Nullable="true" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3053,6 +3399,9 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
                 <ScalarProperty Name="payment_document_id" ColumnName="payment_document_id" />
                 <ScalarProperty Name="Receiptno" ColumnName="Receiptno" />
                 <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3510,6 +3859,114 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tmpinvdata1">
+            <EntityTypeMapping TypeName="sleekbillModel.tmpinvdata1">
+              <MappingFragment StoreEntitySet="tmpinvdata1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="InvoiceValue" ColumnName="InvoiceValue" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="receiptno" ColumnName="receiptno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tmppayments">
+            <EntityTypeMapping TypeName="sleekbillModel.tmppayment">
+              <MappingFragment StoreEntitySet="tmppayments">
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tmpReceiptsdatas">
+            <EntityTypeMapping TypeName="sleekbillModel.tmpReceiptsdata">
+              <MappingFragment StoreEntitySet="tmpReceiptsdata">
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="due_date" ColumnName="due_date" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+                <ScalarProperty Name="pTax" ColumnName="pTax" />
+                <ScalarProperty Name="client_name" ColumnName="client_name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+                <ScalarProperty Name="po_number" ColumnName="po_number" />
+                <ScalarProperty Name="company_address" ColumnName="company_address" />
+                <ScalarProperty Name="company_county" ColumnName="company_county" />
+                <ScalarProperty Name="company_email" ColumnName="company_email" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="company_pin" ColumnName="company_pin" />
+                <ScalarProperty Name="company_zip" ColumnName="company_zip" />
+                <ScalarProperty Name="company_phone" ColumnName="company_phone" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="InvoiceValue" ColumnName="InvoiceValue" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="Receiptdate" ColumnName="Receiptdate" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="receiptno" ColumnName="receiptno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tmpstatementdatas">
+            <EntityTypeMapping TypeName="sleekbillModel.tmpstatementdata">
+              <MappingFragment StoreEntitySet="tmpstatementdata">
+                <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE DATE" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="INVOICE_NO_" ColumnName="INVOICE NO." />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT DATE" />
+                <ScalarProperty Name="RECEIVING_BANK" ColumnName="RECEIVING BANK" />
+                <ScalarProperty Name="TRANS_NO" ColumnName="TRANS NO" />
+                <ScalarProperty Name="Amount_KES_" ColumnName="Amount(KES)" />
+                <ScalarProperty Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" ColumnName="EXPECTED PAYMENT  LESS WHT (KSH)" />
+                <ScalarProperty Name="EXPECTED_WITHHOLDING_TAX__KSH_" ColumnName="EXPECTED WITHHOLDING TAX (KSH)" />
+                <ScalarProperty Name="PAYMENT_RECEIVED" ColumnName="PAYMENT RECEIVED" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_getcustomestatements" FunctionName="sleekbillModel.Store.sp_getcustomestatements">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sleekbillModel.sp_getcustomestatements_Result">
+                <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE DATE" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="INVOICE_NO_" ColumnName="INVOICE NO." />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PAYMENT_DATE" ColumnName="PAYMENT DATE" />
+                <ScalarProperty Name="RECEIVING_BANK" ColumnName="RECEIVING BANK" />
+                <ScalarProperty Name="TRANS_NO" ColumnName="TRANS NO" />
+                <ScalarProperty Name="Amount_KES_" ColumnName="Amount(KES)" />
+                <ScalarProperty Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" ColumnName="EXPECTED PAYMENT  LESS WHT (KSH)" />
+                <ScalarProperty Name="EXPECTED_WITHHOLDING_TAX__KSH_" ColumnName="EXPECTED WITHHOLDING TAX (KSH)" />
+                <ScalarProperty Name="PAYMENT_RECEIVED" ColumnName="PAYMENT RECEIVED" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="client_name" ColumnName="client_name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+                <ScalarProperty Name="company_address" ColumnName="company_address" />
+                <ScalarProperty Name="company_county" ColumnName="company_county" />
+                <ScalarProperty Name="company_email" ColumnName="company_email" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="company_pin" ColumnName="company_pin" />
+                <ScalarProperty Name="company_zip" ColumnName="company_zip" />
+                <ScalarProperty Name="company_phone" ColumnName="company_phone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_getinvoicedetails" FunctionName="sleekbillModel.Store.sp_getinvoicedetails">
             <ResultMapping>
               <ComplexTypeMapping TypeName="sleekbillModel.sp_getinvoicedetails_Result">
@@ -3552,6 +4009,45 @@ warning 6002: The table/view 'sleekbill.dbo.tmpinvdata' does not have a primary 
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_getinvoicesforpayment" FunctionName="sleekbillModel.Store.sp_getinvoicesforpayment" />
+          <FunctionImportMapping FunctionImportName="sp_getReceiptdetails" FunctionName="sleekbillModel.Store.sp_getReceiptdetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sleekbillModel.sp_getReceiptdetails_Result">
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="due_date" ColumnName="due_date" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+                <ScalarProperty Name="pTax" ColumnName="pTax" />
+                <ScalarProperty Name="client_name" ColumnName="client_name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="client_billingaddress" ColumnName="client_billingaddress" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+                <ScalarProperty Name="po_number" ColumnName="po_number" />
+                <ScalarProperty Name="company_address" ColumnName="company_address" />
+                <ScalarProperty Name="company_county" ColumnName="company_county" />
+                <ScalarProperty Name="company_email" ColumnName="company_email" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="company_pin" ColumnName="company_pin" />
+                <ScalarProperty Name="company_zip" ColumnName="company_zip" />
+                <ScalarProperty Name="company_phone" ColumnName="company_phone" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="InvoiceValue" ColumnName="InvoiceValue" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="Receiptdate" ColumnName="Receiptdate" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="receiptno" ColumnName="receiptno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getStatement" FunctionName="sleekbillModel.Store.sp_getStatement" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -47,7 +47,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 852);
+            this.panel1.Size = new System.Drawing.Size(1326, 721);
             this.panel1.TabIndex = 4;
             // 
             // panel3
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 919);
+            this.ClientSize = new System.Drawing.Size(1332, 788);
             this.Controls.Add(this.panel1);
             this.Name = "frmCustomerStatementPreview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

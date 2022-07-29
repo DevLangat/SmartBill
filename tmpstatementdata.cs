@@ -16,14 +16,14 @@ namespace SmartBill
     {
         public System.DateTime INVOICE_DATE { get; set; }
         public string Status { get; set; }
-        public long INVOICE_NO { get; set; }
+        public long INVOICE_NO_ { get; set; }
         public string DESCRIPTION { get; set; }
         public Nullable<System.DateTime> PAYMENT_DATE { get; set; }
         public string RECEIVING_BANK { get; set; }
         public string TRANS_NO { get; set; }
-        public Nullable<decimal> Amount { get; set; }
-        public Nullable<double> EXPECTED_PAYMENT_LESS_WHT { get; set; }
-        public Nullable<double> EXPECTED_WITHHOLDING_TAX { get; set; }
+        public Nullable<decimal> Amount_KES_ { get; set; }
+        public Nullable<double> EXPECTED_PAYMENT__LESS_WHT__KSH_ { get; set; }
+        public Nullable<double> EXPECTED_WITHHOLDING_TAX__KSH_ { get; set; }
         public Nullable<decimal> PAYMENT_RECEIVED { get; set; }
         public Nullable<decimal> BALANCE { get; set; }
     }

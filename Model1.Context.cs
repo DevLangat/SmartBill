@@ -76,7 +76,7 @@ namespace SmartBill
         public virtual DbSet<version> versions { get; set; }
         public virtual DbSet<config> configs { get; set; }
         public virtual DbSet<tmpinvdata> tmpinvdatas { get; set; }
-        public virtual DbSet<tmpinvdataprint> tmpinvdataprints { get; set; }
+        public virtual DbSet<tmpinvdata1> tmpinvdata1 { get; set; }
         public virtual DbSet<tmppayment> tmppayments { get; set; }
         public virtual DbSet<tmpReceiptsdata> tmpReceiptsdatas { get; set; }
         public virtual DbSet<tmpstatementdata> tmpstatementdatas { get; set; }
@@ -99,13 +99,13 @@ namespace SmartBill
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoicedetails_Result>("sp_getinvoicedetails", invParameter);
         }
     
-        public virtual ObjectResult<sp_getinvoices_Result> sp_getinvoices(Nullable<int> clientid)
+        public virtual ObjectResult<sp_getinvoices_Result> sp_getinvoices(Nullable<int> invoiceno)
         {
-            var clientidParameter = clientid.HasValue ?
-                new ObjectParameter("clientid", clientid) :
-                new ObjectParameter("clientid", typeof(int));
+            var invoicenoParameter = invoiceno.HasValue ?
+                new ObjectParameter("invoiceno", invoiceno) :
+                new ObjectParameter("invoiceno", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoices_Result>("sp_getinvoices", clientidParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getinvoices_Result>("sp_getinvoices", invoicenoParameter);
         }
     
         public virtual int sp_getinvoicesforpayment()
@@ -126,7 +126,7 @@ namespace SmartBill
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getReceiptdetails_Result>("sp_getReceiptdetails", recNoParameter, invParameter);
         }
     
-        public virtual int sp_getStatement(string custId, Nullable<System.DateTime> startdate, Nullable<System.DateTime> enddate)
+        public virtual int sp_getStatement(string custId, Nullable<System.DateTime> startdate, Nullable<System.DateTime> enddate, string serv)
         {
             var custIdParameter = custId != null ?
                 new ObjectParameter("custId", custId) :
@@ -140,7 +140,11 @@ namespace SmartBill
                 new ObjectParameter("enddate", enddate) :
                 new ObjectParameter("enddate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_getStatement", custIdParameter, startdateParameter, enddateParameter);
+            var servParameter = serv != null ?
+                new ObjectParameter("serv", serv) :
+                new ObjectParameter("serv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_getStatement", custIdParameter, startdateParameter, enddateParameter, servParameter);
         }
     }
 }

@@ -27,8 +27,6 @@ namespace SmartBill
         public string code { get; set; }
         public string client_billingaddress { get; set; }
         public string billing_city { get; set; }
-        public string billing_zip { get; set; }
-        public string vat_number { get; set; }
         public string client_phone { get; set; }
         public string po_number { get; set; }
         public string company_address { get; set; }

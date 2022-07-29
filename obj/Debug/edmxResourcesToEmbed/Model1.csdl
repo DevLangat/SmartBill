@@ -160,7 +160,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -819,11 +819,11 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="measuring_unit" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-    <Property Name="tax_id" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="tax_id" Type="Int32" />
     <Property Name="deleted" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="sku" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1079,60 +1079,16 @@
   <EntityType Name="tmpinvdata">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="number" />
-      <PropertyRef Name="issue_date" />
+      <PropertyRef Name="InvoiceNumber" />
     </Key>
     <Property Name="id" Type="Int64" Nullable="false" />
     <Property Name="InvoiceValue" Type="Double" />
     <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="client_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="number" Type="Int64" Nullable="false" />
-    <Property Name="due_date" Type="DateTime" Precision="3" />
-    <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="tmpinvdataprint">
-    <Key>
-      <PropertyRef Name="number" />
-      <PropertyRef Name="issue_date" />
-      <PropertyRef Name="product_name" />
-      <PropertyRef Name="product_id" />
-      <PropertyRef Name="quantity" />
-      <PropertyRef Name="type" />
-      <PropertyRef Name="price" />
-      <PropertyRef Name="client_name" />
-      <PropertyRef Name="code" />
-    </Key>
-    <Property Name="number" Type="Int64" Nullable="false" />
-    <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="due_date" Type="DateTime" Precision="3" />
-    <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="product_id" Type="Int32" Nullable="false" />
-    <Property Name="quantity" Type="Double" Nullable="false" />
-    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-    <Property Name="PAmount" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="pTax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="client_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="client_billingaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="client_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="po_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="company_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="company_county" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="company_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="company_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="company_pin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="company_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="company_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="TotalValue" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="TotalAmount" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="TotalTax" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="invTotals" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValueTotals" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="TaxTotals" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvoiceNumber" Type="Int64" Nullable="false" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="receiptno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tmppayment">
     <Key>
@@ -1167,8 +1123,6 @@
     <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="client_billingaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="billing_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="billing_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="vat_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="client_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="po_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="company_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1193,18 +1147,18 @@
     <Key>
       <PropertyRef Name="INVOICE_DATE" />
       <PropertyRef Name="Status" />
-      <PropertyRef Name="INVOICE_NO" />
+      <PropertyRef Name="INVOICE_NO_" />
     </Key>
     <Property Name="INVOICE_DATE" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="INVOICE_NO" Type="Int64" Nullable="false" />
+    <Property Name="INVOICE_NO_" Type="Int64" Nullable="false" />
     <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PAYMENT_DATE" Type="DateTime" Precision="0" />
     <Property Name="RECEIVING_BANK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TRANS_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="EXPECTED_PAYMENT_LESS_WHT" Type="Double" />
-    <Property Name="EXPECTED_WITHHOLDING_TAX" Type="Double" />
+    <Property Name="Amount_KES_" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" Type="Double" />
+    <Property Name="EXPECTED_WITHHOLDING_TAX__KSH_" Type="Double" />
     <Property Name="PAYMENT_RECEIVED" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="BALANCE" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
@@ -1258,7 +1212,6 @@
     <EntitySet Name="versions" EntityType="Self.version" />
     <EntitySet Name="configs" EntityType="Self.config" />
     <EntitySet Name="tmpinvdatas" EntityType="Self.tmpinvdata" />
-    <EntitySet Name="tmpinvdataprints" EntityType="Self.tmpinvdataprint" />
     <EntitySet Name="tmppayments" EntityType="Self.tmppayment" />
     <EntitySet Name="tmpReceiptsdatas" EntityType="Self.tmpReceiptsdata" />
     <EntitySet Name="tmpstatementdatas" EntityType="Self.tmpstatementdata" />
@@ -1269,7 +1222,7 @@
       <Parameter Name="inv" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_getinvoices" ReturnType="Collection(sleekbillModel.sp_getinvoices_Result)">
-      <Parameter Name="clientid" Mode="In" Type="Int32" />
+      <Parameter Name="invoiceno" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_getinvoicesforpayment" />
     <FunctionImport Name="sp_getReceiptdetails" ReturnType="Collection(sleekbillModel.sp_getReceiptdetails_Result)">
@@ -1280,19 +1233,20 @@
       <Parameter Name="custId" Mode="In" Type="String" />
       <Parameter Name="startdate" Mode="In" Type="DateTime" />
       <Parameter Name="enddate" Mode="In" Type="DateTime" />
+      <Parameter Name="serv" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_getcustomestatements_Result">
     <Property Type="DateTime" Name="INVOICE_DATE" Nullable="false" Precision="23" />
     <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
-    <Property Type="Int64" Name="INVOICE_NO" Nullable="false" />
+    <Property Type="Int64" Name="INVOICE_NO_" Nullable="false" />
     <Property Type="String" Name="DESCRIPTION" Nullable="true" />
     <Property Type="DateTime" Name="PAYMENT_DATE" Nullable="true" />
     <Property Type="String" Name="RECEIVING_BANK" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="TRANS_NO" Nullable="true" MaxLength="50" />
-    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
-    <Property Type="Double" Name="EXPECTED_PAYMENT_LESS_WHT" Nullable="true" />
-    <Property Type="Double" Name="EXPECTED_WITHHOLDING_TAX" Nullable="true" />
+    <Property Type="Decimal" Name="Amount_KES_" Nullable="true" Precision="19" />
+    <Property Type="Double" Name="EXPECTED_PAYMENT__LESS_WHT__KSH_" Nullable="true" />
+    <Property Type="Double" Name="EXPECTED_WITHHOLDING_TAX__KSH_" Nullable="true" />
     <Property Type="Decimal" Name="PAYMENT_RECEIVED" Nullable="true" Precision="19" />
     <Property Type="Decimal" Name="BALANCE" Nullable="true" Precision="19" />
     <Property Type="String" Name="client_name" Nullable="false" />
@@ -1318,13 +1272,12 @@
     <Property Type="String" Name="type" Nullable="false" />
     <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
     <Property Type="Decimal" Name="PAmount" Nullable="true" Precision="19" />
-    <Property Type="String" Name="pTax" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="pTax" Nullable="true" Precision="19" />
     <Property Type="String" Name="client_name" Nullable="false" />
     <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="client_billingaddress" Nullable="true" />
     <Property Type="String" Name="billing_city" Nullable="true" />
     <Property Type="String" Name="client_phone" Nullable="true" />
-    <Property Type="String" Name="po_number" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="company_address" Nullable="true" />
     <Property Type="String" Name="company_county" Nullable="true" />
     <Property Type="String" Name="company_email" Nullable="true" />
@@ -1332,13 +1285,6 @@
     <Property Type="String" Name="company_pin" Nullable="true" />
     <Property Type="String" Name="company_zip" Nullable="true" />
     <Property Type="String" Name="company_phone" Nullable="true" />
-    <Property Type="Decimal" Name="TotalValue" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="TotalTax" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="invTotals" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="ValueTotals" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="TaxTotals" Nullable="true" Precision="19" />
-    <Property Type="Decimal" Name="Balance" Nullable="true" Precision="19" />
   </ComplexType>
   <ComplexType Name="sp_getinvoices_Result">
     <Property Type="Int32" Name="No" Nullable="false" />
@@ -1363,8 +1309,6 @@
     <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="client_billingaddress" Nullable="true" />
     <Property Type="String" Name="billing_city" Nullable="true" />
-    <Property Type="String" Name="billing_zip" Nullable="true" />
-    <Property Type="String" Name="vat_number" Nullable="true" />
     <Property Type="String" Name="client_phone" Nullable="true" />
     <Property Type="String" Name="po_number" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="company_address" Nullable="true" />

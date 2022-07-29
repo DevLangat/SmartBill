@@ -143,7 +143,7 @@ namespace SmartBill
             var inv = Convert.ToInt64(txtinvoiceno.Text);
             var invdetails = (from p in context.tmpinvdatas
                            where p.number == inv //code ammended to always update details of a company with the assumption that we always have one company we are working on
-                           select new { p.due_date,p.InvoiceValue,p.Balance,p.issue_date, }).ToList();
+                           select new { p.number,p.InvoiceValue,p.Balance,p.issue_date, }).ToList();
             foreach(var x in invdetails)
             {
                 txtinvdate.Text = x.issue_date.ToString();

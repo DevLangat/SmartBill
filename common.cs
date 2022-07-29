@@ -12,6 +12,8 @@ namespace SmartBill
         public static DateTime Startdate { get; set; }
         public static DateTime EndDate { get; set; }
         public static string invno { get; set; }
+        public static string custoid { get; set; }
+
 
 
 
