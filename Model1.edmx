@@ -1226,7 +1226,7 @@ warning 6002: The table/view 'sleekbill.dbo.tmpstatementdata' does not have a pr
           <Parameter Name="custId" Type="nvarchar" Mode="In" />
           <Parameter Name="startdate" Type="datetime" Mode="In" />
           <Parameter Name="enddate" Type="datetime" Mode="In" />
-          <Parameter Name="serv" Type="nvarchar" Mode="In" />
+          <Parameter Name="serv" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="sleekbillModelStoreContainer">
           <EntitySet Name="bill_payments" EntityType="Self.bill_payments" Schema="dbo" store:Type="Tables" />
@@ -2621,7 +2621,7 @@ warning 6002: The table/view 'sleekbill.dbo.tmpstatementdata' does not have a pr
             <Parameter Name="custId" Mode="In" Type="String" />
             <Parameter Name="startdate" Mode="In" Type="DateTime" />
             <Parameter Name="enddate" Mode="In" Type="DateTime" />
-            <Parameter Name="serv" Mode="In" Type="String" />
+            <Parameter Name="serv" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_getcustomestatements_Result">

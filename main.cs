@@ -102,5 +102,12 @@ namespace SmartBill
             frmcustomerstatements frmcustomerstatements = new frmcustomerstatements();
             frmcustomerstatements.ShowDialog(this);
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            frmcustomerstatements frmcustomerstatements = new frmcustomerstatements();
+            frmcustomerstatements.ShowDialog(this);
+        }
     }
 }

@@ -1131,6 +1131,20 @@
           <ScalarProperty Name="Paid" ColumnName="Paid" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
           <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpinvdata1">
+      <EntityTypeMapping TypeName="sleekbillModel.tmpinvdata1">
+        <MappingFragment StoreEntitySet="tmpinvdata1">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="InvoiceValue" ColumnName="InvoiceValue" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
           <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
           <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
           <ScalarProperty Name="receiptno" ColumnName="receiptno" />

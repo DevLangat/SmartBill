@@ -190,6 +190,7 @@
             this.Name = "frmcustomerstatements";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Statements";
+            this.Load += new System.EventHandler(this.frmcustomerstatements_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

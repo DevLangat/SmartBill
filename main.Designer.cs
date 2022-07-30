@@ -67,6 +67,7 @@
             this.productsMnReport = new System.Windows.Forms.ToolStripMenuItem();
             this.customerStatementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -89,6 +90,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.linkLabel1);
             this.panel3.Controls.Add(this.btnNewProduct);
             this.panel3.Controls.Add(this.btnPayment);
             this.panel3.Controls.Add(this.productsRpt);
@@ -143,7 +145,7 @@
             this.productsRpt.AutoSize = true;
             this.productsRpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productsRpt.LinkColor = System.Drawing.Color.DarkSlateGray;
-            this.productsRpt.Location = new System.Drawing.Point(473, 252);
+            this.productsRpt.Location = new System.Drawing.Point(473, 245);
             this.productsRpt.Name = "productsRpt";
             this.productsRpt.Size = new System.Drawing.Size(129, 18);
             this.productsRpt.TabIndex = 4;
@@ -492,6 +494,21 @@
             this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.paymentsToolStripMenuItem.Text = "Payments";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Brown;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkSlateGray;
+            this.linkLabel1.Location = new System.Drawing.Point(473, 279);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(145, 18);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Customer Statement";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,6 +579,7 @@
         private System.Windows.Forms.LinkLabel btnCompany;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

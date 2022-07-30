@@ -126,7 +126,7 @@ namespace SmartBill
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getReceiptdetails_Result>("sp_getReceiptdetails", recNoParameter, invParameter);
         }
     
-        public virtual int sp_getStatement(string custId, Nullable<System.DateTime> startdate, Nullable<System.DateTime> enddate, string serv)
+        public virtual int sp_getStatement(string custId, Nullable<System.DateTime> startdate, Nullable<System.DateTime> enddate, Nullable<int> serv)
         {
             var custIdParameter = custId != null ?
                 new ObjectParameter("custId", custId) :
@@ -140,9 +140,9 @@ namespace SmartBill
                 new ObjectParameter("enddate", enddate) :
                 new ObjectParameter("enddate", typeof(System.DateTime));
     
-            var servParameter = serv != null ?
+            var servParameter = serv.HasValue ?
                 new ObjectParameter("serv", serv) :
-                new ObjectParameter("serv", typeof(string));
+                new ObjectParameter("serv", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_getStatement", custIdParameter, startdateParameter, enddateParameter, servParameter);
         }

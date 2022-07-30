@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="927b97cebe8f4d4cb7eafb088bc1e64e" Name="Diagram1">
+      <Diagram DiagramId="86a578204cda4cd18476fb2161eb8096" Name="Diagram1">
         <EntityTypeShape EntityType="sleekbillModel.bill_payments" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sleekbillModel.bill_products" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sleekbillModel.bill" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

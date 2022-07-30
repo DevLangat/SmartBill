@@ -16,7 +16,7 @@ namespace SmartBill
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCustomerStatementPreview());
+            Application.Run(new main());
 
         }
     }
